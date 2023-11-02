@@ -1,0 +1,63 @@
+  #headerNav a {
+	font-family: 'Dela Gothic One', cursive;
+  }
+
+
+
+  .dropdown-item:hover {
+	background-color: red;
+	color: white;
+  }
+
+  .nav-link:hover{
+	color: red;
+  }
+
+
+
+
+  .nav-link{
+    color: black !important;
+  }
+
+  .nav-link:hover{
+    color: rgb(249, 0, 0) !important;
+  }
+
+
+/*effect-underline*/
+
+.effect-underline:after {
+	content: '';
+
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid;
+
+  opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: scale(0,1);
+	transform: scale(0,1);
+
+}
+
+.effect-underline:hover:after {
+  opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+
+}
+
+  
+
+
+
+
+
+
+
+
+
+  
+  

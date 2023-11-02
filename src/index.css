@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Dela+Gothic+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
+:root{
+
+	/* colors */
+	
+	--red: #c70706;
+	--black: rgb(0, 0, 0);
+	--white: rgb(255, 255, 255);
+
+}
+
+/* TRANSITION */
+
+
+/* MEDIA QUERY */
+
+@media screen and (min-width:992px){
+	.nav-item {
+	line-height:80px;
+	}
+
+	
+
+  }
+
+/* Wide Mobile = 480px */
+
+@media only screen and (max-width: 767px) {
+
+	/* cambio file immagine in vista mobile */
+
+	/* .carousel-item:nth-child(1) img {
+		content: url(/img/carousel/spiderman-2.jpeg);
+	} 
+
+	 .carousel-item:nth-child(2) img {
+		content: url(/img/carousel/LOF_fullscreen_D1_copia.jpg);
+	} 
+
+	.carousel-item:nth-child(3) img {
+		content: url(/img/carousel/assassins-creed.png);
+	} 
+
+	.carousel-item:nth-child(4) img {
+		content: url(/img/carousel/red-dead-redemption.jpeg);
+	} 
+	
+	.carousel-item:nth-child(5) img {
+		content: url(/img/carousel/forza-motorsport.jpeg);
+	} 
+
+	.carousel-item:nth-child(6) img {
+		content: url(/img/carousel/fc24.jpeg);
+	}  */
+
+
+
+	.navbar-toggler{
+		border: none !important;
+	}
+	
+	#navbarDropdownMenuLink{
+		margin: 8px !important;
+	}
+
+	.nav-link{
+		margin: 8px !important;
+	}
+
+	.item-img{
+		width: 100% !important;
+	}
+
+	#products h2{
+		text-align: center;
+	}
+
+	#products .card{
+		text-align: center;
+	}
+
+
+	#xbox-right{
+		display: block !important;
+	}
+
+	.carousel-item img {
+
+		height: 500px !important;
+
+		
+	}
+
+	.item{
+		width: 250px !important;
+	}
+
+	.card-game{
+		width: 100% ;
+	}
+
+	
+}
+
+
+*{
+	font-family: 'Poppins', sans-serif;
+}
+
+body{
+	background-color: #ffffff;
+}
+
+
+
+/* OTHER STYLE */
+
+/* TESTO SU SINGOLA RIGA */
+
+.single-line-text {
+    white-space: nowrap;
+}
+
+
+#btn-back-to-top {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	display: none;
+  }
+
+
+  .set-bg{
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+
+.paypal{
+	background-color: #e4e7ea;
+	padding: 70px;
+}
+
+  
+  
+
