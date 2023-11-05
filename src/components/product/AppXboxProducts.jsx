@@ -1,23 +1,19 @@
 import AppCardGame from "./AppCardGame"
 
+function AppXboxProducts( {gameXbox} ) {
 
-function AppXboxProducts( {gameData} ) {
-
-    console.log(gameData);
+    console.log(gameXbox);
 
       
     return(
 
     <div id="products" className="container-fluid p-0 my-5">
-                  
+   
         <div className="row p-0 m-0">
-
-                
 
             <span className="text-center "><img src="/src/assets/img/xbox/logo-xbox.png" width="300" /></span>
 
-    
-            <div className="col-lg-3 col-md-12 p-5">
+            <div className="col-lg-3 col-md-12 p-5 slide-in-left">
                 <div className="container rounded-4 set-bg col-sx-xbox shadow-lg">     
                     <img src="/src/assets/img/xbox/xbox.png" className=" w-100 p-3 "/>
                 </div>
@@ -28,15 +24,15 @@ function AppXboxProducts( {gameData} ) {
             </div>
 
   
-            <div className="col-lg-6 p-0 col-md-12"> 
+            <div className="col-lg-6 p-0 col-md-12 "> 
        
                     
                         <div className="container-fluid w-100 h-100 my-5">
                             <div className="row">
 
-
+                            <span className="text-start text-decoration-none fw-bold fs-3 ms-3">Più venduti</span>
                                 
-                            <AppCardGame gameData={gameData} />
+                            <AppCardGame gameXbox={gameXbox} />
                                
 
                                         
@@ -54,7 +50,7 @@ function AppXboxProducts( {gameData} ) {
   
             </div>
 
-            <div className="col-lg-3 col-md-12 p-5">
+            <div className="col-lg-3 col-md-12 p-5 slide-in-right">
                 <div className="container">
                     <img src="/src/assets/img/xbox/xbox-store.jpeg" className=" w-100 rounded-4 mb-5 shadow-lg"/>
                     <img src="/src/assets/img/xbox/gamepass-info.jpeg" className=" w-100 rounded-4 my-5 shadow-lg"/>
@@ -63,6 +59,7 @@ function AppXboxProducts( {gameData} ) {
             </div>
 
         </div>
+
     </div>   
 
     )

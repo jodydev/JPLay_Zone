@@ -1,15 +1,20 @@
-function AppCardGame({ gameData }) {
+function AppCardGame({ gamePs5, gameXbox }) {
+
+  const games = gamePs5 || gameXbox; // Usa i dati di PS5 se sono disponibili, altrimenti quelli di Xbox
+
   return (
+
+
     
      <div className="d-flex flex-wrap">
 
      
-      {gameData.map(game => (
+      {games.map(game => (
 
-        <div className="col-4 flip-card mx-3 my-5 ">
+        <div className="col-4 flip-card mx-3 my-5 flip-in-hor-bottom">
             <div className="flip-card-inner">
-                <div className="flip-card-front">
-                <img src={game.img[0]} alt={game.title} className="card-img-top w-100 rounded-3" />
+                <div className="flip-card-front" style={{ backgroundImage: `url(${game.img[0]})` , backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+      
                 </div>
                 <div className="flip-card-back">
                   <div className="card-body text-center w-100 justify-content-center d-flex align-items-center flex-wrap rounded-4 shadow-lg">

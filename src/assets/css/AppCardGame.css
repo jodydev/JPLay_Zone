@@ -20,8 +20,8 @@
 
 
 .card-body{
-  background: rgb(37, 37, 37);
-  /* background: linear-gradient(0deg, rgb(23, 77, 255) 20%, rgba(0,0,0,1) 86%); */
+  background: rgb(32,32,32);
+
     border-radius: 0px 0px 15px 15px;
     color: white;
 }
@@ -74,7 +74,7 @@
 }
 
 .flip-card-front, .flip-card-back {
-  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 14px 0 rgb(163, 163, 163);
   position: absolute;
   display: flex;
   flex-direction: column;

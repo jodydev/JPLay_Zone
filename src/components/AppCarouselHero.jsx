@@ -2,12 +2,13 @@ function AppCarouselHero() {
   
     return (
       
-     <section id="carousel">
-        <div className="container bg-carouse p-5 my-5">
-        <div id="carouselExampleAutoplaying" className="carousel slide rounded-4 shadow-lg" data-bs-ride="carousel"  >
-            <div className="carousel-inner" >
+<section className="p-5 ">
 
-            <div className="carousel-item active">
+        <div className="container p-5 slide-in-top">
+        <div id="carouselExampleAutoplaying" className="carousel slide rounded-4 shadow-lg " data-bs-ride="carousel"  >
+            <div className="carousel-inner rounded-4 " >
+
+            <div className="carousel-item active ">
                 <img src="/src/assets/img/carousel/spider-man.jpeg" className="d-block w-100 rounded-4 "  alt="..."/>
             </div>
 
@@ -21,21 +22,14 @@ function AppCarouselHero() {
             
 
             <div className="carousel-item">
-                <img src="/src/assets/img/carousel/super-mario.jpeg" className="d-block w-100 rounded-4 " alt="..."/>
-            </div>
-
-            <div className="carousel-item">
-                <img src="/src/assets/img/carousel/pikachu.jpeg" className="d-block w-100 rounded-4 " alt="..."/>
+                <img src="/src/assets/img/carousel/ufc.png" className="d-block w-100 rounded-4 " alt="..."/>
             </div>
 
             <div className="carousel-item">
                 <img src="/src/assets/img/carousel/cod.jpeg" className="d-block w-100 rounded-4 "alt="..."/>
             </div>
 
-            <div className="carousel-item">
-                <img src="/src/assets/img/carousel/warner-bros.jpeg" className="d-block w-100 rounded-4 "  alt="..."/>
-            </div>
-            
+    
             </div>
             <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -48,7 +42,7 @@ function AppCarouselHero() {
         </div>
         </div>
        
-    </section>
+        </section>
      
      
     )

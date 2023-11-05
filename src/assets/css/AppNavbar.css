@@ -1,9 +1,9 @@
   #headerNav a {
-	font-family: 'Dela Gothic One', cursive;
+
+	font-weight: 600;
+  letter-spacing: 2px;
   }
-
-
-
+  
   .dropdown-item:hover {
 	background-color: red;
 	color: white;
@@ -12,9 +12,6 @@
   .nav-link:hover{
 	color: red;
   }
-
-
-
 
   .nav-link{
     color: black !important;
