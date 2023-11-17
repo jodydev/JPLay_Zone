@@ -279,3 +279,21 @@ background-color: white !important;
 border: 1px solid red !important;
 color: red !important;
 }
+
+
+.bg-danger{
+	background-color: red !important;
+}
+
+.nintendo-img{
+	bottom: 0px;
+	width: 100%;
+}
+
+.my-padding{
+	padding: 40px;
+}
+
+a{
+	text-decoration: none !important;
+}

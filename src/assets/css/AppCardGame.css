@@ -20,8 +20,8 @@
 
 
 .card-body{
-  background: rgb(32,32,32);
-
+    background: rgba(36,36,36,1);
+   
     border-radius: 0px 0px 15px 15px;
     color: white;
 }
@@ -43,12 +43,6 @@
   background-color: rgb(211, 15, 15) !important;
   border: red !important;
 }
-
-
-
-
-
-
 
 
 
@@ -88,6 +82,6 @@
 
 
 .flip-card-back {
-  transform: rotateY(180deg);`
+  transform: rotateY(180deg);
 }
 

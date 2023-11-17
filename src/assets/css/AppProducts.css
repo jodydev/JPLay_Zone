@@ -1,5 +1,6 @@
 .col-sx-ps5{
     background-image: url(/src/assets/img/ps5/sfondo-ps5.png);
+    transition: transform 250ms;
 }
 
 .col-sx-xbox{
@@ -8,6 +9,11 @@
 
 .details{
     color: black;
+}
+
+.transition:hover{
+    transition: transform 450ms;
+    transform: translateY(-20px) ;
 }
 
 

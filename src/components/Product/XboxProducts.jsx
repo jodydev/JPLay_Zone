@@ -1,6 +1,6 @@
-import AppCardGame from "./AppCardGame"
+import CardGame from "./CardGame"
 
-function AppXboxProducts( {gameXbox} ) {
+function XboxProducts( {gameXbox} ) {
 
     console.log(gameXbox);
 
@@ -14,11 +14,11 @@ function AppXboxProducts( {gameXbox} ) {
             <span className="text-center "><img src="/src/assets/img/xbox/logo-xbox.png" width="300" /></span>
 
             <div className="col-lg-3 col-md-12 p-5 slide-in-left">
-                <div className="container rounded-4 set-bg col-sx-xbox shadow-lg">     
+                <div className="container rounded-4 set-bg col-sx-xbox shadow-lg transition">     
                     <img src="/src/assets/img/xbox/xbox.png" className=" w-100 p-3 "/>
                 </div>
 
-                <div className="container rounded-4 set-bg col-sx-xbox mt-5 shadow-lg">
+                <div className="container rounded-4 set-bg col-sx-xbox mt-5 shadow-lg transition">
                     <img src="/src/assets/img/xbox/info-xbox.png" className=" w-100 rounded-4 my-5 "/>
                 </div>
             </div>
@@ -32,7 +32,7 @@ function AppXboxProducts( {gameXbox} ) {
 
                             <span className="text-start text-decoration-none fw-bold fs-3 ms-3">Più venduti</span>
                                 
-                            <AppCardGame gameXbox={gameXbox} />
+                            <CardGame gameXbox={gameXbox} />
                                
 
                                         
@@ -52,9 +52,9 @@ function AppXboxProducts( {gameXbox} ) {
 
             <div className="col-lg-3 col-md-12 p-5 slide-in-right">
                 <div className="container">
-                    <img src="/src/assets/img/xbox/xbox-store.jpeg" className=" w-100 rounded-4 mb-5 shadow-lg"/>
-                    <img src="/src/assets/img/xbox/gamepass-info.jpeg" className=" w-100 rounded-4 my-5 shadow-lg"/>
-                    <img src="/src/assets/img/xbox/xbox-gamepass.png" className=" w-100 rounded-4 my-5 shadow-lg"/>
+                    <img src="/src/assets/img/xbox/xbox-store.jpeg" className=" w-100 rounded-4 mb-5 shadow-lg transition"/>
+                    <img src="/src/assets/img/xbox/gamepass-info.jpeg" className=" w-100 rounded-4 my-5 shadow-lg transition"/>
+                    <img src="/src/assets/img/xbox/xbox-gamepass.png" className=" w-100 rounded-4 my-5 shadow-lg transition"/>
                 </div>
             </div>
 
@@ -65,4 +65,4 @@ function AppXboxProducts( {gameXbox} ) {
     )
 }
 
-export default AppXboxProducts
+export default XboxProducts
