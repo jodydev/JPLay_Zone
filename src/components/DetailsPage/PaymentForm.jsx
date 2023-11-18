@@ -17,17 +17,17 @@ function PaymentForm({ games }) {
     <div className="container-fluid">
       <div className="row">
 
-        <div className="col-6 ">
+        <div className="col-12 col-lg-6">
           <div className="container slide-in-left">
               <div className="row d-flex justify-content-center">
                 <div className="col-12 d-flex justify-content-center">
-                  <img src={selectedGame.img} className="w-75 my-5 p-5" />
+                  <img src={selectedGame.img} className="w-75 my-5 p-0 p-lg-5 details-img" />
                 </div>
               </div>
           </div>
         </div>
 
-        <div className="col-6">
+        <div className="col-12 col-lg-6">
                     <div className="container slide-in-right shadow-lg rounded-4 my-5 p-5">
 
                       <h1 className="my-3 fw-normal fs-3">{selectedGame.title}</h1>
@@ -39,13 +39,13 @@ function PaymentForm({ games }) {
         
                       <div className="container my-3">
                         <div className="row">
-                          <div className="col-5 p-1">
+                          <div className="col-lg-5 p-1">
                             <p className="text-nowrap"><i class="fa-solid fa-circle-check" style={{color: "green",}}></i> Consegna a domicilio</p>
                           </div>
-                          <div className="col-4 p-1">
+                          <div className="col-lg-4 p-1">
                             <p><i class="fa-solid fa-circle-check" style={{color: "green",}}></i> Reso gratuito</p>
                           </div>
-                          <div className="col-3 p-1">
+                          <div className="col-lg-3 p-1">
                             <p><i class="fa-solid fa-circle-check" style={{color: "green",}}></i> Sconto 10%</p>
                           </div>
                         </div>
@@ -53,10 +53,10 @@ function PaymentForm({ games }) {
 
                       <div className="container my-3">
                         <div className="row">
-                          <div className="col-4 px-2" >
+                          <div className="col-lg-4 col-6 px-2" >
                             <img src="/assets/img/sponsor/klarna.avif"  className="rounded-4 w-100 shadow-lg" alt="Klarna" />
                           </div>
-                          <div className="col-4 px-2" >
+                          <div className="col-lg-4 col-6 px-2" >
                             <img src="/assets/img/sponsor/paypall.png"  className="rounded-4 w-100 shadow-lg" alt="PayPal" />
                           </div>
                         </div>
@@ -64,8 +64,8 @@ function PaymentForm({ games }) {
 
                       <div className="container">
                         <div className="row">
-                          <div className="col-6">
-                            <div className="mt-5">
+                          <div className="col-lg-6">
+                            <div className="mt-4">
                               <Link to="/">
                                 <button id="button-details" className="btn btn-danger rounded-4 w-100 p-2">
                                 Acquista Ora
@@ -73,8 +73,8 @@ function PaymentForm({ games }) {
                               </Link>
                             </div>
                           </div>
-                          <div className="col-6">
-                            <div className="mt-5">
+                          <div className="col-lg-6">
+                            <div className="mt-4">
                             <Link to="/">
                               <button id="button-cart" className="btn btn-danger rounded-4 w-100 p-2">
                                 <i class="fa-solid fa-cart-shopping mx-3" style={{color: "red",}}></i> 

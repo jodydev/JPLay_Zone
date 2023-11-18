@@ -29,7 +29,7 @@ const StyledBreadcrumb = styled(Chip)(({ theme }) => {
 
 export default function CustomizedBreadcrumbs() {
   return (
-    <div className="container my-5 p-0 d-flex justify-content-start">
+    <div className="container my-5 p-0 px-5 px-lg-0  d-flex justify-content-start">
       <div role="presentation" >
         <Breadcrumbs aria-label="breadcrumb">
           <Link to="/">

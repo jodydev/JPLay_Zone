@@ -28,11 +28,11 @@ function Footer() {
                 </div>
               </section>
         
-              <section className="">
+              <section>
                 <div className="container text-center text-md-start mt-5">
                   <div className="row mt-3">
         
-                    <div className="col-md-3 col-lg-4 col-xl-3 d-flex justify-content-start align-items-center">
+                    <div className="col-md-3 col-lg-4 col-xl-3 d-flex justify-content-start align-items-center d-none d-lg-block">
                         <img src="/assets/img/logo/logo1.png" width="150" alt="JPlay Zone Logo" />                      
                     </div>
         

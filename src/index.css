@@ -147,8 +147,6 @@
 	line-height:80px;
 	}
 
-	
-
   }
 
 /* Wide Mobile = 480px */
@@ -157,31 +155,25 @@
 
 	/* cambio file immagine in vista mobile */
 
-	/* .carousel-item:nth-child(1) img {
-		content: url(/img/carousel/spiderman-2.jpeg);
+	 .carousel-item:nth-child(1) img {
+		content: url(/assets/img/carousel/mobile/spiderman2-hero-mobile.png);
 	} 
 
 	 .carousel-item:nth-child(2) img {
-		content: url(/img/carousel/LOF_fullscreen_D1_copia.jpg);
+		content: url(/assets/img/carousel/mobile/assassins-creed-mobile.png);
 	} 
 
 	.carousel-item:nth-child(3) img {
-		content: url(/img/carousel/assassins-creed.png);
+		content: url(/assets/img/carousel/mobile/fc-24-mobile.jpeg);
 	} 
 
 	.carousel-item:nth-child(4) img {
-		content: url(/img/carousel/red-dead-redemption.jpeg);
+		content: url(/assets/img/carousel/mobile/read-dead-redemption-mobile.png);
 	} 
 	
 	.carousel-item:nth-child(5) img {
-		content: url(/img/carousel/forza-motorsport.jpeg);
+		content: url(/assets/img/carousel/mobile/forza-motorsport-mobile.png);
 	} 
-
-	.carousel-item:nth-child(6) img {
-		content: url(/img/carousel/fc24.jpeg);
-	}  */
-
-
 
 	.navbar-toggler{
 		border: none !important;
@@ -225,6 +217,20 @@
 
 	.card-game{
 		width: 100% ;
+	}
+
+	.my-overflow-x-scroll {
+		overflow-x: scroll !important;
+	}	
+
+
+	.my-row-sm{
+		width: 100% !important;
+	}
+
+	.details-img{
+		border-radius: 15px  !important;
+		width: 100% !important;
 	}
 
 	
@@ -300,4 +306,9 @@ a{
 
 body{
 	overflow-x: hidden !important;
+	background-color: #fafafa !important;
+}
+
+.navbar-toggler{
+	color: black !important;
 }

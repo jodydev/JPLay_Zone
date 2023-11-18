@@ -38,7 +38,7 @@ function XboxProducts( {gameXbox} ) {
                                         
                         <div className="offset-9">
 
-                             <span className="text-end me-5"><a href="#" className="details" ><svg xmlns="http://www.w3.org/2000/svg" width="22.703" height="21.928"><path d="M1.056 21.928c0-6.531 5.661-9.034 10.018-9.375V18.1L22.7 9.044 11.073 0v4.836a10.5 10.5 0 0 0-7.344 3.352C-.618 12.946-.008 21 .076 21.928z"/></svg> Scopri di più  </a></span>
+                             <span className="d-none d-lg-block text-end me-5"><a href="#" className="details" ><svg xmlns="http://www.w3.org/2000/svg" width="22.703" height="21.928"><path d="M1.056 21.928c0-6.531 5.661-9.034 10.018-9.375V18.1L22.7 9.044 11.073 0v4.836a10.5 10.5 0 0 0-7.344 3.352C-.618 12.946-.008 21 .076 21.928z"/></svg> Scopri di più  </a></span>
 
                         </div>
 

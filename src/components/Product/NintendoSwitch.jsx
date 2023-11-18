@@ -5,7 +5,7 @@ function NintendoSwitch({gameNintendo}) {
 
         <div className="container-fluid">
             <div className="row">
-                <div className="col-4">
+                <div className="col-12 col-lg-4">
 
                     <div className="container set-bg col-sx-nintendo rounded-4 transition shadow-lg w-75 my-5 py-3">
                             <img src="/assets/img/nintendo/switch.png" className=" w-100 p-4"/>                        
@@ -17,15 +17,15 @@ function NintendoSwitch({gameNintendo}) {
 
                 </div>
 
-                <div className="col-8">
+                <div className="col-12 col-lg-8">
 
-                    <div className="container w-100 px-5">
+                    
 
                         
                 
                             <CardGame gameNintendo={gameNintendo} />
 
-                    </div>
+                 
 
                 </div>
 

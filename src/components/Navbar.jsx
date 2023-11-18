@@ -2,19 +2,29 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
 
+    
   return (
           <header>
               <nav className="navbar navbar-expand-lg navbar-dark bg-nav p-0 m-0" id="headerNav">
-                  <div className="container-fluid p-0">
-                    <a className="navbar-brand d-block d-lg-none p-0" href="#">
-                      <img src="/assets/img/logo/logo1.png" height="80" />
-                    </a>
+                  <div className="container px-5 px-lg-0 py-3 py-lg-0">
+                    <div className="row my-row-sm">
 
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                      <span className="navbar-toggler-icon"></span>
-                    </button>
-                
-                    <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                      <div className="col-4">
+                        <a className="navbar-brand d-block d-lg-none p-0 " href="#"><h1 className="text-dark fw-bold letter-spacing">JPlay</h1></a>
+                      </div>
+                      <div className="col-2">
+                        <a className="navbar-brand d-block d-lg-none p-0" href="#"><img src="/assets/img/logo/logo1.png" height="35" /></a>
+                      </div>
+
+                      <div className="col-6 d-flex justify-content-end">
+                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i className="fa-solid fa-bars"></i>
+                        </button>
+                      </div>
+                      
+                    </div>
+
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
 
                       <div className="col-12">
                         <ul className="navbar-nav  d-flex justify-content-center my-2 ">
