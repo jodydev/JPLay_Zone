@@ -6,7 +6,7 @@ function SponsorBannerKlarna() {
               <div className="row">
                 <div className="col-6">
                   <div className="container slide-in-left ">
-                    <img src="/public/assets/img/logo-ps5.png" height="170" className="rounded-5 w-100 shadow-lg transition" alt="Klarna" />
+                    <img src="/assets/img/logo-ps5.png" height="170" className="rounded-5 w-100 shadow-lg transition" alt="Klarna" />
                   </div>
                 </div>                
                 <div className="col-6">
