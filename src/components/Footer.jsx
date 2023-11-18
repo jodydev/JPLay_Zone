@@ -41,26 +41,21 @@ function Footer() {
                         Prodotti
                       </h5>
                       <p>
-                        <a href="#!" className="text-dark">PS5</a>
+                        <a href="#ps5" className="text-dark">PS5</a>
                       </p>
                       <p>
-                        <a href="#!" className="text-dark">Xbox X/S</a>
+                        <a href="#xbox" className="text-dark">Xbox X/S</a>
                       </p>
                       <p>
-                        <a href="#!" className="text-dark">Nintendo Ds</a>
+                        <a href="#nientendo" className="text-dark">Nintendo Switch</a>
                       </p>
-                      <p>
-                        <a href="#!" className="text-dark">Pc</a>
-                      </p>
+                      
                     </div>
         
                     <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                       <h5 className="text-uppercase fw-bold mb-4 text-dark">
                         Link Utili
                       </h5>
-                      <p>
-                        <a href="#!" className="text-dark">Prezzi</a>
-                      </p>
                       <p>
                         <a href="#!" className="text-dark">Profilo</a>
                       </p>
@@ -91,7 +86,7 @@ function Footer() {
               </section>
         
               <div className="text-center p-4 text-dark">
-                © 2023 Copyright: <a href="https://jodydev.github.io/Portfolio-it/">Jody</a>
+                © 2023 Copyright: <a href="https://jodydev.github.io/Portfolio-it/" className="text-danger">Jody</a>
               </div>
             </footer>
     );

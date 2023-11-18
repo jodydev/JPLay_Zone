@@ -297,3 +297,7 @@ color: red !important;
 a{
 	text-decoration: none !important;
 }
+
+body{
+	overflow-x: hidden !important;
+}

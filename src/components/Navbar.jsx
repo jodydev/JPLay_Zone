@@ -38,11 +38,9 @@ function Navbar() {
                               Compatibilità
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                              <li><a className="dropdown-item" href="#">PS5</a></li>
-                              <li><a className="dropdown-item" href="#">Xbox One X/S</a></li>
-                              <li><a className="dropdown-item" href="#">Nintendo Switch</a></li>
-                              <li><a className="dropdown-item" href="#">Pc</a></li>
-                
+                              <li><a className="dropdown-item" href="#ps5">PS5</a></li>
+                              <li><a className="dropdown-item" href="#xbox">Xbox One X/S</a></li>
+                              <li><a className="dropdown-item" href="#nintendo">Nintendo Switch</a></li>
                             </ul>
                           </li>
                           <li className="nav-item ">

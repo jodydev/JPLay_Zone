@@ -7,7 +7,7 @@ function XboxProducts( {gameXbox} ) {
       
     return(
 
-    <div id="products" className="container-fluid p-0 my-5">
+    <div id="xbox" className="container-fluid p-0 my-5">
    
         <div className="row p-0 m-0">
 

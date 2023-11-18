@@ -1,18 +1,39 @@
 import { Link } from "react-router-dom";
 
-function CardGame({ gamePs5, gameXbox }) {
+function CardGame({ gamePs5, gameXbox, gameNintendo }) {
 
-  const games = gamePs5 || gameXbox; // Usa i dati di PS5 se sono disponibili, altrimenti quelli di Xbox
+  const games = gamePs5 || gameXbox || gameNintendo; // Usa i dati di PS5 se sono disponibili, altrimenti quelli di Xbox o di nintendo
+
+  const getCardClass = () => {
+    if (gamePs5) {
+      return "card-body blue-border text-center w-100 justify-content-center d-flex align-items-center flex-wrap rounded-4 shadow-lg"; // Applica la classe blue-border se gamePs5 è passato
+    } else if (gameXbox) {
+      return "card-body green-border text-center w-100 justify-content-center d-flex align-items-center flex-wrap rounded-4 shadow-lg"; // Applica la classe green-border se gameXbox è passato
+    } else if (gameNintendo) {
+      return "card-body red-border text-center w-100 justify-content-center d-flex align-items-center flex-wrap rounded-4 shadow-lg"; // Applica la classe red-border se gameNintendo è passato
+    }
+  };
 
   return (
           <div className="d-flex flex-wrap">
             {games.map(game => (
 
-              <div className="col-4 flip-card mx-3 my-5 flip-in-hor-bottom">
+                <div className="col-4 flip-card mx-3 my-5 flip-in-hor-bottom" key={game.id}>
                   <div className="flip-card-inner">
-                      <div className="flip-card-front" style={{ backgroundImage: `url(${game.img[0]})` , backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}></div>
-                      <div className="flip-card-back">
-                         <div className="card-body text-center w-100 justify-content-center d-flex align-items-center flex-wrap rounded-4 shadow-lg">
+                    <div
+                      className="flip-card-front"
+                      style={{
+                        backgroundImage: `url(${game.img[0]})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        backgroundRepeat: "no-repeat",
+                      }}
+                    >
+                    </div>
+                    
+                    <div className="flip-card-back">
+                      <div className={getCardClass()}>
+       
                             <div className="container">
                                 <h3 className="card-title single-line-text fs-5 my-3">{game.title}</h3>
                             </div>
@@ -40,15 +61,16 @@ function CardGame({ gamePs5, gameXbox }) {
                                 </button>
                               </Link>
                             </div>
-
-                          </div>
-                      </div>
+                     </div>
                   </div>
+                </div>
               </div>
             ))}
+
           </div>
   );
 }
 
 export default CardGame;
+
 

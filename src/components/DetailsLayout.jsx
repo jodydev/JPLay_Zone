@@ -1,4 +1,4 @@
-import CustomizedBreadcrumbs from "../components/CustomizedBreadcrumbs";
+import CustomizedBreadcrumbs from "./DetailsPage/CustomizedBreadcrumbs";
 import Divider from '@mui/material/Divider';
 import Container from '@mui/material/Container';
 

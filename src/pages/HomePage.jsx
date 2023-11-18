@@ -1,15 +1,15 @@
-import NintendoSwitchBanner from "../components/NintendoSwitchBanner";
-import CarouselHero from '../components/CarouselHero';
+import CarouselHero from '../components/HomePage/CarouselHero';
 import Ps5Products from '../components/Product/Ps5Products';
-import LogoShowCase from "../components/LogoShowCase";
-import SponsorBannerKlarna from "../components/SponsorBannerKlarna";
+import LogoShowCase from "../components/HomePage/LogoShowCase";
+import SponsorBannerKlarna from "../components/Sponsor/SponsorBannerKlarna";
 import XboxProducts from '../components/Product/XboxProducts';
-import SponsorBannerPayPal from "../components/SponsorBannerPayPal";
+import SponsorBannerPayPal from "../components/Sponsor/SponsorBannerPayPal";
 import { useState } from "react";
+import NintendoProducts from "../components/Product/NintendoProducts";
 
 function HomePage() {
   
-    const data = [
+  const data = [
         [  
           {
             "id": 1,
@@ -156,11 +156,104 @@ function HomePage() {
               "disponibility": true,
               "img": ["https://cdn.gamestorm.it/resized/568x/upload/4723e092f5-XSX.jpg"]
             }
+          ],
+          [  
+            {
+              "id": 1,
+              "title": "Super Mario",
+              "category": "Fantasy",
+              "platform": "Nintendo Switch",
+              "price": 69.99,
+              "disponibility": true,
+              "img": ["/src/assets/img/nintendo/supermario.jpeg"]
+            },
+            {
+              "id": 2,
+              "title": "Ben Ten",
+              "category": "Fantasy",
+              "platform": "Nintendo Switch",
+              "price": 39.99,
+              "disponibility": true,
+              "img": ["/src/assets/img/nintendo/benten.jpeg"]
+            },
+            {
+              "id": 3,
+              "title": "Hot Wheels",
+              "category": "Auto",
+              "platform": "Nintendo Switch",
+              "price": 59.99,
+              "disponibility": false,
+              "img": ["/src/assets/img/nintendo/hotwheels.jpg"]
+            },
+            {
+              "id": 4,
+              "title": "Monkey",
+              "category": "Fantasy",
+              "platform": "Nintendo Switch",
+              "price": 89.99,
+              "disponibility": true,
+              "img": ["/src/assets/img/nintendo/monkey.jpeg"]
+            },
+            {
+              "id": 5,
+              "title": "Naruto",
+              "category": "Fantasy",
+              "platform": "Nintendo Switch",
+              "price": 89.99,
+              "disponibility": true,
+              "img": ["/src/assets/img/nintendo/naruto.jpeg"]
+            },
+            {
+              "id": 6,
+              "title": "Spyro",
+              "category": "Fantasy",
+              "platform": "Nintendo Switch",
+              "price": 79.99,
+              "disponibility": true,
+              "img": ["/src/assets/img/nintendo/spyro.jpeg"]
+            },
+            {
+              "id": 7,
+              "title": "Ary",
+              "category": "Fantasy",
+              "platform": "Nintendo Switch",
+              "price": 49.99,
+              "disponibility": true,
+              "img": ["/src/assets/img/nintendo/ary.jpeg"]
+            },
+            {
+              "id": 8,
+              "title": "Mortal Kombat 11",
+              "category": "Fantasy",
+              "platform": "Nintendo Switch",
+              "price": 39.99,
+              "disponibility": true,
+              "img": ["/src/assets/img/nintendo/animal-crossing.jpeg"]
+            },
+            {
+              "id": 9,
+              "title": "Witcher",
+              "category": "Fantasy",
+              "platform": "Nintendo Switch",
+              "price": 39.99,
+              "disponibility": true,
+              "img": ["/src/assets/img/nintendo/witcher.jpeg"]
+            },
+            {
+              "id": 10,
+              "title": "Doraemon",
+              "category": "Fantasy",
+              "platform": "Nintendo Switch",
+              "price": 39.99,
+              "disponibility": true,
+              "img": ["/src/assets/img/nintendo/doraemon.jpeg"]
+            }
           ]
-      ];
+  ];
 
   const [gamePs5] = useState(data[0]);
   const [gameXbox] = useState(data[1]);
+  const [gameNintendo] = useState(data[2]);
 
   return (
     <>
@@ -170,7 +263,7 @@ function HomePage() {
       <SponsorBannerKlarna />
       <XboxProducts gameXbox={gameXbox} />
       <SponsorBannerPayPal />
-      <NintendoSwitchBanner />
+      <NintendoProducts gameNintendo={gameNintendo} />
     </>
   );
 }

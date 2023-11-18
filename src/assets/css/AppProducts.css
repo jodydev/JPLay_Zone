@@ -7,6 +7,10 @@
     background-image: url(/src/assets/img/xbox/sfondo-xbox.png);
 }
 
+.col-sx-nintendo{
+    background-color: #e80012;
+}
+
 .details{
     color: black;
 }

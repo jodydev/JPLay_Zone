@@ -106,7 +106,7 @@ function PaymentForm({ games }) {
                       </div>
                       
                     </div>
-                  </div>
+        </div>
 
       </div>
     </div>

@@ -21,9 +21,23 @@
 
 .card-body{
     background: rgba(36,36,36,1);
-   
-    border-radius: 0px 0px 15px 15px;
+    border-radius: 15px 15px 15px 15px !important;
     color: white;
+}
+
+.blue-border{
+  border-radius: 0px 0px 15px 15px;
+  border: 5px solid #2e72ce;
+}
+
+.green-border{
+  border-radius: 0px 0px 15px 15px;
+  border: 5px solid #307823;
+}
+
+.red-border{
+  border-radius: 0px 0px 15px 15px;
+  border: 5px solid #f20000;
 }
 
 .card-title .card-span{

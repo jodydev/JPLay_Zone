@@ -1,5 +1,5 @@
 import { useState } from "react";
-import PaymentForm from "../components/PaymentForm";
+import PaymentForm from "../components/DetailsPage/PaymentForm";
 import DetailsLayout from "../components/DetailsLayout";
 
 function DetailsPage() {

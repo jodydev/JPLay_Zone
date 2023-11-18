@@ -4,11 +4,10 @@ function Ps5Products( {gamePs5} ) {
 
     console.log(gamePs5);
 
-      
     return(
 
      
-    <div id="products" className="container-fluid p-0 my-5">
+    <div id="ps5" className="container-fluid p-0 my-5">
 
         <div className="row p-0 m-0">
  
