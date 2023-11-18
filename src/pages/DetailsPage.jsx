@@ -13,7 +13,7 @@ function DetailsPage() {
             "platform": "PS5",
             "price": 69.99,
             "disponibility": true,
-            "img": ["/src/assets/img/game-cover/game-ps5/spidermain.jpeg"]
+            "img": ["/assets/img/game-cover/game-ps5/spidermain.jpeg"]
           },
           {
             "id": 2,
@@ -22,7 +22,7 @@ function DetailsPage() {
             "platform": "PS5",
             "price": 39.99,
             "disponibility": true,
-            "img": ["/src/assets/img/game-cover/game-ps5/mortal-kombat.jpeg"]
+            "img": ["/assets/img/game-cover/game-ps5/mortal-kombat.jpeg"]
           },
           {
             "id": 3,
@@ -31,7 +31,7 @@ function DetailsPage() {
             "platform": "PS5",
             "price": 59.99,
             "disponibility": false,
-            "img": ["/src/assets/img/game-cover/game-ps5/gran-turismo-7.jpeg"]
+            "img": ["/assets/img/game-cover/game-ps5/gran-turismo-7.jpeg"]
           },
           {
             "id": 4,
@@ -40,7 +40,7 @@ function DetailsPage() {
             "platform": "PS5",
             "price": 89.99,
             "disponibility": true,
-            "img": ["/src/assets/img/game-cover/game-ps5/assassins-creed.jpeg"]
+            "img": ["/assets/img/game-cover/game-ps5/assassins-creed.jpeg"]
           },
           {
             "id": 5,
@@ -49,7 +49,7 @@ function DetailsPage() {
             "platform": "PS5",
             "price": 89.99,
             "disponibility": true,
-            "img": ["/src/assets/img/game-cover/game-ps5/fc24.jpeg"]
+            "img": ["/assets/img/game-cover/game-ps5/fc24.jpeg"]
           },
           {
             "id": 6,
@@ -58,7 +58,7 @@ function DetailsPage() {
             "platform": "PS5",
             "price": 79.99,
             "disponibility": true,
-            "img": ["/src/assets/img/game-cover/game-ps5/avatar.jpeg"]
+            "img": ["/assets/img/game-cover/game-ps5/avatar.jpeg"]
           },
           {
             "id": 7,
@@ -67,7 +67,7 @@ function DetailsPage() {
             "platform": "PS5",
             "price": 49.99,
             "disponibility": true,
-            "img": ["/src/assets/img/game-cover/game-ps5/final-fantasy.jpeg"]
+            "img": ["/assets/img/game-cover/game-ps5/final-fantasy.jpeg"]
           },
           {
             "id": 8,
@@ -76,7 +76,7 @@ function DetailsPage() {
             "platform": "PS5",
             "price": 39.99,
             "disponibility": true,
-            "img": ["/src/assets/img/game-cover/game-ps5/prince-of-persia.jpeg"]
+            "img": ["/assets/img/game-cover/game-ps5/prince-of-persia.jpeg"]
           }],
           [  
             {

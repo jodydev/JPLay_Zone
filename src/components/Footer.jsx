@@ -33,7 +33,7 @@ function Footer() {
                   <div className="row mt-3">
         
                     <div className="col-md-3 col-lg-4 col-xl-3 d-flex justify-content-start align-items-center">
-                        <img src="/src/assets/img/logo/logo1.png" width="150" alt="JPlay Zone Logo" />                      
+                        <img src="/assets/img/logo/logo1.png" width="150" alt="JPlay Zone Logo" />                      
                     </div>
         
                     <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">

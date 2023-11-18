@@ -11,19 +11,19 @@ function Ps5Products( {gamePs5} ) {
 
         <div className="row p-0 m-0">
  
-            <span className="text-center "><img src="/src/assets/img/ps5/logo-ps5.png" width="180" /></span>
+            <span className="text-center "><img src="/assets/img/ps5/logo-ps5.png" width="180" /></span>
   
             
             <div className="col-lg-3 col-md-12 p-5 ">   
                 
                     <div className="container rounded-4 set-bg col-sx-ps5 transition shadow-lg">
                         
-                            <img src="/src/assets/img/ps5/ps5.png" className=" w-100 "/>
+                            <img src="/assets/img/ps5/ps5.png" className=" w-100 "/>
                          
                     </div>
                     
                     <div className="container rounded-4 set-bg col-sx-ps5 transition my-5 shadow-lg">
-                        <img src="/src/assets/img/ps5/info-ps5.png" className=" w-100 rounded-4 "/>
+                        <img src="/assets/img/ps5/info-ps5.png" className=" w-100 rounded-4 "/>
                     </div>
                 </div>
 
@@ -54,9 +54,9 @@ function Ps5Products( {gamePs5} ) {
 
             <div className="col-lg-3 col-md-12 p-5 slide-in-right">
                 <div className="container">
-                    <img src="/src/assets/img/ps5/ps-store.jpeg" className=" w-100 rounded-4 mb-5 shadow-lg transition"/>
-                    <img src="/src/assets/img/ps5/ps-plus.webp" className=" w-100 rounded-4 my-5 shadow-lg transition"/>
-                    <img src="/src/assets/img/ps5/ps-plus-3.webp" className=" w-100 rounded-4 my-5 shadow-lg transition"/>
+                    <img src="/assets/img/ps5/ps-store.jpeg" className=" w-100 rounded-4 mb-5 shadow-lg transition"/>
+                    <img src="/assets/img/ps5/ps-plus.webp" className=" w-100 rounded-4 my-5 shadow-lg transition"/>
+                    <img src="/assets/img/ps5/ps-plus-3.webp" className=" w-100 rounded-4 my-5 shadow-lg transition"/>
                 </div>
             </div>
 

@@ -18,7 +18,7 @@ function HomePage() {
             "platform": "PS5",
             "price": 69.99,
             "disponibility": true,
-            "img": ["/src/assets/img/game-cover/game-ps5/spidermain.jpeg"]
+            "img": ["/assets/img/game-cover/game-ps5/spidermain.jpeg"]
           },
           {
             "id": 2,
@@ -27,7 +27,7 @@ function HomePage() {
             "platform": "PS5",
             "price": 39.99,
             "disponibility": true,
-            "img": ["/src/assets/img/game-cover/game-ps5/mortal-kombat.jpeg"]
+            "img": ["/assets/img/game-cover/game-ps5/mortal-kombat.jpeg"]
           },
           {
             "id": 3,
@@ -36,7 +36,7 @@ function HomePage() {
             "platform": "PS5",
             "price": 59.99,
             "disponibility": false,
-            "img": ["/src/assets/img/game-cover/game-ps5/gran-turismo-7.jpeg"]
+            "img": ["/assets/img/game-cover/game-ps5/gran-turismo-7.jpeg"]
           },
           {
             "id": 4,
@@ -45,7 +45,7 @@ function HomePage() {
             "platform": "PS5",
             "price": 89.99,
             "disponibility": true,
-            "img": ["/src/assets/img/game-cover/game-ps5/assassins-creed.jpeg"]
+            "img": ["/assets/img/game-cover/game-ps5/assassins-creed.jpeg"]
           },
           {
             "id": 5,
@@ -54,7 +54,7 @@ function HomePage() {
             "platform": "PS5",
             "price": 89.99,
             "disponibility": true,
-            "img": ["/src/assets/img/game-cover/game-ps5/fc24.jpeg"]
+            "img": ["/assets/img/game-cover/game-ps5/fc24.jpeg"]
           },
           {
             "id": 6,
@@ -63,7 +63,7 @@ function HomePage() {
             "platform": "PS5",
             "price": 79.99,
             "disponibility": true,
-            "img": ["/src/assets/img/game-cover/game-ps5/avatar.jpeg"]
+            "img": ["/assets/img/game-cover/game-ps5/avatar.jpeg"]
           },
           {
             "id": 7,
@@ -72,7 +72,7 @@ function HomePage() {
             "platform": "PS5",
             "price": 49.99,
             "disponibility": true,
-            "img": ["/src/assets/img/game-cover/game-ps5/final-fantasy.jpeg"]
+            "img": ["/assets/img/game-cover/game-ps5/final-fantasy.jpeg"]
           },
           {
             "id": 8,
@@ -81,7 +81,7 @@ function HomePage() {
             "platform": "PS5",
             "price": 39.99,
             "disponibility": true,
-            "img": ["/src/assets/img/game-cover/game-ps5/prince-of-persia.jpeg"]
+            "img": ["/assets/img/game-cover/game-ps5/prince-of-persia.jpeg"]
           }],
           [  
             {
@@ -165,7 +165,7 @@ function HomePage() {
               "platform": "Nintendo Switch",
               "price": 69.99,
               "disponibility": true,
-              "img": ["/src/assets/img/nintendo/supermario.jpeg"]
+              "img": ["/assets/img/nintendo/supermario.jpeg"]
             },
             {
               "id": 2,
@@ -174,7 +174,7 @@ function HomePage() {
               "platform": "Nintendo Switch",
               "price": 39.99,
               "disponibility": true,
-              "img": ["/src/assets/img/nintendo/benten.jpeg"]
+              "img": ["/assets/img/nintendo/benten.jpeg"]
             },
             {
               "id": 3,
@@ -183,7 +183,7 @@ function HomePage() {
               "platform": "Nintendo Switch",
               "price": 59.99,
               "disponibility": false,
-              "img": ["/src/assets/img/nintendo/hotwheels.jpg"]
+              "img": ["/assets/img/nintendo/hotwheels.jpg"]
             },
             {
               "id": 4,
@@ -192,7 +192,7 @@ function HomePage() {
               "platform": "Nintendo Switch",
               "price": 89.99,
               "disponibility": true,
-              "img": ["/src/assets/img/nintendo/monkey.jpeg"]
+              "img": ["/assets/img/nintendo/monkey.jpeg"]
             },
             {
               "id": 5,
@@ -201,7 +201,7 @@ function HomePage() {
               "platform": "Nintendo Switch",
               "price": 89.99,
               "disponibility": true,
-              "img": ["/src/assets/img/nintendo/naruto.jpeg"]
+              "img": ["/assets/img/nintendo/naruto.jpeg"]
             },
             {
               "id": 6,
@@ -210,7 +210,7 @@ function HomePage() {
               "platform": "Nintendo Switch",
               "price": 79.99,
               "disponibility": true,
-              "img": ["/src/assets/img/nintendo/spyro.jpeg"]
+              "img": ["/assets/img/nintendo/spyro.jpeg"]
             },
             {
               "id": 7,
@@ -219,7 +219,7 @@ function HomePage() {
               "platform": "Nintendo Switch",
               "price": 49.99,
               "disponibility": true,
-              "img": ["/src/assets/img/nintendo/ary.jpeg"]
+              "img": ["/assets/img/nintendo/ary.jpeg"]
             },
             {
               "id": 8,
@@ -228,7 +228,7 @@ function HomePage() {
               "platform": "Nintendo Switch",
               "price": 39.99,
               "disponibility": true,
-              "img": ["/src/assets/img/nintendo/animal-crossing.jpeg"]
+              "img": ["/assets/img/nintendo/animal-crossing.jpeg"]
             },
             {
               "id": 9,
@@ -237,7 +237,7 @@ function HomePage() {
               "platform": "Nintendo Switch",
               "price": 39.99,
               "disponibility": true,
-              "img": ["/src/assets/img/nintendo/witcher.jpeg"]
+              "img": ["/assets/img/nintendo/witcher.jpeg"]
             },
             {
               "id": 10,
@@ -246,7 +246,7 @@ function HomePage() {
               "platform": "Nintendo Switch",
               "price": 39.99,
               "disponibility": true,
-              "img": ["/src/assets/img/nintendo/doraemon.jpeg"]
+              "img": ["/assets/img/nintendo/doraemon.jpeg"]
             }
           ]
   ];

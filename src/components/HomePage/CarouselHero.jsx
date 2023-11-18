@@ -7,24 +7,24 @@ function CarouselHero() {
                         <div className="carousel-inner rounded-4 " >
 
                         <div className="carousel-item active ">
-                            <img src="/src/assets/img/carousel/spider-man.jpeg" className="d-block w-100 rounded-4 "  alt="..."/>
+                            <img src="/assets/img/carousel/spider-man.jpeg" className="d-block w-100 rounded-4 "  alt="..."/>
                         </div>
 
                         <div className="carousel-item">
-                            <img src="/src/assets/img/carousel/assassins-creed.png" className="d-block w-100 rounded-4 "  alt="..."/>
+                            <img src="/assets/img/carousel/assassins-creed.png" className="d-block w-100 rounded-4 "  alt="..."/>
                         </div>
 
                         <div className="carousel-item">
-                            <img src="/src/assets/img/carousel/fc24.jpeg" className="d-block w-100 rounded-4 " alt="..."/>
+                            <img src="/assets/img/carousel/fc24.jpeg" className="d-block w-100 rounded-4 " alt="..."/>
                         </div>
                         
 
                         <div className="carousel-item">
-                            <img src="/src/assets/img/carousel/ufc.png" className="d-block w-100 rounded-4 " alt="..."/>
+                            <img src="/assets/img/carousel/ufc.png" className="d-block w-100 rounded-4 " alt="..."/>
                         </div>
 
                         <div className="carousel-item">
-                            <img src="/src/assets/img/carousel/cod.jpeg" className="d-block w-100 rounded-4 "alt="..."/>
+                            <img src="/assets/img/carousel/cod.jpeg" className="d-block w-100 rounded-4 "alt="..."/>
                         </div>
 
                 

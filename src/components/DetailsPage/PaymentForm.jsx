@@ -54,10 +54,10 @@ function PaymentForm({ games }) {
                       <div className="container my-3">
                         <div className="row">
                           <div className="col-4 px-2" >
-                            <img src="/src/assets/img/sponsor/klarna.avif"  className="rounded-4 w-100 shadow-lg" alt="Klarna" />
+                            <img src="/assets/img/sponsor/klarna.avif"  className="rounded-4 w-100 shadow-lg" alt="Klarna" />
                           </div>
                           <div className="col-4 px-2" >
-                            <img src="/src/assets/img/sponsor/paypall.png"  className="rounded-4 w-100 shadow-lg" alt="PayPal" />
+                            <img src="/assets/img/sponsor/paypall.png"  className="rounded-4 w-100 shadow-lg" alt="PayPal" />
                           </div>
                         </div>
                       </div>

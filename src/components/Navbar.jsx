@@ -7,7 +7,7 @@ function Navbar() {
               <nav className="navbar navbar-expand-lg navbar-dark bg-nav p-0 m-0" id="headerNav">
                   <div className="container-fluid p-0">
                     <a className="navbar-brand d-block d-lg-none p-0" href="#">
-                      <img src="/src/assets/img/logo/logo1.png" height="80" />
+                      <img src="/assets/img/logo/logo1.png" height="80" />
                     </a>
 
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,7 @@ function Navbar() {
                           </li>
                           <li className="nav-item d-none d-lg-block">
                             <a className="nav-link p-0" href="#">
-                              <img src="/src/assets/img/logo/logo1.png" width="70"  />
+                              <img src="/assets/img/logo/logo1.png" width="70"  />
                             </a>
                           </li>
                           <li className="nav-item dropdown">

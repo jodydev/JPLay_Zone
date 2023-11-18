@@ -11,15 +11,15 @@ function XboxProducts( {gameXbox} ) {
    
         <div className="row p-0 m-0">
 
-            <span className="text-center "><img src="/src/assets/img/xbox/logo-xbox.png" width="300" /></span>
+            <span className="text-center "><img src="/assets/img/xbox/logo-xbox.png" width="300" /></span>
 
             <div className="col-lg-3 col-md-12 p-5 slide-in-left">
                 <div className="container rounded-4 set-bg col-sx-xbox shadow-lg transition">     
-                    <img src="/src/assets/img/xbox/xbox.png" className=" w-100 p-3 "/>
+                    <img src="/assets/img/xbox/xbox.png" className=" w-100 p-3 "/>
                 </div>
 
                 <div className="container rounded-4 set-bg col-sx-xbox mt-5 shadow-lg transition">
-                    <img src="/src/assets/img/xbox/info-xbox.png" className=" w-100 rounded-4 my-5 "/>
+                    <img src="/assets/img/xbox/info-xbox.png" className=" w-100 rounded-4 my-5 "/>
                 </div>
             </div>
 
@@ -52,9 +52,9 @@ function XboxProducts( {gameXbox} ) {
 
             <div className="col-lg-3 col-md-12 p-5 slide-in-right">
                 <div className="container">
-                    <img src="/src/assets/img/xbox/xbox-store.jpeg" className=" w-100 rounded-4 mb-5 shadow-lg transition"/>
-                    <img src="/src/assets/img/xbox/gamepass-info.jpeg" className=" w-100 rounded-4 my-5 shadow-lg transition"/>
-                    <img src="/src/assets/img/xbox/xbox-gamepass.png" className=" w-100 rounded-4 my-5 shadow-lg transition"/>
+                    <img src="/assets/img/xbox/xbox-store.jpeg" className=" w-100 rounded-4 mb-5 shadow-lg transition"/>
+                    <img src="/assets/img/xbox/gamepass-info.jpeg" className=" w-100 rounded-4 my-5 shadow-lg transition"/>
+                    <img src="/assets/img/xbox/xbox-gamepass.png" className=" w-100 rounded-4 my-5 shadow-lg transition"/>
                 </div>
             </div>
 
