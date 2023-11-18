@@ -20,7 +20,7 @@ function PaymentForm({ games }) {
         <div className="col-12 col-lg-6">
           <div className="container slide-in-left">
               <div className="row d-flex justify-content-center">
-                <div className="col-12 d-flex justify-content-center">
+                <div  className="col-12 d-flex justify-content-center">
                   <img src={selectedGame.img} className="w-75 my-5 p-0 p-lg-5 details-img" />
                 </div>
               </div>
