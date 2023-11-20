@@ -312,3 +312,28 @@ body, html{
 .navbar-toggler{
 	color: black !important;
 }
+
+
+.input {
+	margin: 30px;
+	background: rgb(68, 68, 68);
+	border: none;
+	outline: none;
+	width: 100%;
+	padding: 10px 20px;
+	font-size: 24px;
+	border-radius: 9999px;
+	box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+	color: white;
+  }
+
+.search-input{
+	background-color: rgb(39, 39, 39);
+	color: white !important;
+	border-radius: 15px;
+
+}
+
+.my-span{
+	color: black !important;
+}

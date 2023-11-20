@@ -7,7 +7,7 @@ function XboxProducts( {gameXbox} ) {
       
     return(
 
-    <div id="xbox" className="container-fluid p-0 my-5">
+    <div id="xbox" className="container-fluid py-5">
    
         <div className="row p-0 m-0">
 
@@ -43,6 +43,7 @@ function XboxProducts( {gameXbox} ) {
                         </div>
 
 
+                        <span className="text-end text-decoration-underline pe-5 fs-6 d-none d-lg-block"><a href="#" className="my-span"><i class="fa-solid fa-share"></i> Scopri altro</a></span>
 
                               
                             </div>

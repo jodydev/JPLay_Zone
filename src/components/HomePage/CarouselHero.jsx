@@ -1,7 +1,7 @@
 function CarouselHero() {
   
     return (
-            <section id="carousel" className="p-0 p-lg-5">
+            <section id="carousel" className="p-0 p-lg-2">
                 <div className="container-fluid px-5 slide-in-top my-3">
                     <div id="carouselExampleAutoplaying" className="carousel slide rounded-4 shadow-lg " data-bs-ride="carousel"  >
                         <div className="carousel-inner rounded-4 " >

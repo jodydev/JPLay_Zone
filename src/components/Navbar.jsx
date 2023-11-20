@@ -2,11 +2,10 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
 
-    
   return (
           <header>
-              <nav className="navbar navbar-expand-lg navbar-dark bg-nav p-0 m-0" id="headerNav">
-                  <div className="container px-5 px-lg-0 py-3 py-lg-0">
+              <nav className="navbar navbar-expand-lg navbar-dark bg-nav p-0 my-3" id="headerNav">
+                  <div className="container-fluid px-5 px-lg-0 py-3 py-lg-0">
                     <div className="row my-row-sm">
 
                       <div className="col-4">
@@ -26,17 +25,21 @@ function Navbar() {
 
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
 
-                      <div className="col-12">
+                      <div className="col-3 ">
+                      
+                      </div>
+
+                      <div className="col-6">
                         <ul className="navbar-nav  d-flex justify-content-center my-2 ">
                         
                           <li className="nav-item">
                             <Link to="/">
-                              <a className="nav-link mx-5 active effect-underline" aria-current="page" href="#">Home</a>
+                              <a className="nav-link mx-5 active effect-underline fs-5" aria-current="page" href="#">Home</a>
                             </Link>
                           </li>
                         
                           <li className="nav-item">
-                            <a className="nav-link me-5 active effect-underline" href="#products">Giochi</a>
+                            <a className="nav-link me-5 active effect-underline fs-5" href="#products">Giochi</a>
                           </li>
                           <li className="nav-item d-none d-lg-block">
                             <a className="nav-link p-0" href="#">
@@ -44,7 +47,7 @@ function Navbar() {
                             </a>
                           </li>
                           <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle ms-5 active " href="#patner" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a className="nav-link dropdown-toggle ms-5 active fs-5" href="#patner" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                               Compatibilità
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -54,7 +57,24 @@ function Navbar() {
                             </ul>
                           </li>
                           <li className="nav-item ">
-                            <a className="nav-link  mx-5 active effect-underline" href="#footer">Contatti</a>
+                            <a className="nav-link  mx-5 active effect-underline fs-5" href="#footer">Contatti</a>
+                          </li>
+                     
+                        </ul>
+                      </div>
+
+                      <div className="col-4">
+                        <ul className="navbar-nav  d-flex justify-content-center my-2 ">
+                          <li className="nav-item">
+                            <Link to="/searchGame">
+                              <a className="nav-link me-5 active "><i class="fa-solid fa-lg fa-magnifying-glass"></i></a>
+                            </Link>
+                          </li>
+                          <li className="nav-item">
+                            <a className="nav-link me-5 active "><i class="fa-solid fa-lg fa-circle-user"></i></a>
+                          </li>  
+                          <li className="nav-item">
+                            <a className="nav-link me-5 active "><i class="fa-solid fa-lg fa-right-to-bracket"></i></a>
                           </li>
                         </ul>
                       </div>

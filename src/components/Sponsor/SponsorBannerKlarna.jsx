@@ -1,7 +1,7 @@
 function SponsorBannerKlarna() {
 
   return (
-          <section className="p-0 p-lg-5">
+          <section className="p-0 p-lg-3">
             <div className="container">
               <div className="row">
                 <div className="col-12 col-md-6">

@@ -3,14 +3,15 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 function PaymentForm({ games }) {
-  const { id } = useParams(); // Estrazione dell'id
+  const { id} = useParams(); // Estraiamo l'id dal parametro dell'URL
+  console.log("ID:", id);
+  // Concatena tutti gli array all'interno di 'games' in un unico array
+  const flattenedGames = games.flat();
+  console.log("Flattened Games:", flattenedGames);
+  // Trova il gioco selezionato corrispondente all'ID
 
-  console.log(id);
-
-  // Filtro il gioco selezionato e lo confronto con l'id
-  const selectedGame = games.find(game => game.id == id);
-
-  console.log(selectedGame); 
+  const selectedGame = flattenedGames.find((game) => game.id == id && game.category == game.category);
+  console.log("Selected Game:", selectedGame);
 
 
   return (
@@ -95,11 +96,11 @@ function PaymentForm({ games }) {
                               <li className="fw-bold">Genere: <span className=" fw-normal">{selectedGame.category}</span> </li>
                               <li className="fw-bold">Disponibilità: 
                               {selectedGame ? (
-                                   <span className=" fw-normal"> Disponibile</span> 
+                                <span className=" fw-normal"> Disponibile</span> 
                               ) : (
                                 <span className='fw-normal'> Non disponibile</span>
                               )}
-                             </li>
+                            </li>
                             </ul>
                           </div>
                         </div>

@@ -25,7 +25,16 @@ function NintendoSwitch({gameNintendo}) {
                 
                             <CardGame gameNintendo={gameNintendo} />
 
-                 
+                    <div className="row d-none d-lg-block">
+                        <div className="col-5 offset-6">
+
+                            <span className="d-flex justify-content-end text-decoration-underline fs-6 "><a href="#" className="my-span"><i class="fa-solid fa-share"></i> Scopri altro</a></span>
+
+
+                        </div>
+                    </div>
+                       
+
 
                 </div>
 
