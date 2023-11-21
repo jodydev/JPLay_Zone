@@ -1,339 +1,375 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
-:root{
+:root {
+  /* colori */
 
-	/* colori */
-	
-	--red: #c70706;
-	--black: rgb(0, 0, 0);
-	--white: rgb(255, 255, 255);
-
+  --red: #c70706;
+  --black: rgb(0, 0, 0);
+  --white: rgb(255, 255, 255);
 }
 
 /* TRANSITION */
 
-
 .slide-in-top {
-	-webkit-animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .slide-in-left {
-	-webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .slide-in-right {
-	-webkit-animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .flip-in-hor-bottom {
-	-webkit-animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: flip-in-hor-bottom 0.5s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: flip-in-hor-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
- @-webkit-keyframes slide-in-top {
-	0% {
-	  -webkit-transform: translateY(-1000px);
-			  transform: translateY(-1000px);
-	  opacity: 0;
-	}
-	100% {
-	  -webkit-transform: translateY(0);
-			  transform: translateY(0);
-	  opacity: 1;
-	}
+@-webkit-keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    opacity: 0;
   }
-  @keyframes slide-in-top {
-	0% {
-	  -webkit-transform: translateY(-1000px);
-			  transform: translateY(-1000px);
-	  opacity: 0;
-	}
-	100% {
-	  -webkit-transform: translateY(0);
-			  transform: translateY(0);
-	  opacity: 1;
-	}
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
   }
+}
+@keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 @-webkit-keyframes slide-in-left {
-	0% {
-	  -webkit-transform: translateX(-1000px);
-			  transform: translateX(-1000px);
-	  opacity: 0;
-	}
-	100% {
-	  -webkit-transform: translateX(0);
-			  transform: translateX(0);
-	  opacity: 1;
-	}
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
   }
-  @keyframes slide-in-left {
-	0% {
-	  -webkit-transform: translateX(-1000px);
-			  transform: translateX(-1000px);
-	  opacity: 0;
-	}
-	100% {
-	  -webkit-transform: translateX(0);
-			  transform: translateX(0);
-	  opacity: 1;
-	}
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
   }
+}
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 
 @-webkit-keyframes slide-in-right {
-	0% {
-	  -webkit-transform: translateX(1000px);
-			  transform: translateX(1000px);
-	  opacity: 0;
-	}
-	100% {
-	  -webkit-transform: translateX(0);
-			  transform: translateX(0);
-	  opacity: 1;
-	}
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
   }
-  @keyframes slide-in-right {
-	0% {
-	  -webkit-transform: translateX(1000px);
-			  transform: translateX(1000px);
-	  opacity: 0;
-	}
-	100% {
-	  -webkit-transform: translateX(0);
-			  transform: translateX(0);
-	  opacity: 1;
-	}
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
   }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 
- @-webkit-keyframes flip-in-hor-bottom {
-	0% {
-	  -webkit-transform: rotateX(80deg);
-			  transform: rotateX(80deg);
-	  opacity: 0;
-	}
-	100% {
-	  -webkit-transform: rotateX(0);
-			  transform: rotateX(0);
-	  opacity: 1;
-	}
+@-webkit-keyframes flip-in-hor-bottom {
+  0% {
+    -webkit-transform: rotateX(80deg);
+    transform: rotateX(80deg);
+    opacity: 0;
   }
-  @keyframes flip-in-hor-bottom {
-	0% {
-	  -webkit-transform: rotateX(80deg);
-			  transform: rotateX(80deg);
-	  opacity: 0;
-	}
-	100% {
-	  -webkit-transform: rotateX(0);
-			  transform: rotateX(0);
-	  opacity: 1;
-	}
+  100% {
+    -webkit-transform: rotateX(0);
+    transform: rotateX(0);
+    opacity: 1;
   }
-  
-  
-  
-  
-  
-  
-
+}
+@keyframes flip-in-hor-bottom {
+  0% {
+    -webkit-transform: rotateX(80deg);
+    transform: rotateX(80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0);
+    transform: rotateX(0);
+    opacity: 1;
+  }
+}
 
 /* MEDIA QUERY */
 
-@media screen and (min-width:992px){
-	.nav-item {
-	line-height:80px;
-	}
-
+@media screen and (min-width: 992px) {
+  .nav-item {
+    line-height: 80px;
   }
+}
 
 /* Wide Mobile = 480px */
 
 @media only screen and (max-width: 767px) {
+  /* cambio file immagine in vista mobile */
 
-	/* cambio file immagine in vista mobile */
+  .carousel-item:nth-child(1) img {
+    content: url(/assets/img/carousel/mobile/spiderman2-hero-mobile.png);
+  }
 
-	 .carousel-item:nth-child(1) img {
-		content: url(/assets/img/carousel/mobile/spiderman2-hero-mobile.png);
-	} 
+  .carousel-item:nth-child(2) img {
+    content: url(/assets/img/carousel/mobile/assassins-creed-mobile.png);
+  }
 
-	 .carousel-item:nth-child(2) img {
-		content: url(/assets/img/carousel/mobile/assassins-creed-mobile.png);
-	} 
+  .carousel-item:nth-child(3) img {
+    content: url(/assets/img/carousel/mobile/fc-24-mobile.jpeg);
+  }
 
-	.carousel-item:nth-child(3) img {
-		content: url(/assets/img/carousel/mobile/fc-24-mobile.jpeg);
-	} 
+  .carousel-item:nth-child(4) img {
+    content: url(/assets/img/carousel/mobile/read-dead-redemption-mobile.png);
+  }
 
-	.carousel-item:nth-child(4) img {
-		content: url(/assets/img/carousel/mobile/read-dead-redemption-mobile.png);
-	} 
-	
-	.carousel-item:nth-child(5) img {
-		content: url(/assets/img/carousel/mobile/forza-motorsport-mobile.png);
-	} 
+  .carousel-item:nth-child(5) img {
+    content: url(/assets/img/carousel/mobile/forza-motorsport-mobile.png);
+  }
 
-	.navbar-toggler{
-		border: none !important;
-	}
-	
-	#navbarDropdownMenuLink{
-		margin: 8px !important;
-	}
+  .navbar-toggler {
+    border: none !important;
+  }
 
-	.nav-link{
-		margin: 8px !important;
-	}
+  #navbarDropdownMenuLink {
+    margin: 8px !important;
+  }
 
-	.item-img{
-		width: 100% !important;
-	}
+  .nav-link {
+    margin: 8px !important;
+  }
 
-	#products h2{
-		text-align: center;
-	}
+  .item-img {
+    width: 100% !important;
+  }
 
-	#products .card{
-		text-align: center;
-	}
+  #products h2 {
+    text-align: center;
+  }
 
+  #products .card {
+    text-align: center;
+  }
 
-	#xbox-right{
-		display: block !important;
-	}
+  #xbox-right {
+    display: block !important;
+  }
 
-	.carousel-item img {
+  .carousel-item img {
+    height: 500px !important;
+  }
 
-		height: 500px !important;
+  .item {
+    width: 250px !important;
+  }
 
-		
-	}
+  .card-game {
+    width: 100%;
+  }
 
-	.item{
-		width: 250px !important;
-	}
+  .my-overflow-x-scroll {
+    overflow-x: scroll !important;
+  }
 
-	.card-game{
-		width: 100% ;
-	}
+  .my-row-sm {
+    width: 100% !important;
+  }
 
-	.my-overflow-x-scroll {
-		overflow-x: scroll !important;
-	}	
+  .details-img {
+    border-radius: 15px !important;
+    width: 100% !important;
+  }
+  .error-404{
+    font-size: 60px !important;
 
+  }
 
-	.my-row-sm{
-		width: 100% !important;
-	}
+  .error-404-span{
+    font-size: 25px !important;
+    text-align: center;
+    padding: 50px;
+    top: 350px !important ;
 
-	.details-img{
-		border-radius: 15px  !important;
-		width: 100% !important;
-	}
+  }
+  .mario-triste {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    filter: drop-shadow(0 0 0.75rem rgb(6, 6, 6));
+  }
 
-	
 }
 
-
-*{
-	font-family: 'Poppins', sans-serif;
+* {
+  font-family: "Poppins", sans-serif;
 }
 
-body{
-	background-color: #ffffff;
+body {
+  background-color: #ffffff;
 }
-
-
 
 /* OTHER STYLE */
 
 /* TESTO SU SINGOLA RIGA */
 
 .single-line-text {
-    white-space: wrap;
+  white-space: wrap;
 }
-
 
 #btn-back-to-top {
-	position: fixed;
-	bottom: 20px;
-	right: 20px;
-	display: none;
-  }
-
-
-  .set-bg{
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
 }
 
-
-.paypal{
-	background-color: #e4e7ea;
-	padding: 70px;
+.set-bg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.bg-footer{
-	background-color: #4f4f4f;
+.paypal {
+  background-color: #e4e7ea;
+  padding: 70px;
 }
 
-#button-cart{
-background-color: white !important;
-border: 1px solid red !important;
-color: red !important;
+.bg-footer {
+  background-color: #4f4f4f;
 }
 
-
-.bg-danger{
-	background-color: red !important;
+#button-cart {
+  background-color: white !important;
+  border: 1px solid red !important;
+  color: red !important;
 }
 
-.nintendo-img{
-	bottom: 0px;
-	width: 100%;
+.bg-danger {
+  background-color: red !important;
 }
 
-.my-padding{
-	padding: 40px;
+.nintendo-img {
+  bottom: 0px;
+  width: 100%;
 }
 
-a{
-	text-decoration: none !important;
+.my-padding {
+  padding: 40px;
 }
 
-body, html{
-	overflow-x: hidden !important;
-	background-color: #fafafa !important;
+a {
+  text-decoration: none !important;
 }
 
-.navbar-toggler{
-	color: black !important;
+body,
+html {
+  overflow-x: hidden !important;
+  background-color: #fafafa !important;
 }
 
+.navbar-toggler {
+  color: black !important;
+}
 
 .input {
-	margin: 30px;
-	background: rgb(68, 68, 68);
-	border: none;
-	outline: none;
-	width: 100%;
-	padding: 10px 20px;
-	font-size: 24px;
-	border-radius: 9999px;
-	box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-	color: white;
-  }
-
-.search-input{
-	background-color: rgb(39, 39, 39);
-	color: white !important;
-	border-radius: 15px;
-
+  margin: 30px;
+  background: rgb(68, 68, 68);
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 24px;
+  border-radius: 9999px;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  color: white;
 }
 
-.my-span{
-	color: black !important;
+.search-input {
+  background-color: rgb(39, 39, 39);
+  color: white !important;
+  border-radius: 15px;
+}
+
+.my-span {
+  color: black !important;
+}
+
+.mario-triste {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  max-width: 1000px !important;
+  filter: drop-shadow(0 0 0.75rem rgb(6, 6, 6));
+}
+
+.error-404{
+  font-size: 150px ;
+  color: white;
+  position: absolute;
+  bottom: 0px !important;
+  top: 200px !important;
+  text-shadow: #040404 0px 0px 25px;
+}
+
+.error-404-span{
+  font-size: 50px ;
+  color: white;
+  position: absolute;
+  bottom: 0px !important;
+  top: 400px ;
+  text-shadow: #040404 0px 0px 25px;
+}
+
+.button-backhome{
+  position: absolute;
+  top: 540px !important;
+  background-image: linear-gradient(to right bottom, #f1c6a2, #f0c19e, #efbc9a, #eeb797, #edb294, #ebae91, #eaa98d, #e8a58a, #e6a186, #e39c81, #e1987d, #de9379);
+  width: 320px;
+  height: 280px;
+  border-radius: 150px 150px 150px 150px;
+  filter: drop-shadow(20px 5px 20px #000000);
+}
+
+.my-error-container{
+position: absolute;
+bottom: 0px !important;
 }

@@ -1,12 +1,9 @@
-import { useState } from "react";
 import PaymentForm from "../components/DetailsPage/PaymentForm";
 import DetailsLayout from "../components/DetailsLayout";
 
-function DetailsPage({games}) {
-
+function DetailsPage({ games }) {
   return (
-
-    <DetailsLayout>
+    <DetailsLayout games={games}>
       <PaymentForm games={games} />
     </DetailsLayout>
   );

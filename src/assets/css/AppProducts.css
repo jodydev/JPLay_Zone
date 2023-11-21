@@ -1,26 +1,21 @@
-.col-sx-ps5{
-    background-image: url(/src/assets/img/ps5/sfondo-ps5.png);
-    transition: transform 250ms;
+.col-sx-ps5 {
+  background-image: url(/src/assets/img/ps5/sfondo-ps5.png);
+  transition: transform 250ms;
 }
 
-.col-sx-xbox{
-    background-image: url(/src/assets/img/xbox/sfondo-xbox.png);
+.col-sx-xbox {
+  background-image: url(/src/assets/img/xbox/sfondo-xbox.png);
 }
 
-.col-sx-nintendo{
-    background-color: #e80012;
+.col-sx-nintendo {
+  background-color: #e80012;
 }
 
-.details{
-    color: black;
+.details {
+  color: black;
 }
 
-.transition:hover{
-    transition: transform 450ms;
-    transform: translateY(-20px) ;
+.transition:hover {
+  transition: transform 450ms;
+  transform: translateY(-20px);
 }
-
-
-
-
-
