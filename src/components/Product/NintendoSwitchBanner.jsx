@@ -3,13 +3,13 @@ import React from "react";
 function NintendoSwitchBanner() {
   return (
     <>
-      <section id="nintendo" className="pt-0 pt-lg-5 mt-5">
-        <div className="container-fluid bg-danger my-5">
+      <section id="nintendo" className="pt-4 pt-lg-5 mt-5">
+        <div className="container-fluid p-0 bg-danger my-5 my-nintendo-container">
           <div className="container">
-            <div className="row bg-danger">
+            <div className="row bg-danger my-row">
               <div className="col-12 col-lg-4 d-flex justify-content-center align-items-center">
                 <img
-                  className="img-responsive "
+                  className="img-responsive d-none d-lg-block mb-5"
                   src="//www.nintendo.it/games/oms/nintendo_switch/common/commonbottom/img-nso-logo.png"
                   alt="Nintendo Switch Online Logo"
                 />

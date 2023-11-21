@@ -21,7 +21,7 @@ const GameSearch = ({ games }) => {
     <div className="container px-5 my-5 py-3 my-container">
       <div className="row">
         <div className="col-12">
-          <h1 className="fw-bold title-search px-4">
+          <h1 className="fw-bold title-search text-center text-lg-start">
             Cerca il tuo gioco preferito
           </h1>
           <input
@@ -34,20 +34,20 @@ const GameSearch = ({ games }) => {
           />
         </div>
 
-        <div className="container py-5 px-5">
+        <div className="container p-0 p-lg-5">
           <div className="row">
             {searchTerm && filteredGames.length === 0 && (
-              <p className="text-center fw-bold">
+              <p className="text-center fw-bold my-5 my-lg-0">
                 Nessun gioco trovato per "{searchTerm}"
               </p>
             )}
 
             {searchTerm && filteredGames.length > 0 && (
-              <div className="d-flex flex-wrap">
+              <div className="d-flex flex-nowrap flex-lg-wrap my-overflow-x-scroll">
                 {filteredGames.map((game) => (
-                  <div key={game.id} className="col-3">
+                  <div key={game.id} className="col-12 col-lg-3 flip-card my-5 mx-3 mx-lg-3 flip-in-hor-bottom">
                     <div
-                      className="col-5 flip-card mx-5 my-5 flip-in-hor-bottom"
+                      className="col-5 flip-card mx-5 mx-lg-0 my-3 my-lg-0 flip-in-hor-bottom"
                       key={game.id}
                     >
                       <div className="flip-card-inner">

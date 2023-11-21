@@ -10,20 +10,26 @@ function Footer() {
         </div>
 
         <div>
-          <a href="#" className="me-4 text-reset">
-            <i class="fa-brands fa-lg fa-facebook"></i>
-          </a>
-          <a href="#" className="me-4 text-reset">
-            <i class="fa-brands fa-lg fa-instagram"></i>
-          </a>
-          <a href="#" className="me-4 text-reset">
-            <i class="fa-brands fa-lg fa-square-x-twitter"></i>
-          </a>
-          <a href="#" className="me-4 text-reset">
+          <a
+            href="linkedin.com/in/jody-ossino2001/"
+            className="me-4 text-reset"
+          >
             <i class="fa-brands fa-lg fa-linkedin"></i>
           </a>
-          <a href="#" className="me-4 text-reset">
+          <a href="https://github.com/jodydev" className="me-4 text-reset">
             <i class="fa-brands fa-lg fa-square-github"></i>
+          </a>
+          <a
+            href="https://www.facebook.com/jody.ossino"
+            className="me-4 text-reset"
+          >
+            <i class="fa-brands fa-lg fa-facebook"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/jody.ossino/"
+            className="me-4 text-reset"
+          >
+            <i class="fa-brands fa-lg fa-instagram"></i>
           </a>
         </div>
       </section>
@@ -32,11 +38,11 @@ function Footer() {
         <div className="container text-center text-md-start mt-5">
           <div className="row mt-3">
             <div className="col-md-3 col-lg-4 col-xl-3 d-flex justify-content-start align-items-center d-none d-lg-block">
-              <img
-                src="/assets/img/logo/logo1.png"
-                width="150"
-                alt="JPlay Zone Logo"
-              />
+                  <img
+                    src="/assets/img/logo/logo1.png"
+                    width="150"
+                    alt="JPlay Zone Logo"
+                  />
             </div>
 
             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
@@ -50,7 +56,7 @@ function Footer() {
               </p>
               <p>
                 <a href="#xbox" className="text-dark">
-                  Xbox X/S
+                  Xbox One
                 </a>
               </p>
               <p>

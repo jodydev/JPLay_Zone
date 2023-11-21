@@ -14,12 +14,12 @@ function PaymentForm({ games }) {
     <div className="container-fluid">
       <div className="row">
         <div className="col-12 col-lg-6">
-          <div className="container slide-in-left">
+          <div className="container">
             <div className="row d-flex justify-content-center">
               <div className="col-12 d-flex justify-content-center">
                 <img
                   src={selectedGame.img}
-                  className="w-75 my-5 p-0 p-lg-5 details-img"
+                  className="w-75 my-5 p-0 p-lg-5 details-img slide-in-blurred-left"
                 />
               </div>
             </div>
@@ -27,10 +27,10 @@ function PaymentForm({ games }) {
         </div>
 
         <div className="col-12 col-lg-6">
-          <div className="container slide-in-right shadow-lg rounded-4 my-5 p-5">
+          <div className="container slide-in-blurred-right shadow-lg rounded-4 my-5 p-5">
             <h1 className="my-3 fw-normal fs-3">{selectedGame.title}</h1>
             <h2 className="my-3 fw-bold fs-1">{selectedGame.price}€</h2>
-            <Rating name="size-large" defaultValue={2} size="large" />
+            <Rating name="size-large" defaultValue={5} size="large" />
 
             <div className="container my-3">
               <div className="row">
@@ -136,9 +136,23 @@ function PaymentForm({ games }) {
                     <li className="fw-bold">
                       Disponibilità:
                       {selectedGame ? (
-                        <span className=" fw-normal"> Disponibile</span>
+                        <span className=" fw-normal text-nowrap">
+                          {" "}
+                          Disponibile 
+                          <i
+                            class="fa-solid fa-circle-check ms-1"
+                            style={{ color: "green" }}
+                          ></i>
+                        </span>
                       ) : (
-                        <span className="fw-normal"> Non disponibile</span>
+                        <span className="fw-normal text-nowrap">
+                          {" "}
+                          Non disponibile 
+                          <i
+                            class="fa-solid fa-circle-xmark ms-1"
+                            style={{ color: "red" }}
+                          ></i>
+                        </span>
                       )}
                     </li>
                   </ul>

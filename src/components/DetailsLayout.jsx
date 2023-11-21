@@ -2,7 +2,7 @@ import CustomizedBreadcrumbs from "./DetailsPage/CustomizedBreadcrumbs";
 import Divider from "@mui/material/Divider";
 import Container from "@mui/material/Container";
 
-function DetailsLayout({ children, games }) {
+function DetailsLayout({ children, games}) {
   return (
     <div className="container-fluid p-0 my-5">
       <CustomizedBreadcrumbs games={games} />

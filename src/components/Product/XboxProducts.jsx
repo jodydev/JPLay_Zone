@@ -4,7 +4,7 @@ function XboxProducts({ gameXbox }) {
   console.log(gameXbox);
 
   return (
-    <div id="xbox" className="container-fluid py-5">
+    <div id="xbox" className="container-fluid py-0 py-lg-5 ">
       <div className="row p-0 m-0">
         <span className="text-center ">
           <img src="/assets/img/xbox/logo-xbox.png" width="300" />
@@ -60,15 +60,15 @@ function XboxProducts({ gameXbox }) {
           <div className="container">
             <img
               src="/assets/img/xbox/xbox-store.jpeg"
-              className=" w-100 rounded-4 mb-5 shadow-lg transition"
+              className=" w-100 rounded-4 my-4 mb-lg-5 shadow-lg transition"
             />
             <img
               src="/assets/img/xbox/gamepass-info.jpeg"
-              className=" w-100 rounded-4 my-5 shadow-lg transition"
+              className=" w-100 rounded-4 my-4 my-lg-5 shadow-lg transition"
             />
             <img
               src="/assets/img/xbox/xbox-gamepass.png"
-              className=" w-100 rounded-4 my-5 shadow-lg transition"
+              className=" w-100 rounded-4 my-4 my-lg-5 shadow-lg transition"
             />
           </div>
         </div>

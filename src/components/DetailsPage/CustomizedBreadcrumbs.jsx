@@ -1,41 +1,44 @@
 import * as React from "react";
-import { emphasize, styled } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
-import Chip from "@mui/material/Chip";
-import { Link } from "react-router-dom";
+import Link from "@mui/material/Link";
+import { useParams } from "react-router-dom";
 
-const StyledBreadcrumb = styled(Chip)(({ theme }) => {
-  const backgroundColor =
-    theme.palette.mode === "light"
-      ? theme.palette.grey[100]
-      : theme.palette.grey[800];
-  return {
-    backgroundColor,
-    height: theme.spacing(3),
-    color: "white",
-    backgroundColor: "red",
-    fontWeight: theme.typography.fontWeightRegular,
-    "&:hover, &:focus": {
-      backgroundColor: "white",
-      color: "red",
-      border: "1px solid red",
-    },
-    "&:active": {
-      boxShadow: theme.shadows[1],
-    },
-  };
-});
+function handleClick(event) {
+  event.preventDefault();
+  console.info("You clicked a breadcrumb.");
+}
 
-export default function CustomizedBreadcrumbs() {
+export default function CustomizedBreadcrumbs({ games }) {
+  const { id } = useParams(); // Estraiamo l'id dal parametro dell'URL
+  console.log("ID:", id);
+  // Concatena tutti gli array all'interno di 'games' in un unico array
+
+  const selectedGame = games.find((game) => game.id == id);
+  console.log("Gioco selezionato:", selectedGame);
+
   return (
-    <div className="container my-5 p-0 px-5 px-lg-0  d-flex justify-content-start">
-      <div role="presentation">
+    <div className="container slide-in-blurred-left">
+      <div className="my-3" role="presentation" onClick={handleClick}>
         <Breadcrumbs aria-label="breadcrumb">
-          <Link to="/">
-            <StyledBreadcrumb component="a" href="#" label="Home" />
+          <Link
+            underline="hover"
+            sx={{ display: "flex", alignItems: "center" }}
+            color="inherit"
+            to="/"
+            className="fw-bold"
+          >
+            <img src={selectedGame.svg} className="svg" />
+            {selectedGame.platform}
           </Link>
-          <StyledBreadcrumb component="a" href="#" label="Giochi" />
-          <StyledBreadcrumb label="ps5" />
+          <Typography
+            sx={{ display: "flex", alignItems: "center" }}
+            color="inherit"
+            className="fw-bold"
+          >
+            <img src="/assets/img/pad-svg.png" className="svg" />
+            {selectedGame.title}
+          </Typography>
         </Breadcrumbs>
       </div>
     </div>

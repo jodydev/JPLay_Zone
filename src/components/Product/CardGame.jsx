@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
 
 function CardGame({ gamePs5, gameXbox, gameNintendo }) {
+
+   const handleClickToShowDetail = () => {
+    // Reset dello scroll prima di navigare alla pagina di dettaglio
+     window.scrollTo(0, 0);
+}
+
   const games = gamePs5 || gameXbox || gameNintendo || []; // Usa i dati di PS5 se sono disponibili, altrimenti quelli di Xbox o di nintendo
 
   const getCardClass = () => {
@@ -68,7 +74,7 @@ function CardGame({ gamePs5, gameXbox, gameNintendo }) {
 
                   <div className="d-flex justify-content-center my-2">
                     <Link to={`/details/${game.id}`}>
-                      <button id="button-details" className="btn btn-danger">
+                      <button onClick={handleClickToShowDetail} id="button-details" className="btn btn-danger">
                         Scopri
                       </button>
                     </Link>

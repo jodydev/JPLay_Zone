@@ -4,10 +4,10 @@ function Ps5Products({ gamePs5 }) {
   console.log(gamePs5);
 
   return (
-    <div id="ps5" className="container-fluid p-0 my-5">
+    <div id="ps5" className="container-fluid py-0 py-lg-3 ">
       <div className="row p-0 m-0">
         <span className="text-center ">
-          <img src="/assets/img/ps5/logo-ps5.png" width="180" />
+          <img src="/assets/img/ps5/logo-ps5.png" width="200" />
         </span>
 
         <div className="col-lg-3 col-md-12 p-5 ">
@@ -60,15 +60,15 @@ function Ps5Products({ gamePs5 }) {
           <div className="container ">
             <img
               src="/assets/img/ps5/ps-store.jpeg"
-              className=" w-100 rounded-4 mb-5 shadow-lg transition"
+              className=" w-100 rounded-4 my-4 mb-lg-5 shadow-lg transition"
             />
             <img
               src="/assets/img/ps5/ps-plus.webp"
-              className=" w-100 rounded-4 my-5 shadow-lg transition"
+              className=" w-100 rounded-4 my-4 my-lg-5 shadow-lg transition"
             />
             <img
               src="/assets/img/ps5/ps-plus-3.webp"
-              className=" w-100 rounded-4 my-5 shadow-lg transition"
+              className=" w-100 rounded-4 my-4 my-lg-5 shadow-lg transition"
             />
           </div>
         </div>

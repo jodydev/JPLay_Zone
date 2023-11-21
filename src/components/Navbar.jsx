@@ -4,17 +4,19 @@ function Navbar() {
   return (
     <header>
       <nav
-        className="navbar navbar-expand-lg navbar-dark bg-nav p-0 my-3 position-relative"
+        className="navbar navbar-expand-lg navbar-dark bg-nav p-0 my-3 position-relative slide-in-blurred-top"
         id="headerNav"
       >
-        <div className="container-fluid px-5 px-lg-0 py-3 py-lg-0">
+        <div className="container-fluid px-4 px-lg-0 py-3 py-lg-0">
           <div className="row my-row-sm">
-            <div className="col-4">
-              <a className="navbar-brand d-block d-lg-none p-0 " href="#">
-                <h1 className="text-dark fw-bold letter-spacing">JPlay</h1>
-              </a>
+            <div className="col-3">
+              <Link to="/">
+                <a className="navbar-brand d-block d-lg-none p-0 ">
+                  <h1 className="text-dark fw-bold letter-spacing">JPlay</h1>
+                </a>
+              </Link>
             </div>
-            <div className="col-2">
+            <div className="col-3">
               <Link to="/">
                 <a className="navbar-brand d-block d-lg-none p-0" href="#">
                   <img src="/assets/img/logo/logo1.png" height="35" />
@@ -45,7 +47,7 @@ function Navbar() {
                 <li className="nav-item">
                   <Link to="/">
                     <a
-                      className="nav-link mx-5 active effect-underline fs-5"
+                      className="nav-link mx-5 active effect-underline "
                       aria-current="page"
                     >
                       Home
@@ -55,7 +57,7 @@ function Navbar() {
 
                 <li className="nav-item">
                   <a
-                    className="nav-link me-5 active effect-underline fs-5"
+                    className="nav-link me-5 active effect-underline "
                     href="#products"
                   >
                     Giochi
@@ -63,14 +65,14 @@ function Navbar() {
                 </li>
                 <li className="nav-item d-none d-lg-block">
                   <Link to="/">
-                    <a className="nav-link p-0">
+                    <a className="nav-link p-0 logo">
                       <img src="/assets/img/logo/logo1.png" width="70" />
                     </a>
                   </Link>
                 </li>
                 <li className="nav-item dropdown">
                   <a
-                    className="nav-link dropdown-toggle ms-5 active fs-5"
+                    className="nav-link dropdown-toggle ms-5 active "
                     href="#patner"
                     id="navbarDropdownMenuLink"
                     role="button"
@@ -102,7 +104,7 @@ function Navbar() {
                 </li>
                 <li className="nav-item ">
                   <a
-                    className="nav-link  mx-5 active effect-underline fs-5"
+                    className="nav-link  mx-5 active effect-underline "
                     href="#footer"
                   >
                     Contatti
@@ -111,26 +113,26 @@ function Navbar() {
               </ul>
             </div>
 
-            <div className="col-4">
-              <ul className="navbar-nav  d-flex justify-content-center my-2 ">
-                <li className="nav-item">
-                  <Link to="/searchGame">
-                    <a className="nav-link me-5 active ">
-                      <i class="fa-solid fa-lg fa-magnifying-glass"></i>
-                    </a>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link me-5 active ">
-                    <i class="fa-solid fa-lg fa-circle-user"></i>
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link me-5 active ">
-                    <i class="fa-solid fa-lg fa-right-to-bracket"></i>
-                  </a>
-                </li>
-              </ul>
+            <div className="col-6 col-lg-4 my-lg-0 my-3">
+              <div className="container-fluid d-flex justify-content-center align-items-center">
+                <div className="row">
+                  <div className="col-4 rombo d-flex justify-content-center align-items-center roll-in-right">
+                    <Link to="/searchGame">
+                      <i class="icon-hover fa-solid fa-lg fa-magnifying-glass icon"></i>
+                    </Link>
+                  </div>
+                  <div className="col-4 rombo d-flex justify-content-center align-items-center roll-in-right2">
+                    <Link to="/searchGame">
+                      <i class="icon-hover fa-solid fa-lg fa-circle-user icon"></i>
+                    </Link>
+                  </div>
+                  <div className="col-4 rombo d-flex justify-content-center align-items-center roll-in-right3">
+                    <Link to="/searchGame">
+                      <i class="icon-hover fa-solid fa-lg fa-right-to-bracket icon"></i>
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
