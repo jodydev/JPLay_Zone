@@ -647,17 +647,17 @@ bottom: 0px !important;
 }
 
 .rombo{
-  border-radius: 10px;
-  background-color:black;
+  border-radius: 13px;
   padding:0;
   width: 45px;
   height: 45px;
   position: relative;
+  margin-left: 4px;
     display:block;
-    border-bottom:5px solid rgb(253, 0, 0);
-    border-left:5px solid rgb(253, 0, 0);
-    border-top:5px solid rgb(0, 0, 0);
-    border-right:5px solid rgb(0, 0, 0);
+    border-bottom:6px solid rgb(253, 0, 0);
+    border-left:6px solid rgb(253, 0, 0);
+    border-top:6px solid rgb(0, 0, 0);
+    border-right:6px solid rgb(0, 0, 0);
     -ms-transform: rotate(45deg); /* IE 9 */
     -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
     transform: rotate(45deg);
@@ -665,24 +665,24 @@ bottom: 0px !important;
 }
 
 .icon{
-  color: white !important;
+  color: rgb(0, 0, 0) !important;
   -ms-transform: rotate(-45deg); /* IE 9 */
   -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
   transform: rotate(-45deg);
 }
 
 .rombo:hover{
-  border-radius: 10px;
-  background-color:black;
+  border-radius: 13px;
   padding:0;
   width:45px;
   height:45px;
+  margin-left: 4px;
   position: relative;
     display:block;
-    border-bottom:5px solid rgb(253, 0, 0);
-    border-left:5px solid rgb(0, 0, 0);
-    border-top:5px solid rgb(0, 0, 0);
-    border-right:5px solid rgb(0, 0, 0);
+    border-bottom:6px solid rgb(253, 0, 0);
+    border-left:6px solid rgb(0, 0, 0);
+    border-top:6px solid rgb(0, 0, 0);
+    border-right:6px solid rgb(0, 0, 0);
     -ms-transform: rotate(-0deg) !important; /* IE 9 */
     -webkit-transform: rotate(-0deg) !important; /* Chrome, Safari, Opera */
     transform: rotate(-0deg) !important;

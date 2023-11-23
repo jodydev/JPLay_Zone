@@ -291,7 +291,7 @@ const allGames = data.flat(); // Combinazione di tutti i giochi in un unico arra
         <Route path="/" element={<HomePage gamePs5={gamePs5} gameXbox={gameXbox} gameNintendo={gameNintendo} />} />
         <Route path="/details/:id" element={<DetailsPage games={allGames} />} />
         <Route path="/searchGame" element={<GameSearch games={allGames} />} />
-        <Route path="*" element={<RouteNotFound />} />
+        <Route path="/*" element={<RouteNotFound />} />
       </Routes>
     </Layout>
   );
