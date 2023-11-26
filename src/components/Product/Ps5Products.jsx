@@ -11,11 +11,11 @@ function Ps5Products({ gamePs5 }) {
         </span>
 
         <div className="col-lg-3 col-md-12 p-5 ">
-          <div className="container rounded-4 set-bg col-sx-ps5 transition shadow-lg">
+          <div className="container rounded-4 set-bg col-sx-ps5 slide-in-blurred-left shadow-lg">
             <img src="/assets/img/ps5/ps5.png" className=" w-100 " />
           </div>
 
-          <div className="container rounded-4 set-bg col-sx-ps5 transition my-5 shadow-lg">
+          <div className="container rounded-4 set-bg col-sx-ps5 slide-in-blurred-left my-5 shadow-lg">
             <img
               src="/assets/img/ps5/info-ps5.png"
               className=" w-100 rounded-4 "
@@ -56,19 +56,19 @@ function Ps5Products({ gamePs5 }) {
           </div>
         </div>
 
-        <div className="col-lg-3 col-md-12 p-5 slide-in-right">
+        <div className="col-lg-3 col-md-12 p-5">
           <div className="container ">
             <img
               src="/assets/img/ps5/ps-store.jpeg"
-              className=" w-100 rounded-4 my-4 mb-lg-5 shadow-lg transition"
+              className=" w-100 rounded-4 my-4 mb-lg-5 shadow-lg slide-in-blurred-right"
             />
             <img
               src="/assets/img/ps5/ps-plus.webp"
-              className=" w-100 rounded-4 my-4 my-lg-5 shadow-lg transition"
+              className=" w-100 rounded-4 my-4 my-lg-5 shadow-lg slide-in-blurred-right"
             />
             <img
               src="/assets/img/ps5/ps-plus-3.webp"
-              className=" w-100 rounded-4 my-4 my-lg-5 shadow-lg transition"
+              className=" w-100 rounded-4 my-4 my-lg-5 shadow-lg slide-in-blurred-right"
             />
           </div>
         </div>

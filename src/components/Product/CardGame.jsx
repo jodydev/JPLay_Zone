@@ -24,7 +24,7 @@ function CardGame({ gamePs5, gameXbox, gameNintendo }) {
       <div className="d-flex flex-nowrap flex-lg-wrap my-overflow-x-scroll">
         {games.map((game) => (
           <div
-            className="col-4 flip-card mx-3 my-5 flip-in-hor-bottom"
+            className="col-4 flip-card mx-3 my-5 slide-in-blurred-top"
             key={game.id}
           >
             <div className="flip-card-inner">

@@ -121,13 +121,15 @@ function Navbar() {
                       <i class="icon-hover fa-solid fa-lg fa-magnifying-glass icon"></i>
                     </Link>
                   </div>
-                  <div className="col-4 rombo d-flex justify-content-center align-items-center roll-in-right2">
-                    <Link to="/searchGame">
+                  <div className="col-4 rombo d-flex justify-content-center align-items-center roll-in-right">
+                    <Link to="/login">
+                      
                       <i class="icon-hover fa-solid fa-lg fa-circle-user icon"></i>
                     </Link>
                   </div>
-                  <div className="col-4 rombo d-flex justify-content-center align-items-center roll-in-right3">
-                    <Link to="/searchGame">
+                  <div className="col-4 rombo d-flex justify-content-center align-items-center roll-in-right">
+                   
+                    <Link to="/register">
                       <i class="icon-hover fa-solid fa-lg fa-right-to-bracket icon"></i>
                     </Link>
                   </div>

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function CarouselHero() {
   return (
     <section id="carousel" className="p-0 p-lg-2">
@@ -8,45 +10,55 @@ function CarouselHero() {
           data-bs-ride="carousel"
         >
           <div className="carousel-inner rounded-4 ">
-            <div className="carousel-item active ">
-              <img
-                src="/assets/img/carousel/spider-man.jpeg"
-                className="d-block w-100 rounded-4 "
-                alt="..."
-              />
-            </div>
+            <Link to="details/1">
+              <div className="carousel-item active ">
+                <img
+                  src="/assets/img/carousel/spider-man.jpeg"
+                  className="d-block w-100 rounded-4 "
+                  alt="..."
+                />
+              </div>
+            </Link>
 
-            <div className="carousel-item">
-              <img
-                src="/assets/img/carousel/assassins-creed.png"
-                className="d-block w-100 rounded-4 "
-                alt="..."
-              />
-            </div>
+            <Link to="details/4">
+              <div className="carousel-item">
+                <img
+                  src="/assets/img/carousel/assassins-creed.png"
+                  className="d-block w-100 rounded-4 "
+                  alt="..."
+                />
+              </div>
+            </Link>
 
-            <div className="carousel-item">
-              <img
-                src="/assets/img/carousel/fc24.jpeg"
-                className="d-block w-100 rounded-4 "
-                alt="..."
-              />
-            </div>
+            <Link to="details/5">
+              <div className="carousel-item">
+                <img
+                  src="/assets/img/carousel/fc24.jpeg"
+                  className="d-block w-100 rounded-4 "
+                  alt="..."
+                />
+              </div>
+            </Link>
 
-            <div className="carousel-item">
-              <img
-                src="/assets/img/carousel/ufc.png"
-                className="d-block w-100 rounded-4 "
-                alt="..."
-              />
-            </div>
+            <Link to="details/15">
+              <div className="carousel-item">
+                <img
+                  src="/assets/img/carousel/ufc.png"
+                  className="d-block w-100 rounded-4 "
+                  alt="..."
+                />
+              </div>
+            </Link>
 
-            <div className="carousel-item">
-              <img
-                src="/assets/img/carousel/cod.jpeg"
-                className="d-block w-100 rounded-4 "
-                alt="..."
-              />
-            </div>
+            <Link to="details/11">
+              <div className="carousel-item">
+                <img
+                  src="/assets/img/carousel/cod.jpeg"
+                  className="d-block w-100 rounded-4 "
+                  alt="..."
+                />
+              </div>
+            </Link>
           </div>
 
           <button

@@ -1,10 +1,18 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import AppContext from "./contexts/AppContext";
 import Layout from "./components/Layout";
 import DetailsPage from "./pages/DetailsPage";
 import HomePage from "./pages/HomePage";
 import GameSearch from "./pages/GameSearch";
 import RouteNotFound from "./pages/RouteNotFound";
+import LoginPage from "./auth/LoginPage";
+import RegisterPage from "./auth/RegisterPage";
+import Account from "./auth/Account";
+import useAuth from './hooks/useAuth';
+import LoggedUserRoutes from "./auth/LoggedUserRoutes";
+import supabase from "./supabase/client";
+
 
 import './assets/css/AppNavbar.css';
 import './assets/css/AppCarouselHero.css';
@@ -283,7 +291,8 @@ export function App() {
 const [gamePs5] = useState(data[0]);
 const [gameXbox] = useState(data[1]);
 const [gameNintendo] = useState(data[2]);
-const allGames = data.flat(); // Combinazione di tutti i giochi in un unico array
+const allGames = data.flat(); 
+
 
   return (
     <Layout>
@@ -291,17 +300,41 @@ const allGames = data.flat(); // Combinazione di tutti i giochi in un unico arra
         <Route path="/" element={<HomePage gamePs5={gamePs5} gameXbox={gameXbox} gameNintendo={gameNintendo} />} />
         <Route path="/details/:id" element={<DetailsPage games={allGames} />} />
         <Route path="/searchGame" element={<GameSearch games={allGames} />} />
-        <Route path="/*" element={<RouteNotFound />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="*" element={<RouteNotFound />} />
+
+        <Route element={<LoggedUserRoutes/>}>
+          <Route path="/account" element={<Account />} />
+        </Route>
+       
       </Routes>
     </Layout>
   );
 }
 
 function Root() {
+
+  const userData = useAuth(); 
+
+  const [session, setSession] = useState(null)
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session)
+    })
+
+    supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session)
+    })
+  }, [])
+
   return (
-    <Router>
-      <App />
-    </Router>
+    <AppContext.Provider value={{ session, setSession, userData }}>
+      <Router>
+        <App />
+      </Router>
+    </AppContext.Provider>
   );
 }
 

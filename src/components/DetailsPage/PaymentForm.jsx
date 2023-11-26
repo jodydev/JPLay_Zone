@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 function PaymentForm({ games }) {
+
   const { id } = useParams(); // Estraiamo l'id dal parametro dell'URL
-  console.log("ID:", id);
-  // Concatena tutti gli array all'interno di 'games' in un unico array
 
   const selectedGame = games.find((game) => game.id == id);
   console.log("Gioco selezionato:", selectedGame);
