@@ -293,7 +293,6 @@ const [gameXbox] = useState(data[1]);
 const [gameNintendo] = useState(data[2]);
 const allGames = data.flat(); 
 
-
   return (
     <Layout>
       <Routes>

@@ -27,7 +27,6 @@ function useAuth() {
     return () => subscription.unsubscribe()
   }, []); 
 
-  
 
   return {
     session, 

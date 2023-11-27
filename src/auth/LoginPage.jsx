@@ -34,9 +34,9 @@ function LoginPage() {
     }
 
     return (
-        <div className="container p-5">
+        <div className="container-fluid p-0 p-lg-5">
             <div className="row">
-                <div className="col-12 d-flex justify-content-center">
+                <div className="col-12 d-flex justify-content-center align-items-center">
                     <div className="form-container my-5 shadow-sm">
                         <form className="form" onSubmit={handleLogin}>
                             <h1 className="text-dark fw-bold mb-0">Accedi con i tuoi dati.</h1>
@@ -49,6 +49,7 @@ function LoginPage() {
                                     type="text"
                                     value={email}
                                     onChange={handleEmailChange}
+                                    placeholder="jodyossino.dev@gmail.com"
                                 />
                             </div>
                             <div className="form-group">
@@ -59,6 +60,7 @@ function LoginPage() {
                                     type="password"
                                     value={password}
                                     onChange={handlePasswordChange}
+                                    placeholder="********"
                                 />
                             </div>
                             <button type="submit" className="form-submit-btn" disabled={loading}>

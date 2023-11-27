@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { useContext } from "react";
 import { FiSearch } from "react-icons/fi";
 import { PiUserPlusBold } from "react-icons/pi";
@@ -16,30 +17,68 @@ function Navbar() {
     signOut();
   };
 
+  const [navbarClicked, setNavbarClicked] = useState(false);
+
+  const handleNavbarClick = () => {
+    setNavbarClicked(true);
+    setTimeout(() => {
+      setNavbarClicked(false);
+    }, 100);
+  };
+
   return (
     <header>
       <nav
-        className="navbar navbar-expand-lg navbar-dark bg-nav p-0 my-3 position-relative slide-in-blurred-top"
+        className={`navbar navbar-expand-lg navbar-dark bg-nav p-0 my-3 position-relative slide-in-blurred-top ${
+          navbarClicked ? "navbar-clicked" : ""
+        }`}
         id="headerNav"
       >
-        <div className="container-fluid px-4 px-lg-0 py-3 py-lg-0">
+        <div className="container-fluid px-lg-0 py-3 py-lg-0 mb-4 nav-container">
           <div className="row my-row-sm">
-            <div className="col-3">
+            <div className="col-4 d-flex justify-content-start align-items-center">
               <Link to="/">
                 <a className="navbar-brand d-block d-lg-none p-0 ">
                   <h1 className="text-dark fw-bold letter-spacing">JPlay</h1>
                 </a>
               </Link>
             </div>
-            <div className="col-3">
+
+            <div className="col-2 d-flex justify-content-end align-items-center ">
               <Link to="/">
-                <a className="navbar-brand d-block d-lg-none p-0" href="#">
-                  <img src="/assets/img/logo/logo1.png" height="35" />
+                <a className="navbar-brand d-block d-lg-none p-0 me-5" href="#">
+                  <img src="/assets/img/logo/logo1.png" height="33" />
                 </a>
               </Link>
             </div>
 
-            <div className="col-6 d-flex justify-content-end">
+            <div className="col-6 d-flex justify-content-end align-items-center d-block d-lg-none">
+              <Link to="/searchGame" className="fs-5 text-dark">
+                <FiSearch
+                  style={{
+                    marginRight: "8px",
+                    marginBottom: "3px",
+                  }}
+                />
+              </Link>
+
+              <Link to="/login" className="fs-5 text-dark">
+                <PiUserDuotone
+                  style={{
+                    marginRight: "8px",
+                    marginBottom: "3px",
+                  }}
+                />
+              </Link>
+
+              <Link to="/register" className="fs-5 text-dark">
+                <PiUserPlusBold
+                  style={{
+                    marginRight: "8px",
+                    marginBottom: "3px",
+                  }}
+                />
+              </Link>
               <button
                 className="navbar-toggler"
                 type="button"
@@ -48,6 +87,7 @@ function Navbar() {
                 aria-controls="navbarSupportedContent"
                 aria-expanded="false"
                 aria-label="Toggle navigation"
+                onClick={handleNavbarClick}
               >
                 <i className="fa-solid fa-bars"></i>
               </button>
@@ -55,7 +95,7 @@ function Navbar() {
           </div>
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <div className="col-4 d-flex justify-content-start align-items-center px-5">
+            <div className="col-4 d-flex justify-content-start align-items-center px-5 d-none d-lg-block">
               <Link to="/searchGame" className="fs-5 text-dark">
                 <FiSearch
                   style={{
@@ -156,8 +196,8 @@ function Navbar() {
                   </div>
                 ) : (
                   <div className="row">
-                    <div className="col-2"></div>
-                    <div className="col-4 d-flex justify-content-center align-items-center ps-5">
+                    <div className="col-2 d-none d-lg-block"></div>
+                    <div className="col-4 d-none d-lg-block d-flex justify-content-center align-items-center">
                       <Link to="/login">
                         <button className="btn btn-danger px-3 py-2 fw-bold text-nowrap">
                           <PiUserDuotone
@@ -169,7 +209,7 @@ function Navbar() {
                         </button>
                       </Link>
                     </div>
-                    <div className="col-6 d-flex justify-content-center align-items-center ">
+                    <div className="col-6 d-none d-lg-block d-flex justify-content-center align-items-center ps-4">
                       <Link to="/register">
                         <button className="btn btn-dark text-nowrap px-3 py-2 fw-bold">
                           <PiUserPlusBold

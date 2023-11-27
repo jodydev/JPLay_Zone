@@ -10,55 +10,55 @@ function CarouselHero() {
           data-bs-ride="carousel"
         >
           <div className="carousel-inner rounded-4 ">
-            <Link to="details/1">
-              <div className="carousel-item active ">
+            <div className="carousel-item active ">
+              <Link to="details/1">
                 <img
                   src="/assets/img/carousel/spider-man.jpeg"
                   className="d-block w-100 rounded-4 "
                   alt="..."
                 />
-              </div>
-            </Link>
+              </Link>
+            </div>
 
-            <Link to="details/4">
-              <div className="carousel-item">
+            <div className="carousel-item">
+              <Link to="details/4">
                 <img
                   src="/assets/img/carousel/assassins-creed.png"
                   className="d-block w-100 rounded-4 "
                   alt="..."
                 />
-              </div>
-            </Link>
+              </Link>
+            </div>
 
-            <Link to="details/5">
-              <div className="carousel-item">
+            <div className="carousel-item">
+              <Link to="details/5">
                 <img
                   src="/assets/img/carousel/fc24.jpeg"
                   className="d-block w-100 rounded-4 "
                   alt="..."
                 />
-              </div>
-            </Link>
+              </Link>
+            </div>
 
-            <Link to="details/15">
-              <div className="carousel-item">
+            <div className="carousel-item">
+              <Link to="details/15">
                 <img
                   src="/assets/img/carousel/ufc.png"
                   className="d-block w-100 rounded-4 "
                   alt="..."
                 />
-              </div>
-            </Link>
+              </Link>
+            </div>
 
-            <Link to="details/11">
-              <div className="carousel-item">
+            <div className="carousel-item">
+              <Link to="details/11">
                 <img
                   src="/assets/img/carousel/cod.jpeg"
                   className="d-block w-100 rounded-4 "
                   alt="..."
                 />
-              </div>
-            </Link>
+              </Link>
+            </div>
           </div>
 
           <button

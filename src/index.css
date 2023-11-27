@@ -403,23 +403,22 @@
   /* cambio file immagine in vista mobile */
 
   .carousel-item:nth-child(1) img {
-    content: url(/assets/img/carousel/mobile/assassins-creed-mobile.png);
+    content: url(/public/assets/img/carousel/mobile/spiderman-mobile.jpeg) !important;
   }
 
   .carousel-item:nth-child(2) img {
-    content: url(/assets/img/carousel/mobile/spiderman2.jpeg);
+    content: url(/assets/img/carousel/mobile/assassins-creed-mobile.png) !important;
   }
 
   .carousel-item:nth-child(3) img {
-    content: url(/assets/img/carousel/mobile/fc-24-mobile.jpeg);
+    content: url(/assets/img/carousel/mobile/fc-24-mobile.jpeg) !important;
   }
 
   .carousel-item:nth-child(4) img {
-    content: url(/assets/img/carousel/mobile/read-dead-redemption-mobile.png);
+    content: url(/public/assets/img/carousel/mobile/naruto-mobile.jpeg) !important;
   }
-
   .carousel-item:nth-child(5) img {
-    content: url(/assets/img/carousel/mobile/forza-motorsport-mobile.png);
+    content: url(/public/assets/img/carousel/mobile/cod-mobile.jpeg) !important;
   }
 
   .navbar-toggler {
@@ -497,7 +496,40 @@
     height: 150px !important;
   }
 
+  .nav-container{
+    border-bottom: 2px solid black;
+  }
+
+  .dropdown-menu{
+    width: 250px !important;
+    margin-left: 10px !important;
+    border: 2px solid red !important;
+  }
+
+  .dropdown-item:hover {
+    background-color: white !important;
+    color: black !important;
+  }
+
+  .form-container {
+    width: 90% !important;
+  }
+
+  
+  .form-container .form {
+    padding: 0px !important;
+  }
+  
+  
+  .form-container .form-submit-btn {
+    width: 100% !important;
+  }
+  
+
+  
+
 }
+
 
 * {
   font-family: "Poppins", sans-serif;
@@ -702,6 +734,22 @@ bottom: 0px !important;
 
 
 
+
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .form-container {
   width: 50%;
   background: linear-gradient(#ffffff, #ffffff) padding-box,
@@ -719,20 +767,6 @@ bottom: 0px !important;
   background-size: 200% 100%;
   animation: gradient 5s ease infinite;
   /* filter: drop-shadow(0 0 0.5rem rgb(197, 197, 197)); */
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 .form-container button:active {
@@ -807,7 +841,6 @@ bottom: 0px !important;
   background-color: #ff1d1d;
   border-color: #fff;
 }
-
 
 
 
