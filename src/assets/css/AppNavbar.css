@@ -1,6 +1,6 @@
 #headerNav a {
   font-weight: 600;
-  letter-spacing: 1px;
+font-size: 20px;
 }
 
 .dropdown-item:hover {
@@ -26,7 +26,7 @@
   content: "";
   display: block;
   width: 100%;
-  border-bottom: 1px solid;
+  border-bottom: 2px solid;
   opacity: 0;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;

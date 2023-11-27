@@ -1,6 +1,21 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { FiSearch } from "react-icons/fi";
+import { PiUserPlusBold } from "react-icons/pi";
+import { PiUserDuotone } from "react-icons/pi";
+import { CgLogOut } from "react-icons/cg";
+import AppContext from "../contexts/AppContext";
+import useAuth from "../hooks/useAuth";
 
 function Navbar() {
+  const { session } = useContext(AppContext);
+
+  const { signOut } = useAuth();
+
+  const handleLogout = () => {
+    signOut();
+  };
+
   return (
     <header>
       <nav
@@ -40,9 +55,19 @@ function Navbar() {
           </div>
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <div className="col-3 "></div>
+            <div className="col-4 d-flex justify-content-start align-items-center px-5">
+              <Link to="/searchGame" className="fs-5 text-dark">
+                <FiSearch
+                  style={{
+                    marginRight: "8px",
+                    marginBottom: "3px",
+                  }}
+                />
+                Cerca il tuo gioco preferito..
+              </Link>
+            </div>
 
-            <div className="col-6">
+            <div className="col-4">
               <ul className="navbar-nav  d-flex justify-content-center my-2 ">
                 <li className="nav-item">
                   <Link to="/">
@@ -113,27 +138,51 @@ function Navbar() {
               </ul>
             </div>
 
-            <div className="col-6 col-lg-4 my-lg-0 my-3">
-              <div className="container-fluid d-flex justify-content-center align-items-center">
-                <div className="row">
-                  <div className="col-4 rombo d-flex justify-content-center align-items-center roll-in-right">
-                    <Link to="/searchGame">
-                      <i class="icon-hover fa-solid fa-lg fa-magnifying-glass icon"></i>
-                    </Link>
+            <div className="col-4 col-lg-4 my-lg-0 my-3">
+              <div className="container-fluid d-flex justify-content-center align-items-center ms-5">
+                {session ? (
+                  <div
+                    onClick={handleLogout}
+                    className="col-6 d-flex justify-content-end align-items-center px-3 py-2"
+                  >
+                    <button className="btn btn-dark">
+                      <CgLogOut
+                        style={{
+                          marginRight: "5px",
+                        }}
+                      />
+                      Logout
+                    </button>
                   </div>
-                  <div className="col-4 rombo d-flex justify-content-center align-items-center roll-in-right">
-                    <Link to="/login">
-                      
-                      <i class="icon-hover fa-solid fa-lg fa-circle-user icon"></i>
-                    </Link>
+                ) : (
+                  <div className="row">
+                    <div className="col-2"></div>
+                    <div className="col-4 d-flex justify-content-center align-items-center ps-5">
+                      <Link to="/login">
+                        <button className="btn btn-danger px-3 py-2 fw-bold text-nowrap">
+                          <PiUserDuotone
+                            style={{
+                              marginRight: "5px",
+                            }}
+                          />
+                          Accedi
+                        </button>
+                      </Link>
+                    </div>
+                    <div className="col-6 d-flex justify-content-center align-items-center ">
+                      <Link to="/register">
+                        <button className="btn btn-dark text-nowrap px-3 py-2 fw-bold">
+                          <PiUserPlusBold
+                            style={{
+                              marginRight: "5px",
+                            }}
+                          />
+                          Registrati
+                        </button>
+                      </Link>
+                    </div>
                   </div>
-                  <div className="col-4 rombo d-flex justify-content-center align-items-center roll-in-right">
-                   
-                    <Link to="/register">
-                      <i class="icon-hover fa-solid fa-lg fa-right-to-bracket icon"></i>
-                    </Link>
-                  </div>
-                </div>
+                )}
               </div>
             </div>
           </div>

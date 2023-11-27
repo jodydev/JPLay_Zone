@@ -1,9 +1,10 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
 function LoginPage() {
+
     const { signIn } = useAuth();
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
@@ -33,12 +34,13 @@ function LoginPage() {
     }
 
     return (
-        <div className="container">
+        <div className="container p-5">
             <div className="row">
                 <div className="col-12 d-flex justify-content-center">
-                    <div className="form-container my-5">
+                    <div className="form-container my-5 shadow-sm">
                         <form className="form" onSubmit={handleLogin}>
-                            <h1 className="text-dark">Accedi</h1>
+                            <h1 className="text-dark fw-bold mb-0">Accedi con i tuoi dati.</h1>
+                            <h3 className="text-dark fw-bold h6 mb-4">Oppure <Link to="/register" className="text-danger">registrati</Link> se non hai un account.</h3>
                             <div className="form-group">
                                 <label htmlFor="email">Inserisci Email</label>
                                 <input
