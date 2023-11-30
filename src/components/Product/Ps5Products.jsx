@@ -1,7 +1,6 @@
 import CardGame from "./CardGame";
 
 function Ps5Products({ gamePs5 }) {
-  console.log(gamePs5);
 
   return (
     <div id="ps5" className="container-fluid py-0 py-lg-3 ">

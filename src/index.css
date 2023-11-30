@@ -826,7 +826,7 @@ bottom: 0px !important;
   font-family: inherit;
   color: #ffffff;
   font-weight: 600;
-  width: 40%;
+  width: 50%;
   background: #313131;
   border: 1px solid #414141;
   padding: 12px 16px;
@@ -844,3 +844,26 @@ bottom: 0px !important;
 
 
 
+
+
+.circle{
+  border-radius: 50%;
+    width: 130px;
+    height: 130px;
+  background-color: red;
+  
+}
+
+.col-black{
+  background-color:#2b2b2b;
+  border-radius: 15px 0px 0px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar-img{
+  width: 100%;
+  max-width: 100px;
+}

@@ -1,7 +1,6 @@
 import CardGame from "./CardGame";
 
 function XboxProducts({ gameXbox }) {
-  console.log(gameXbox);
 
   return (
     <div id="xbox" className="container-fluid py-0 py-lg-5 ">
