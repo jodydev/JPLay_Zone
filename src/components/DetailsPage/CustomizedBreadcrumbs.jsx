@@ -1,20 +1,20 @@
-import * as React from "react";
+import { useParams } from "react-router-dom";
+import { useGameContext } from '../../contexts/GameContext';
 import Typography from "@mui/material/Typography";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
-import { useParams } from "react-router-dom";
 
 function handleClick(event) {
   event.preventDefault();
-  console.info("You clicked a breadcrumb.");
 }
 
-export default function CustomizedBreadcrumbs({ games }) {
-  const { id } = useParams(); // Estraiamo l'id dal parametro dell'URL
-  console.log("ID:", id);
-  // Concatena tutti gli array all'interno di 'games' in un unico array
+export default function CustomizedBreadcrumbs() {
 
-  const selectedGame = games.find((game) => game.id == id);
+  const { gameData  } = useGameContext();
+
+  const { id } = useParams(); // Estraiamo l'id dal parametro dell'URL
+
+  const selectedGame = gameData.find((game) => game.id == id);
   console.log("Gioco selezionato:", selectedGame);
 
   return (

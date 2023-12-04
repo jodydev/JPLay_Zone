@@ -1,13 +1,16 @@
-import Rating from "@mui/material/Rating";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { useGameContext } from "../../contexts/GameContext";
+import Rating from "@mui/material/Rating";
 
-function PaymentForm({ games }) {
+function PaymentForm() {
+  
+  const { gameData } = useGameContext();
 
   const { id } = useParams(); // Estraiamo l'id dal parametro dell'URL
 
-  const selectedGame = games.find((game) => game.id == id);
-  console.log("Gioco selezionato:", selectedGame);
+  const selectedGame = gameData.find((game) => game.id == id);
+
 
   return (
     <div className="container-fluid">
@@ -137,7 +140,7 @@ function PaymentForm({ games }) {
                       {selectedGame ? (
                         <span className=" fw-normal text-nowrap">
                           {" "}
-                          Disponibile 
+                          Disponibile
                           <i
                             class="fa-solid fa-circle-check ms-1"
                             style={{ color: "green" }}
@@ -146,7 +149,7 @@ function PaymentForm({ games }) {
                       ) : (
                         <span className="fw-normal text-nowrap">
                           {" "}
-                          Non disponibile 
+                          Non disponibile
                           <i
                             class="fa-solid fa-circle-xmark ms-1"
                             style={{ color: "red" }}

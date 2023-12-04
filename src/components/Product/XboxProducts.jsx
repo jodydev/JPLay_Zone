@@ -1,6 +1,11 @@
 import CardGame from "./CardGame";
+import { useGameContext } from '../../contexts/GameContext';
 
-function XboxProducts({ gameXbox }) {
+function XboxProducts() {
+
+  const { gameXbox } = useGameContext();
+
+  console.log(gameXbox);
 
   return (
     <div id="xbox" className="container-fluid py-0 py-lg-5 ">

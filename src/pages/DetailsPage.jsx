@@ -1,11 +1,11 @@
 import PaymentForm from "../components/DetailsPage/PaymentForm";
 import DetailsLayout from "../components/DetailsLayout";
 
-function DetailsPage({ games }) {
+function DetailsPage() {
 
   return (
-    <DetailsLayout games={games}>
-      <PaymentForm games={games} />
+    <DetailsLayout >
+      <PaymentForm />
     </DetailsLayout>
   );
 }

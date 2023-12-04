@@ -1,7 +1,11 @@
 import CardGame from "./CardGame";
+import { useGameContext } from '../../contexts/GameContext';
 
-function Ps5Products({ gamePs5 }) {
+function Ps5Products() {
+  const { gamePs5 } = useGameContext();
 
+  console.log(gamePs5);
+  
   return (
     <div id="ps5" className="container-fluid py-0 py-lg-3 ">
       <div className="row p-0 m-0">

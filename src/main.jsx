@@ -6,6 +6,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <Route />
 )
 
-  // <React.StrictMode>
-  // </React.StrictMode>,
 

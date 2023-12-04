@@ -1,22 +1,24 @@
 import { Link } from "react-router-dom";
 
 function CardGame({ gamePs5, gameXbox, gameNintendo }) {
+  const games = gamePs5 || gameXbox || gameNintendo || [];
 
-   const handleClickToShowDetail = () => {
-    // Reset dello scroll prima di navigare alla pagina di dettaglio
-     window.scrollTo(0, 0);
-}
+  console.log(games);
 
-  const games = gamePs5 || gameXbox || gameNintendo || []; // Usa i dati di PS5 se sono disponibili, altrimenti quelli di Xbox o di nintendo
-
-  const getCardClass = () => {
-    if (gamePs5) {
-      return "card-body blue-border text-center w-100 justify-content-center d-flex align-items-center flex-wrap rounded-4 shadow-lg"; // Applica la classe blue-border se gamePs5 è passato
-    } else if (gameXbox) {
-      return "card-body green-border text-center w-100 justify-content-center d-flex align-items-center flex-wrap rounded-4 shadow-lg"; // Applica la classe green-border se gameXbox è passato
-    } else if (gameNintendo) {
-      return "card-body red-border text-center w-100 justify-content-center d-flex align-items-center flex-wrap rounded-4 shadow-lg"; // Applica la classe red-border se gameNintendo è passato
+  const getCardClass = (platform) => {
+    if (platform === "PS5") {
+      return "blue-border";
+    } else if (platform === "Xbox One") {
+      return "green-border";
+    } else if (platform === "Nintendo Switch") {
+      return "red-border";
     }
+    return "";
+  };
+
+  const handleClickToShowDetail = () => {
+    // Reset dello scroll prima di navigare alla pagina di dettaglio
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -38,47 +40,49 @@ function CardGame({ gamePs5, gameXbox, gameNintendo }) {
                 }}
               ></div>
 
-              <div className="flip-card-back">
-                <div className={getCardClass()}>
-                  <div className="container">
-                    <h3 className="card-title single-line-text fs-5 my-3">
-                      {game.title}
-                    </h3>
-                  </div>
+              <div className={`flip-card-back ${getCardClass(game.platform)}`}>
+                <div className="container">
+                  <h3 className="card-title single-line-text fs-5 my-3">
+                    {game.title}
+                  </h3>
+                </div>
 
-                  <div className="container">
-                    <h6 className="fs-3 card-price">{game.price}€</h6>
-                  </div>
+                <div className="container">
+                  <h6 className="fs-3 card-price">{game.price}€</h6>
+                </div>
 
-                  <div className="container">
-                    <span className="card-span ">
-                      {game.disponibility ? "Disponibile " : "Non disponibile "}
+                <div className="container">
+                  <span className="card-span ">
+                    {game.disponibility ? "Disponibile " : "Non disponibile "}
+                  </span>
+
+                  {game.disponibility ? (
+                    <span>
+                      <i
+                        class="fa-solid fa-circle-check"
+                        style={{ color: "green" }}
+                      ></i>
                     </span>
+                  ) : (
+                    <span>
+                      <i
+                        class="fa-solid fa-circle-xmark"
+                        style={{ color: "red" }}
+                      ></i>
+                    </span>
+                  )}
+                </div>
 
-                    {game.disponibility ? (
-                      <span>
-                        <i
-                          class="fa-solid fa-circle-check"
-                          style={{ color: "green" }}
-                        ></i>
-                      </span>
-                    ) : (
-                      <span>
-                        <i
-                          class="fa-solid fa-circle-xmark"
-                          style={{ color: "red" }}
-                        ></i>
-                      </span>
-                    )}
-                  </div>
-
-                  <div className="d-flex justify-content-center my-2">
-                    <Link to={`/details/${game.id}`}>
-                      <button onClick={handleClickToShowDetail} id="button-details" className="btn btn-danger">
-                        Scopri
-                      </button>
-                    </Link>
-                  </div>
+                <div className="d-flex justify-content-center my-2">
+                  <Link to={`/details/${game.id}`}>
+                    <button
+                      onClick={handleClickToShowDetail}
+                      id="button-details"
+                      className="btn btn-danger"
+                    >
+                      Scopri
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

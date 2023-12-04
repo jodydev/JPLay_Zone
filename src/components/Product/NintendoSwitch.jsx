@@ -1,6 +1,12 @@
 import CardGame from "./CardGame";
+import { useGameContext } from '../../contexts/GameContext';
 
-function NintendoSwitch({ gameNintendo }) {
+function NintendoSwitch() {
+
+  const { gameNintendo } = useGameContext();
+
+  console.log(gameNintendo);
+  
   return (
     <div className="container-fluid">
       <div className="row">
