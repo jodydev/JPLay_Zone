@@ -1,4 +1,18 @@
+import useProfile from "../hooks/useProfile";
+import  Avatar  from "../components/Avatar";
+import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
+
 function Account() {
+  const location = useLocation();
+  const user = location.state?.updatedProfile || {}; // Ottieni i dati aggiornati dalla navigazione
+  const [userAvatar, setUserAvatar] = useState(null);
+   // Funzione per ricevere l'avatar URL dal componente Avatar
+   const handleAvatarChange = (avatarUrl) => {
+    setUserAvatar(avatarUrl);
+  };
+
+
   return (
     <>
       <section id="user" className="vh-200">
@@ -8,25 +22,25 @@ function Account() {
               <div className="card mb- w-100 rounded-4 shadow-lg">
                 <div className="row g-0">
                   <div className="col-md-4 text-center text-white col-black">
-                    <div className="circle">
-                      <img
-                        src="/assets/jody-avatar.png"
-                        className="img-fluid avatar-img"
-                        
-                      />
+                    <div className="avatar-container">
+                     
+                     <img src={userAvatar} sizes='150' alt="" srcset="" />
                     </div>
 
                     <div className="text-description mt-3">
-                      <h2 class="fs-2">Benvenuto,</h2>
-                      <h3 class="fs-3 fw-bold"> Jody</h3>
+                      <h2 class="fs-3">Benvenuto,</h2>
+                      <h3 class="fs-4 fw-bold">{user.username}</h3>
                     </div>
 
-                    <button
-                      id="button-edit"
-                      className="my-2 text-light btn-danger btn"
-                    >
-                      Modifica i tuoi dati <i className="far fa-edit fa-lg"></i>
-                    </button>
+                    <Link to="/setting">
+                      <button
+                        id="button-edit"
+                        className="my-3 text-light btn-danger btn"
+                      >
+                        Modifica i tuoi dati{" "}
+                        <i className="far fa-edit fa-lg"></i>
+                      </button>
+                    </Link>
                   </div>
                   <div className="col-md-8">
                     <div className=" p-4">
@@ -38,12 +52,15 @@ function Account() {
 
                       <div className="row pt-1">
                         <div className="col-6 mb-3">
-                          <h6>Email</h6>
-                          <p className="text-muted">mfaifla</p>
+                          <label>Nome</label>
+
+                          <p className="text-muted fw-bold">
+                            {user.first_name}
+                          </p>
                         </div>
                         <div className="col-6 mb-3">
-                          <h6>Telefono</h6>
-                          <p className="text-muted">+39 53453</p>
+                          <label>Cognome</label>
+                          <p className="text-muted fw-bold">{user.last_name}</p>
                         </div>
                       </div>
 
@@ -51,12 +68,25 @@ function Account() {
 
                       <div className="row pt-1">
                         <div className="col-6 mb-3">
-                          <h6>Città</h6>
-                          <p className="text-muted">fgsedfgs</p>
+                          <label>Email</label>
+                          <p className="text-muted fw-bold">{user.email}</p>
                         </div>
                         <div className="col-6 mb-3">
-                          <h6>Indirizzo</h6>
-                          <p className="text-muted">fgsdfgs</p>
+                          <label>Telefono</label>
+                          <p className="text-muted fw-bold">{user.telephone}</p>
+                        </div>
+                      </div>
+
+                      <hr className="mt-0 mb-4" />
+
+                      <div className="row pt-1">
+                        <div className="col-6 mb-3">
+                          <label>Città</label>
+                          <p className="text-muted fw-bold">{user.city}</p>
+                        </div>
+                        <div className="col-6 mb-3">
+                          <label>Indirizzo</label>
+                          <p className="text-muted fw-bold">{user.address}</p>
                         </div>
                       </div>
                     </div>

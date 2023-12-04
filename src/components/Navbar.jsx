@@ -37,18 +37,14 @@ function Navbar() {
         <div className="container-fluid px-lg-0 py-3 py-lg-0 mb-4 nav-container">
           <div className="row my-row-sm">
             <div className="col-4 d-flex justify-content-start align-items-center">
-              <Link to="/">
-                <a className="navbar-brand d-block d-lg-none p-0 ">
-                  <h1 className="text-dark fw-bold letter-spacing">JPlay</h1>
-                </a>
+              <Link to="/" className="navbar-brand d-block d-lg-none p-0 ">
+                <h1 className="text-dark fw-bold letter-spacing">JPlay</h1>
               </Link>
             </div>
 
             <div className="col-2 d-flex justify-content-end align-items-center ">
-              <Link to="/">
-                <a className="navbar-brand d-block d-lg-none p-0 me-5" href="#">
-                  <img src="/assets/img/logo/logo1.png" height="33" />
-                </a>
+              <Link to="/" className="navbar-brand d-block d-lg-none p-0 me-5">
+                <img src="/assets/img/logo/logo1.png" height="33" />
               </Link>
             </div>
 
@@ -110,13 +106,11 @@ function Navbar() {
             <div className="col-4">
               <ul className="navbar-nav  d-flex justify-content-center my-2 ">
                 <li className="nav-item">
-                  <Link to="/">
-                    <a
-                      className="nav-link mx-5 active effect-underline "
-                      aria-current="page"
-                    >
-                      Home
-                    </a>
+                  <Link
+                    to="/"
+                    className="nav-link mx-5 active effect-underline "
+                  >
+                    Home
                   </Link>
                 </li>
 
@@ -129,10 +123,8 @@ function Navbar() {
                   </a>
                 </li>
                 <li className="nav-item d-none d-lg-block">
-                  <Link to="/">
-                    <a className="nav-link p-0 logo">
-                      <img src="/assets/img/logo/logo1.png" width="70" />
-                    </a>
+                  <Link to="/" className="nav-link p-0 logo">
+                    <img src="/assets/img/logo/logo1.png" width="70" />
                   </Link>
                 </li>
                 <li className="nav-item dropdown">
@@ -180,21 +172,7 @@ function Navbar() {
 
             <div className="col-4 col-lg-4 my-lg-0 my-3">
               <div className="container-fluid d-flex justify-content-center align-items-center ms-5">
-                {session ? (
-                  <div
-                    onClick={handleLogout}
-                    className="col-6 d-flex justify-content-end align-items-center px-3 py-2"
-                  >
-                    <button className="btn btn-dark">
-                      <CgLogOut
-                        style={{
-                          marginRight: "5px",
-                        }}
-                      />
-                      Logout
-                    </button>
-                  </div>
-                ) : (
+                {!session ? (
                   <div className="row">
                     <div className="col-2 d-none d-lg-block"></div>
                     <div className="col-4 d-none d-lg-block d-flex justify-content-center align-items-center">
@@ -221,6 +199,20 @@ function Navbar() {
                         </button>
                       </Link>
                     </div>
+                  </div>
+                ) : (
+                  <div
+                    onClick={handleLogout}
+                    className="col-6 d-flex justify-content-end align-items-center px-3 py-2"
+                  >
+                    <button className="btn btn-dark">
+                      <CgLogOut
+                        style={{
+                          marginRight: "5px",
+                        }}
+                      />
+                      Logout
+                    </button>
                   </div>
                 )}
               </div>

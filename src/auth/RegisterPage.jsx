@@ -1,6 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import useAuth from "../hooks/useAuth";
+// import { Formik, Form, Field } from 'formik';
+// import * as Yup from 'yup';
 
 function RegisterPage() {
   const { signUp } = useAuth();
@@ -9,10 +11,9 @@ function RegisterPage() {
 
   const handleRegister = async (event) => {
     event.preventDefault();
-    const { username, email, password } = Object.fromEntries(
-      new FormData(event.currentTarget)
-    );
-  
+    const { username, email, password} =
+      Object.fromEntries(new FormData(event.currentTarget));
+
     try {
       const { error } = await signUp({
         email,
@@ -23,13 +24,13 @@ function RegisterPage() {
           },
         },
       });
-  
-      const errorEmail = 'Unable to validate email address: invalid format';
-      const errorPassword = 'Signup requires a valid password';
-  
+
+      const errorEmail = "Unable to validate email address: invalid format";
+      const errorPassword = "Signup requires a valid password";
+
       const errorMessageMail = "Email errata, riprova";
       const errorMessagePassword = "Dati incompleti o errati, riprova";
-  
+
       if (error?.message === errorEmail) {
         setError(errorMessageMail);
       } else if (error?.message === errorPassword) {
@@ -37,11 +38,11 @@ function RegisterPage() {
       } else {
         setError("Errore durante la registrazione, riprova");
       }
-      
+
       if (error?.status === 422) {
         navigate("/register");
       } else {
-        navigate("/account");
+        navigate("/setting");
       }
     } catch (error) {
       setError("Errore durante la registrazione, riprova");
@@ -57,8 +58,14 @@ function RegisterPage() {
           <div className="form-container my-3 shadow-sm">
             <form onSubmit={handleRegister} className="form ">
               <h1 className="text-dark fw-bold">Registrati</h1>
-              <h3 className="text-dark fw-bold h6 mb-4">Oppure <Link to="/login" className="text-danger">Accedi</Link> se hai già un account.</h3>
-              {error && 
+              <h3 className="text-dark fw-bold h6 mb-2">
+                Oppure{" "}
+                <Link to="/login" className="text-danger">
+                  Accedi
+                </Link>{" "}
+                se hai già un account.
+              </h3>
+              {error && (
                 <div
                   class="alert alert-danger d-flex align-items-center"
                   role="alert"
@@ -66,26 +73,47 @@ function RegisterPage() {
                   <i className="col-0 fa-solid fa-lg fa-triangle-exclamation mx-2 justify-content-start"></i>
                   <div className="col-4 text-nowrap">{error}</div>
                   <div className="col-7 d-flex justify-content-end">
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="alert"
+                      aria-label="Close"
+                    ></button>
                   </div>
                 </div>
-              }
+              )}
+
               <div className="form-group">
-                <label htmlFor="email">Inserisci Username</label>
-                <input name="username" id="username" type="text" placeholder="jodydev" required />
+                <label htmlFor="username">Username</label>
+                <input
+                  name="username"
+                  id="username"
+                  type="text"
+                  placeholder="jody.dev"
+                  required
+                />
               </div>
               <div className="form-group">
-                <label htmlFor="email">Inserisci Email</label>
-                <input name="email" id="email" type="text" placeholder="jodyossino.dev@gmail.com" required />
+                <label htmlFor="email">Email</label>
+                <input
+                  name="email"
+                  id="email"
+                  type="text"
+                  placeholder="jodyossino.dev@gmail.com"
+                  required
+                />
               </div>
               <div className="form-group">
-                <label htmlFor="password">Inserisci Password</label>
-                <input name="password" id="password" type="text" placeholder="********" required/>
+                <label htmlFor="password">Password</label>
+                <input
+                  name="password"
+                  id="password"
+                  type="text"
+                  placeholder="********"
+                  required
+                />
               </div>
-              <div className="col-6">
-                
-              </div>
+
               <button type="submit" className="form-submit-btn">
                 Registrati
               </button>
@@ -98,3 +126,49 @@ function RegisterPage() {
 }
 
 export default RegisterPage;
+
+// const SignupSchema = Yup.object().shape({
+//   firstName: Yup.string()
+//     .min(2, 'Too Short!')
+//     .max(50, 'Too Long!')
+//     .required('Required'),
+//   lastName: Yup.string()
+//     .min(2, 'Too Short!')
+//     .max(50, 'Too Long!')
+//     .required('Required'),
+//   email: Yup.string().email('Invalid email').required('Required'),
+// });
+
+// export const ValidationSchemaExample = () => (
+//   <div>
+//     <h1>Signup</h1>
+//     <Formik
+//       initialValues={{
+//         firstName: '',
+//         lastName: '',
+//         email: '',
+//       }}
+//       validationSchema={SignupSchema}
+//       onSubmit={values => {
+//         // same shape as initial values
+//         console.log(values);
+//       }}
+//     >
+//       {({ errors, touched }) => (
+//         <Form>
+//           <Field name="firstName" />
+//           {errors.firstName && touched.firstName ? (
+//             <div>{errors.firstName}</div>
+//           ) : null}
+//           <Field name="lastName" />
+//           {errors.lastName && touched.lastName ? (
+//             <div>{errors.lastName}</div>
+//           ) : null}
+//           <Field name="email" type="email" />
+//           {errors.email && touched.email ? <div>{errors.email}</div> : null}
+//           <button type="submit">Submit</button>
+//         </Form>
+//       )}
+//     </Formik>
+//   </div>
+// );
