@@ -842,7 +842,6 @@ label {
   background-size: cover;
   width: 220px !important;
   height: 220px !important;
-
 }
 
 .col-black {
@@ -855,9 +854,8 @@ label {
 }
 
 .avatar {
-
-  width: 130px;
-  height: 130px;
+  width: 100px;
+  height: 100px;
 }
 
 .buttons-container {
@@ -900,4 +898,15 @@ label {
 .google-icon {
   font-size: 18px;
   margin-bottom: 1px;
+}
+
+.add-photo {
+  background-image: url(../public/assets/add-photo-icon-19.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100px;
+}
+
+.text-danger {
+  color: #ec0403 !important;
 }

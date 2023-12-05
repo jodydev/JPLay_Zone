@@ -1,15 +1,13 @@
 import Avatar from "../components/Avatar";
 import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import AppContext from "../contexts/AppContext";
 
 function Account() {
   const location = useLocation();
-  const user = location.state?.updatedProfile || {}; // Ottieni i dati aggiornati dalla navigazione
-  const [userAvatar, setUserAvatar] = useState(null);
-
-console.log(userAvatar);
-
-
+  const updateUser = location.state?.updatedProfile || {};
+  const [userAvatar, setUserAvatar] = useState(updateUser.avatar_url);
+  const { session } = useContext(AppContext);
 
   return (
     <>
@@ -20,18 +18,25 @@ console.log(userAvatar);
               <div className="card mb- w-100 rounded-4 shadow-lg">
                 <div className="row g-0">
                   <div className="col-md-4 text-center text-white col-black">
+                    {userAvatar == undefined ? (
+                      <Avatar url={userAvatar} />
+                      
+                    ) : (
+                      <div className="add-photo circle"></div>
+                    )}
 
-                    <Avatar url={userAvatar} />
-
-                    <div className="text-description mt-3">
-                      <h2 class="fs-3">Benvenuto,</h2>
-                      <h3 class="fs-4 fw-bold">{user.username}</h3>
+                    <div className="text-description">
+                      <h2 class="fs-2">Bentornato,</h2>
+                      <h3 class="fs-4 fw-bold text-danger">
+                        {updateUser.username ||
+                          session.user.user_metadata.username}
+                      </h3>
                     </div>
 
                     <Link to="/setting">
                       <button
                         id="button-edit"
-                        className="my-3 text-light btn-danger btn"
+                        className="my-5 mb-5 text-light btn-danger btn"
                       >
                         Modifica i tuoi dati{" "}
                         <i className="far fa-edit fa-lg"></i>
@@ -51,12 +56,14 @@ console.log(userAvatar);
                           <label>Nome</label>
 
                           <p className="text-muted fw-bold">
-                            {user.first_name}
+                            {updateUser.first_name}
                           </p>
                         </div>
                         <div className="col-6 mb-3">
                           <label>Cognome</label>
-                          <p className="text-muted fw-bold">{user.last_name}</p>
+                          <p className="text-muted fw-bold">
+                            {updateUser.last_name}
+                          </p>
                         </div>
                       </div>
 
@@ -65,11 +72,15 @@ console.log(userAvatar);
                       <div className="row pt-1">
                         <div className="col-6 mb-3">
                           <label>Email</label>
-                          <p className="text-muted fw-bold">{user.email}</p>
+                          <p className="text-muted fw-bold">
+                            {session.user.email}
+                          </p>
                         </div>
                         <div className="col-6 mb-3">
                           <label>Telefono</label>
-                          <p className="text-muted fw-bold">{user.telephone}</p>
+                          <p className="text-muted fw-bold">
+                            {updateUser.telephone}
+                          </p>
                         </div>
                       </div>
 
@@ -78,11 +89,15 @@ console.log(userAvatar);
                       <div className="row pt-1">
                         <div className="col-6 mb-3">
                           <label>Città</label>
-                          <p className="text-muted fw-bold">{user.city}</p>
+                          <p className="text-muted fw-bold">
+                            {updateUser.city}
+                          </p>
                         </div>
                         <div className="col-6 mb-3">
                           <label>Indirizzo</label>
-                          <p className="text-muted fw-bold">{user.address}</p>
+                          <p className="text-muted fw-bold">
+                            {updateUser.address}
+                          </p>
                         </div>
                       </div>
                     </div>

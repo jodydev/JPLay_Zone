@@ -5,6 +5,7 @@ import AppContext from "../contexts/AppContext";
 import Avatar from "../components/Avatar";
 
 export default function Settings() {
+
   const navigate = useNavigate();
   const { session } = useContext(AppContext);
   const [loading, setLoading] = useState(true);
@@ -12,11 +13,11 @@ export default function Settings() {
   const [first_name, setfirstName] = useState(null);
   const [last_name, setLastName] = useState(null);
   const [avatar_url, setAvatarUrl] = useState(null);
+  const [uploading, setUploading] = useState(false);
   const [telephone, setTelephone] = useState(null);
   const [city, setCity] = useState(null);
   const [address, setAddress] = useState(null);
   const [error, setError] = useState(null);
-  const [uploading, setUploading] = useState(false);
 
   useEffect(() => {
     let ignore = false;
@@ -88,7 +89,22 @@ export default function Settings() {
     }
   }
 
-  // funzione che controlla il path dell'immagine da inserire...
+  // funzione che carica l'immagine nello storage...
+  async function downloadImage(path) {
+    try {
+      const { data, error } = await supabase.storage
+        .from("avatars")
+        .download(path);
+      if (error) {
+        throw error;
+      }
+      const url = URL.createObjectURL(data);
+      setAvatarUrl(url);
+    } catch (error) {
+      console.log("Error downloading image: ", error.message);
+    }
+  }
+
   async function uploadAvatar(event) {
     try {
       setUploading(true);
@@ -102,15 +118,16 @@ export default function Settings() {
       const fileName = `${Math.random()}.${fileExt}`;
       const filePath = `${fileName}`;
 
-      const { error: uploadError } = await supabase.storage
+      const { data, error } = await supabase.storage
         .from("avatars")
-        .upload(filePath, file);
+        .upload(filePath, file); // Carica il file su Supabase
 
-      if (uploadError) {
-        throw uploadError;
+      if (error) {
+        throw error;
       }
 
-      onUpload(event, filePath);
+      const url = URL.createObjectURL(file);
+      setAvatarUrl(url);
     } catch (error) {
       alert(error.message);
     } finally {
@@ -118,10 +135,7 @@ export default function Settings() {
     }
   }
 
-  // Funzione per ricevere l'avatar URL dal componente Avatar
-  // const handleAvatarChange = (avatarUrl) => {
-  //   setUserAvatar(avatarUrl);
-  // };
+
 
   return (
     <div className="container-fluid p-0 p-lg-3">
@@ -129,7 +143,7 @@ export default function Settings() {
         <div className="col-12 d-flex justify-content-center align-items-center">
           <div className="form-container shadow-sm">
             <form className="form" onSubmit={updateProfile}>
-              <div className="row">
+              <div className="row d-flex justify-content-center align-items-center px-3">
                 <div className="col-12 col-lg-6">
                   <div>
                     <h1 className="text-dark fw-bold">Ancora un attimo..</h1>
@@ -138,28 +152,33 @@ export default function Settings() {
                     </h5>
                   </div>
                 </div>
-                <div className="col-12 col-lg-6">
-                  <div className="col-5 col-lg-6 d-flex justify-content-center align-items-center flex-column">
-                    <p className="text-dark fw-bold h5">
-                      Aggiungi il tuo avatar
-                    </p>
-                    <input
-                      type="file"
-                      id="single"
-                      accept="image/*"
-                      onClick={uploadAvatar}
-                      disabled={uploading}
-                      style={{ margin: "0 auto" }}
-                    />
-                  </div>
 
-                  <Avatar
-                    url={avatar_url}
-                    size={150}
-                    onUpload={(event, url) => {
-                      updateProfile(event, url);
-                    }}
+                <div className="col-5 col-lg-3  flex-column">
+                  <p className="text-dark fw-bold h5">
+                    Aggiungi il tuo <br /> avatar
+                  </p>
+                  <input
+                    type="file"
+                    id="single"
+                    accept="image/*"
+                    onChange={uploadAvatar}
+                    disabled={uploading}
+                    style={{ margin: "0 auto" }}
                   />
+                </div>
+
+                <div className="col-12 col-lg-2">
+                  {avatar_url ? (
+                    <Avatar
+                      url={avatar_url}
+                      size={100}
+                      onUpload={(event, url) => {
+                        updateProfile(event, url);
+                      }}
+                    />
+                  ) : (
+                    <div className="add-photo circle"></div>
+                  )}
                 </div>
               </div>
 
