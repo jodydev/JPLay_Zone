@@ -3,8 +3,6 @@ import { useGameContext } from '../../contexts/GameContext';
 
 function Ps5Products() {
   const { gamePs5 } = useGameContext();
-
-  console.log(gamePs5);
   
   return (
     <div id="ps5" className="container-fluid py-0 py-lg-3 ">
@@ -52,7 +50,7 @@ function Ps5Products() {
 
               <span className="text-end text-decoration-underline pe-5 fs-6 d-none d-lg-block">
                 <a href="#" className="my-span">
-                  <i class="fa-solid fa-share"></i> Scopri altro
+                  <i className="fa-solid fa-share"></i> Scopri altro
                 </a>
               </span>
             </div>

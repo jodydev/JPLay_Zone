@@ -1,5 +1,4 @@
-import useProfile from "../hooks/useProfile";
-import  Avatar  from "../components/Avatar";
+import Avatar from "../components/Avatar";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 
@@ -7,10 +6,9 @@ function Account() {
   const location = useLocation();
   const user = location.state?.updatedProfile || {}; // Ottieni i dati aggiornati dalla navigazione
   const [userAvatar, setUserAvatar] = useState(null);
-   // Funzione per ricevere l'avatar URL dal componente Avatar
-   const handleAvatarChange = (avatarUrl) => {
-    setUserAvatar(avatarUrl);
-  };
+
+console.log(userAvatar);
+
 
 
   return (
@@ -22,10 +20,8 @@ function Account() {
               <div className="card mb- w-100 rounded-4 shadow-lg">
                 <div className="row g-0">
                   <div className="col-md-4 text-center text-white col-black">
-                    <div className="avatar-container">
-                     
-                     <img src={userAvatar} sizes='150' alt="" srcset="" />
-                    </div>
+
+                    <Avatar url={userAvatar} />
 
                     <div className="text-description mt-3">
                       <h2 class="fs-3">Benvenuto,</h2>

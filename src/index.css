@@ -763,7 +763,7 @@ html {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 30px 50px;
+  padding: 10px 60px;
 }
 
 .form-container .form-group {
@@ -838,10 +838,11 @@ label {
 }
 
 .circle {
-  border-radius: 50%;
-  width: 130px;
-  height: 130px;
-  background-color: red;
+  background-image: url(https://static.vecteezy.com/system/resources/previews/021/662/434/original/red-circle-free-png.png);
+  background-size: cover;
+  width: 220px !important;
+  height: 220px !important;
+
 }
 
 .col-black {
@@ -853,9 +854,10 @@ label {
   align-items: center;
 }
 
-.avatar-img {
-  width: 100%;
-  max-width: 100px;
+.avatar {
+
+  width: 130px;
+  height: 130px;
 }
 
 .buttons-container {

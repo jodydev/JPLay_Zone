@@ -25,7 +25,7 @@ const GameSearch = ({ games }) => {
             Cerca il tuo gioco preferito
           </h1>
           <input
-            class="input"
+            className="input"
             name="text"
             type="text"
             placeholder="Inserisci un titolo.."
@@ -82,14 +82,14 @@ const GameSearch = ({ games }) => {
                             {game.disponibility ? (
                               <span>
                                 <i
-                                  class="fa-solid fa-circle-check"
+                                  className="fa-solid fa-circle-check"
                                   style={{ color: "green" }}
                                 ></i>
                               </span>
                             ) : (
                               <span>
                                 <i
-                                  class="fa-solid fa-circle-xmark"
+                                  className="fa-solid fa-circle-xmark"
                                   style={{ color: "red" }}
                                 ></i>
                               </span>

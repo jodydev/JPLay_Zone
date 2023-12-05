@@ -5,8 +5,6 @@ function NintendoSwitch() {
 
   const { gameNintendo } = useGameContext();
 
-  console.log(gameNintendo);
-  
   return (
     <div className="container-fluid">
       <div className="row">
@@ -27,7 +25,7 @@ function NintendoSwitch() {
             <div className="col-5 offset-6">
               <span className="d-flex justify-content-end text-decoration-underline fs-6 ">
                 <a href="#" className="my-span">
-                  <i class="fa-solid fa-share"></i> Scopri altro
+                  <i className="fa-solid fa-share"></i> Scopri altro
                 </a>
               </span>
             </div>

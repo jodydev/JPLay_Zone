@@ -17,11 +17,11 @@ function LoginPage() {
     const signInResult = await signIn(email, password);
 
     if (signInResult.error) {
-      let errorMessage = "I dati inseriti non sono corretti, riprova.";
+      const errorMessage = "I dati inseriti non sono corretti, riprova.";
       setError(signInResult.error.error_description || errorMessage);
     } else {
-      setError(null);
-      navigate("/setting");
+      // setError(null);
+      navigate("/account");
     }
   };
 
@@ -52,7 +52,7 @@ function LoginPage() {
 
               {error && (
                 <div
-                  class="alert alert-danger d-flex align-items-center"
+                  className="alert alert-danger d-flex align-items-center"
                   role="alert"
                 >
                   <i className="fa-solid fa-lg fa-triangle-exclamation mx-2"></i>
@@ -91,13 +91,13 @@ function LoginPage() {
                 <hr style={{ color: "black" }} />
               </div>
 
-              <div class="buttons-container">
-                <div class="apple-login-button">
+              <div className="buttons-container">
+                <div className="apple-login-button">
                   <svg
                     stroke="currentColor"
                     fill="currentColor"
-                    stroke-width="0"
-                    class="apple-icon"
+                    strokeWidth="0"
+                    className="apple-icon"
                     viewBox="0 0 1024 1024"
                     height="1em"
                     width="1em"
@@ -107,15 +107,15 @@ function LoginPage() {
                   </svg>
                   <span>Log in with Apple</span>
                 </div>
-                <div class="google-login-button">
+                <div className="google-login-button">
                   <svg
                     stroke="currentColor"
                     fill="currentColor"
-                    stroke-width="0"
+                    strokeWidth="0"
                     version="1.1"
                     x="0px"
                     y="0px"
-                    class="google-icon"
+                    className="google-icon"
                     viewBox="0 0 48 48"
                     height="1em"
                     width="1em"

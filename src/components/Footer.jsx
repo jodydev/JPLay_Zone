@@ -14,22 +14,22 @@ function Footer() {
             href="linkedin.com/in/jody-ossino2001/"
             className="me-4 text-reset"
           >
-            <i class="fa-brands fa-lg fa-linkedin"></i>
+            <i className="fa-brands fa-lg fa-linkedin"></i>
           </a>
           <a href="https://github.com/jodydev" className="me-4 text-reset">
-            <i class="fa-brands fa-lg fa-square-github"></i>
+            <i className="fa-brands fa-lg fa-square-github"></i>
           </a>
           <a
             href="https://www.facebook.com/jody.ossino"
             className="me-4 text-reset"
           >
-            <i class="fa-brands fa-lg fa-facebook"></i>
+            <i className="fa-brands fa-lg fa-facebook"></i>
           </a>
           <a
             href="https://www.instagram.com/jody.ossino/"
             className="me-4 text-reset"
           >
-            <i class="fa-brands fa-lg fa-instagram"></i>
+            <i className="fa-brands fa-lg fa-instagram"></i>
           </a>
         </div>
       </section>
@@ -93,21 +93,21 @@ function Footer() {
               </h5>
               <p className="text-dark">
                 <i
-                  class="fa-solid fa-house me-3"
+                  className="fa-solid fa-house me-3"
                   style={{ color: "#000000" }}
                 ></i>
                 Bologna BO
               </p>
               <p className="text-dark">
                 <i
-                  class="fa-regular fa-envelope me-3"
+                  className="fa-regular fa-envelope me-3"
                   style={{ color: "#000000" }}
                 ></i>
                 jodyossino.dev@gmail.com
               </p>
               <p className="text-dark">
                 <i
-                  class="fa-solid fa-phone me-3"
+                  className="fa-solid fa-phone me-3"
                   style={{ color: "#000000" }}
                 ></i>
                 +39 333-6170035

@@ -67,7 +67,7 @@ function RegisterPage() {
               </h3>
               {error && (
                 <div
-                  class="alert alert-danger d-flex align-items-center"
+                  className="alert alert-danger d-flex align-items-center"
                   role="alert"
                 >
                   <i className="col-0 fa-solid fa-lg fa-triangle-exclamation mx-2 justify-content-start"></i>
@@ -89,7 +89,7 @@ function RegisterPage() {
                   name="username"
                   id="username"
                   type="text"
-                  placeholder="jody.dev"
+                  placeholder="Jody"
                   required
                 />
               </div>

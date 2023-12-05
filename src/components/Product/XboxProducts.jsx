@@ -5,8 +5,6 @@ function XboxProducts() {
 
   const { gameXbox } = useGameContext();
 
-  console.log(gameXbox);
-
   return (
     <div id="xbox" className="container-fluid py-0 py-lg-5 ">
       <div className="row p-0 m-0">
@@ -53,7 +51,7 @@ function XboxProducts() {
 
               <span className="text-end text-decoration-underline pe-5 fs-6 d-none d-lg-block">
                 <a href="#" className="my-span">
-                  <i class="fa-solid fa-share"></i> Scopri altro
+                  <i className="fa-solid fa-share"></i> Scopri altro
                 </a>
               </span>
             </div>

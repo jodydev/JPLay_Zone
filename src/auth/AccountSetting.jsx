@@ -16,6 +16,7 @@ export default function Settings() {
   const [city, setCity] = useState(null);
   const [address, setAddress] = useState(null);
   const [error, setError] = useState(null);
+  const [uploading, setUploading] = useState(false);
 
   useEffect(() => {
     let ignore = false;
@@ -87,6 +88,41 @@ export default function Settings() {
     }
   }
 
+  // funzione che controlla il path dell'immagine da inserire...
+  async function uploadAvatar(event) {
+    try {
+      setUploading(true);
+
+      if (!event.target.files || event.target.files.length === 0) {
+        throw new Error("You must select an image to upload.");
+      }
+
+      const file = event.target.files[0];
+      const fileExt = file.name.split(".").pop();
+      const fileName = `${Math.random()}.${fileExt}`;
+      const filePath = `${fileName}`;
+
+      const { error: uploadError } = await supabase.storage
+        .from("avatars")
+        .upload(filePath, file);
+
+      if (uploadError) {
+        throw uploadError;
+      }
+
+      onUpload(event, filePath);
+    } catch (error) {
+      alert(error.message);
+    } finally {
+      setUploading(false);
+    }
+  }
+
+  // Funzione per ricevere l'avatar URL dal componente Avatar
+  // const handleAvatarChange = (avatarUrl) => {
+  //   setUserAvatar(avatarUrl);
+  // };
+
   return (
     <div className="container-fluid p-0 p-lg-3">
       <div className="row">
@@ -103,8 +139,19 @@ export default function Settings() {
                   </div>
                 </div>
                 <div className="col-12 col-lg-6">
-
-                  {/* errore qui */}
+                  <div className="col-5 col-lg-6 d-flex justify-content-center align-items-center flex-column">
+                    <p className="text-dark fw-bold h5">
+                      Aggiungi il tuo avatar
+                    </p>
+                    <input
+                      type="file"
+                      id="single"
+                      accept="image/*"
+                      onClick={uploadAvatar}
+                      disabled={uploading}
+                      style={{ margin: "0 auto" }}
+                    />
+                  </div>
 
                   <Avatar
                     url={avatar_url}
@@ -212,8 +259,6 @@ export default function Settings() {
                     </div>
                   </div>
                 </div>
-
-               
 
                 <button type="submit" className="form-submit-btn my-3">
                   Aggiorna

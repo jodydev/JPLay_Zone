@@ -1,53 +1,46 @@
-import { createContext, useState, useContext, useEffect } from 'react';
+import { createContext, useState, useContext, useEffect } from "react";
 
 const GameContext = createContext();
 
 export const GameProvider = ({ children }) => {
-    const [gameData, setGameData] = useState([]);
+  const [gameData, setGameData] = useState([]);
 
-    const [gamePs5, setGamePs5] = useState([]);
-    const [gameXbox, setGameXbox] = useState([]);
-    const [gameNintendo, setGameNintendo] = useState([]);
+  const [gamePs5, setGamePs5] = useState([]);
+  const [gameXbox, setGameXbox] = useState([]);
+  const [gameNintendo, setGameNintendo] = useState([]);
 
-    useEffect(() => {
-
-        const fetchData = async () => {
-          try {
-            const response = await fetch('http://localhost:5000/games');
-            if (!response.ok) {
-              throw new Error('Network response was not ok.');
-            }
-            const data = await response.json();
-            setGameData(data); // Imposta i dati ottenuti nello stato
-          } catch (error) {
-            console.error('Error fetching data:', error);
-          }
-        };
-    
-        fetchData();
-      }, []);
-  
-    useEffect(() => {
-      if (Array.isArray(gameData)) {
-        const ps5Games = gameData.filter((game) => game.platform === 'PS5');
-        const xboxGames = gameData.filter((game) => game.platform === 'Xbox One');
-        const nintendoGames = gameData.filter((game) => game.platform === 'Nintendo Switch');
-
-        console.log(ps5Games);
-  
-        setGamePs5(ps5Games);
-        setGameXbox(xboxGames);
-        setGameNintendo(nintendoGames);
-
-
-        console.log(gamePs5);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/games");
+        if (!response.ok) {
+          throw new Error("Network response was not ok.");
+        }
+        const data = await response.json();
+        setGameData(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
       }
-    }, [gameData]);
+    };
 
+    fetchData();
+  }, []);
 
+  useEffect(() => {
+    if (Array.isArray(gameData)) {
+      const ps5Games = gameData.filter((game) => game.platform === "PS5");
+      const xboxGames = gameData.filter((game) => game.platform === "Xbox One");
+      const nintendoGames = gameData.filter((game) => game.platform === "Nintendo Switch");
+
+      setGamePs5(ps5Games);
+      setGameXbox(xboxGames);
+      setGameNintendo(nintendoGames);
+
+    }
+  }, [gameData]);
 
   return (
-    <GameContext.Provider value={{  gameData, setGameData, gamePs5, gameXbox, gameNintendo }}>
+    <GameContext.Provider value={{ gameData, setGameData, gamePs5, gameXbox, gameNintendo }}>
       {children}
     </GameContext.Provider>
   );

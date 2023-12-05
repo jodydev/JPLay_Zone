@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 function CardGame({ gamePs5, gameXbox, gameNintendo }) {
   const games = gamePs5 || gameXbox || gameNintendo || [];
 
-  console.log(games);
-
   const getCardClass = (platform) => {
     if (platform === "PS5") {
       return "blue-border";

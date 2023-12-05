@@ -39,7 +39,7 @@ function PaymentForm() {
                 <div className="col-lg-5 p-1">
                   <p className="text-nowrap">
                     <i
-                      class="fa-solid fa-circle-check"
+                      className="fa-solid fa-circle-check"
                       style={{ color: "green" }}
                     ></i>{" "}
                     Consegna a domicilio
@@ -48,7 +48,7 @@ function PaymentForm() {
                 <div className="col-lg-4 p-1">
                   <p>
                     <i
-                      class="fa-solid fa-circle-check"
+                      className="fa-solid fa-circle-check"
                       style={{ color: "green" }}
                     ></i>{" "}
                     Reso gratuito
@@ -57,7 +57,7 @@ function PaymentForm() {
                 <div className="col-lg-3 p-1">
                   <p>
                     <i
-                      class="fa-solid fa-circle-check"
+                      className="fa-solid fa-circle-check"
                       style={{ color: "green" }}
                     ></i>{" "}
                     Sconto 10%
@@ -107,7 +107,7 @@ function PaymentForm() {
                         className="btn btn-danger rounded-4 w-100 p-2"
                       >
                         <i
-                          class="fa-solid fa-cart-shopping mx-3"
+                          className="fa-solid fa-cart-shopping mx-3"
                           style={{ color: "red" }}
                         ></i>
                         Aggiungi al carrello
@@ -142,7 +142,7 @@ function PaymentForm() {
                           {" "}
                           Disponibile
                           <i
-                            class="fa-solid fa-circle-check ms-1"
+                            className="fa-solid fa-circle-check ms-1"
                             style={{ color: "green" }}
                           ></i>
                         </span>
@@ -151,7 +151,7 @@ function PaymentForm() {
                           {" "}
                           Non disponibile
                           <i
-                            class="fa-solid fa-circle-xmark ms-1"
+                            className="fa-solid fa-circle-xmark ms-1"
                             style={{ color: "red" }}
                           ></i>
                         </span>
