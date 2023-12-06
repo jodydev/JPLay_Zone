@@ -1,29 +1,19 @@
-import { useLocation } from "react-router-dom";
-
 function Avatar({ url, size, avatar_url }) {
-
-const location = useLocation();
-const { updatedProfile, avatarUrl } = location.state || {};
-
-console.log(avatarUrl);
-
+  console.log(url);
+  console.log(avatar_url);
 
   return (
     <>
-   
-        <img
-          src={
-            avatarUrl || avatar_url
-          } /* Utilizza 'url' se è definito, altrimenti 'avatarUrl' */
-          alt="Avatar"
-          className="avatar"
-          style={{
-            height: size,
-            width: size,
-            borderRadius: '50%'
-          }}
-        />
-      
+      <img
+        src={url}
+        alt="Avatar"
+        className="avatar"
+        style={{
+          height: size,
+          width: size,
+          borderRadius: "50%",
+        }}
+      />
     </>
   );
 }

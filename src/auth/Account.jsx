@@ -1,13 +1,16 @@
-import Avatar from "../components/Avatar";
 import { Link, useLocation } from "react-router-dom";
-import { useState, useContext } from "react";
-import AppContext from "../contexts/AppContext";
+import Avatar from "../components/Avatar";
+import useProfile from "../hooks/useProfile";
 
 function Account() {
   const location = useLocation();
   const updateUser = location.state?.updatedProfile || {};
-  const [userAvatar, setUserAvatar] = useState(updateUser.avatar_url);
-  const { session } = useContext(AppContext);
+
+  const { profile } = useProfile();
+
+  console.log(updateUser);
+
+  console.log(profile);
 
   return (
     <>
@@ -18,18 +21,12 @@ function Account() {
               <div className="card mb- w-100 rounded-4 shadow-lg">
                 <div className="row g-0">
                   <div className="col-md-4 text-center text-white col-black">
-                    {userAvatar == undefined ? (
-                      <Avatar url={userAvatar} />
-                      
-                    ) : (
-                      <div className="add-photo circle"></div>
-                    )}
+                    <Avatar url={updateUser.avatar_url || profile.avatar_url} />
 
                     <div className="text-description">
                       <h2 class="fs-2">Bentornato,</h2>
                       <h3 class="fs-4 fw-bold text-danger">
-                        {updateUser.username ||
-                          session.user.user_metadata.username}
+                        {updateUser.username || profile.username}
                       </h3>
                     </div>
 
@@ -56,13 +53,13 @@ function Account() {
                           <label>Nome</label>
 
                           <p className="text-muted fw-bold">
-                            {updateUser.first_name}
+                            {updateUser.first_name || profile.first_name}
                           </p>
                         </div>
                         <div className="col-6 mb-3">
                           <label>Cognome</label>
                           <p className="text-muted fw-bold">
-                            {updateUser.last_name}
+                            {updateUser.last_name || profile.last_name}
                           </p>
                         </div>
                       </div>
@@ -72,14 +69,12 @@ function Account() {
                       <div className="row pt-1">
                         <div className="col-6 mb-3">
                           <label>Email</label>
-                          <p className="text-muted fw-bold">
-                            {session.user.email}
-                          </p>
+                          <p className="text-muted fw-bold">{profile.email}</p>
                         </div>
                         <div className="col-6 mb-3">
                           <label>Telefono</label>
                           <p className="text-muted fw-bold">
-                            {updateUser.telephone}
+                            {updateUser.telephone || profile.telephone}
                           </p>
                         </div>
                       </div>
@@ -90,13 +85,13 @@ function Account() {
                         <div className="col-6 mb-3">
                           <label>Città</label>
                           <p className="text-muted fw-bold">
-                            {updateUser.city}
+                            {updateUser.city || profile.city}
                           </p>
                         </div>
                         <div className="col-6 mb-3">
                           <label>Indirizzo</label>
                           <p className="text-muted fw-bold">
-                            {updateUser.address}
+                            {updateUser.address || profile.address}
                           </p>
                         </div>
                       </div>
