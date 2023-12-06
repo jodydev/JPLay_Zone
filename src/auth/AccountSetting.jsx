@@ -141,9 +141,9 @@ export default function Settings() {
     <div className="container-fluid p-0 p-lg-3">
       <div className="row">
         <div className="col-12 d-flex justify-content-center align-items-center">
-          <div className="form-container shadow-sm">
+          <div className="form-container shadow-sm px-3">
             <form className="form" onSubmit={updateProfile}>
-              <div className="row d-flex justify-content-center align-items-center px-3">
+              <div className="row d-flex justify-content-center align-items-center">
                 <div className="col-12 col-lg-6">
                   <div>
                     <h1 className="text-dark fw-bold">Ancora un attimo..</h1>
@@ -192,7 +192,7 @@ export default function Settings() {
                 </div>
               )}
 
-              <div className="container">
+              <div className="container px-3">
                 <div className="row">
                   <div className="col-6">
                     <div className="form-group my-2">

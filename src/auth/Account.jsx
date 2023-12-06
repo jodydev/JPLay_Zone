@@ -1,98 +1,142 @@
+import { useState, useEffect, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Avatar from "../components/Avatar";
-import useProfile from "../hooks/useProfile";
+import getProfileImg from "../utils/getProfileImg";
+import AppContext from "../contexts/AppContext";
+import supabase from "../supabase/client";
 
 function Account() {
   const location = useLocation();
   const updateUser = location.state?.updatedProfile || {};
-
-  const { profile } = useProfile();
-
+  
   console.log(updateUser);
 
-  console.log(profile);
+  const { session } = useContext(AppContext);
+  const [profile, setProfile] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let ignore = false;
+    async function getProfile() {
+      setLoading(true);
+      const { user } = session;
+
+      const { data, error } = await supabase
+        .from("profiles")
+        .select(`*`)
+        .eq("id", user.id)
+        .single();
+
+      if (!ignore) {
+        if (error) {
+          console.warn(error);
+        } else if (data) {
+          setProfile(data);
+        }
+      }
+
+      setLoading(false);
+    }
+
+    getProfile();
+
+    return () => {
+      ignore = true;
+    };
+  }, [session]);
 
   return (
     <>
       <section id="user" className="vh-200">
-        <div className="container h-100 w-100 p-5 mt-5">
-          <div className="row d-flex justify-content-center align-items-center h-100">
-            <div className="col col-lg-12 mb-lg-0">
-              <div className="card mb- w-100 rounded-4 shadow-lg">
-                <div className="row g-0">
-                  <div className="col-md-4 text-center text-white col-black">
-                    <Avatar url={updateUser.avatar_url || profile.avatar_url} />
+        {profile && (
+          <div className="container h-100 w-100 p-5 mt-5">
+            <div className="row d-flex justify-content-center align-items-center h-100">
+              <div className="col col-lg-12 mb-lg-0">
+                <div className="card mb- w-100 rounded-4 shadow-lg">
+                  <div className="row g-0">
+                    <div className="col-md-4 text-center text-white col-black">
+                      <div className="circle d-flex justify-content-center align-items-center">
+                      <Avatar
+                        url={profile.avatar_url || getProfileImg.avatar_url}
+                        size='150px'
+                        className='d-flex justify-content-center align-items-center'
+                      />
+                      </div>
+                     
 
-                    <div className="text-description">
-                      <h2 class="fs-2">Bentornato,</h2>
-                      <h3 class="fs-4 fw-bold text-danger">
-                        {updateUser.username || profile.username}
-                      </h3>
+                      <div className="text-description my-2">
+                        <h2 class="fs-1 fw-bold">Bentornato,</h2>
+                        <h3 class="fs-3 fw-bold text-danger">
+                          {profile.username || updateUser.username}
+                        </h3>
+                      </div>
+
+                      <Link to="/setting">
+                        <button
+                          id="button-edit"
+                          className="my-3 mb-5 text-light btn-danger btn"
+                        >
+                          Modifica i tuoi dati{" "}
+                          <i className="far fa-edit fa-lg"></i>
+                        </button>
+                      </Link>
                     </div>
+                    <div className="col-md-8">
+                      <div className=" p-4">
+                        <h6 className="fs-1 fw-bold">
+                          Informazioni<span>.</span>
+                        </h6>
 
-                    <Link to="/setting">
-                      <button
-                        id="button-edit"
-                        className="my-5 mb-5 text-light btn-danger btn"
-                      >
-                        Modifica i tuoi dati{" "}
-                        <i className="far fa-edit fa-lg"></i>
-                      </button>
-                    </Link>
-                  </div>
-                  <div className="col-md-8">
-                    <div className=" p-4">
-                      <h6 className="fs-1 fw-bold">
-                        Informazioni<span>.</span>
-                      </h6>
+                        <hr className="mt-0 mb-4" />
 
-                      <hr className="mt-0 mb-4" />
+                        <div className="row pt-1">
+                          <div className="col-6 mb-3">
+                            <label>Nome</label>
 
-                      <div className="row pt-1">
-                        <div className="col-6 mb-3">
-                          <label>Nome</label>
-
-                          <p className="text-muted fw-bold">
-                            {updateUser.first_name || profile.first_name}
-                          </p>
+                            <p className="text-muted fw-bold">
+                              {profile.first_name || updateUser.first_name}
+                            </p>
+                          </div>
+                          <div className="col-6 mb-3">
+                            <label>Cognome</label>
+                            <p className="text-muted fw-bold">
+                              {profile.last_name || updateUser.last_name}
+                            </p>
+                          </div>
                         </div>
-                        <div className="col-6 mb-3">
-                          <label>Cognome</label>
-                          <p className="text-muted fw-bold">
-                            {updateUser.last_name || profile.last_name}
-                          </p>
-                        </div>
-                      </div>
 
-                      <hr className="mt-0 mb-4" />
+                        <hr className="mt-0 mb-4" />
 
-                      <div className="row pt-1">
-                        <div className="col-6 mb-3">
-                          <label>Email</label>
-                          <p className="text-muted fw-bold">{profile.email}</p>
+                        <div className="row pt-1">
+                          <div className="col-6 mb-3">
+                            <label>Email</label>
+                            <p className="text-muted fw-bold">
+                              {session.user.email}
+                            </p>
+                          </div>
+                          <div className="col-6 mb-3">
+                            <label>Telefono</label>
+                            <p className="text-muted fw-bold">
+                              {profile.telephone || updateUser.telephone}
+                            </p>
+                          </div>
                         </div>
-                        <div className="col-6 mb-3">
-                          <label>Telefono</label>
-                          <p className="text-muted fw-bold">
-                            {updateUser.telephone || profile.telephone}
-                          </p>
-                        </div>
-                      </div>
 
-                      <hr className="mt-0 mb-4" />
+                        <hr className="mt-0 mb-4" />
 
-                      <div className="row pt-1">
-                        <div className="col-6 mb-3">
-                          <label>Città</label>
-                          <p className="text-muted fw-bold">
-                            {updateUser.city || profile.city}
-                          </p>
-                        </div>
-                        <div className="col-6 mb-3">
-                          <label>Indirizzo</label>
-                          <p className="text-muted fw-bold">
-                            {updateUser.address || profile.address}
-                          </p>
+                        <div className="row pt-1">
+                          <div className="col-6 mb-3">
+                            <label>Città</label>
+                            <p className="text-muted fw-bold">
+                              {profile.city || updateUser.city}
+                            </p>
+                          </div>
+                          <div className="col-6 mb-3">
+                            <label>Indirizzo</label>
+                            <p className="text-muted fw-bold">
+                              {profile.address || updateUser.address}
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -101,7 +145,7 @@ function Account() {
               </div>
             </div>
           </div>
-        </div>
+        )}
       </section>
     </>
   );
