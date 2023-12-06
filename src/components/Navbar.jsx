@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+// import { useState } from "react";
 import { useContext } from "react";
 import { FiSearch } from "react-icons/fi";
 import { PiUserPlusBold } from "react-icons/pi";
@@ -17,21 +17,12 @@ function Navbar() {
     signOut();
   };
 
-  const [navbarClicked, setNavbarClicked] = useState(false);
-
-  const handleNavbarClick = () => {
-    setNavbarClicked(true);
-    setTimeout(() => {
-      setNavbarClicked(false);
-    }, 100);
-  };
-
   return (
     <header>
       <nav
-        className={`navbar navbar-expand-lg navbar-dark bg-nav p-0 my-3 position-relative slide-in-blurred-top ${
-          navbarClicked ? "navbar-clicked" : ""
-        }`}
+        className={
+          "navbar navbar-expand-lg navbar-dark bg-nav p-0 my-3 position-relative slide-in-blurred-top navbar-clicked"
+        }
         id="headerNav"
       >
         <div className="container-fluid px-lg-0 py-3 py-lg-0 mb-4 nav-container">
@@ -83,7 +74,6 @@ function Navbar() {
                 aria-controls="navbarSupportedContent"
                 aria-expanded="false"
                 aria-label="Toggle navigation"
-                onClick={handleNavbarClick}
               >
                 <i className="fa-solid fa-bars"></i>
               </button>
@@ -171,7 +161,7 @@ function Navbar() {
             </div>
 
             <div className="col-4 col-lg-4 my-lg-0 my-3">
-              <div className="container-fluid d-flex justify-content-center align-items-center ms-5">
+              <div className="container-fluid d-flex justify-content-center align-items-center ms-4 ms-lg-5">
                 {!session ? (
                   <div className="row">
                     <div className="col-2 d-none d-lg-block"></div>
@@ -203,13 +193,11 @@ function Navbar() {
                 ) : (
                   <div
                     onClick={handleLogout}
-                    className="col-6 d-flex justify-content-end align-items-center px-3 py-2"
+                    className="col-1 col-lg-6 d-flex justify-content-end align-items-center px-0 px-lg-3 py-0 py-lg-2"
                   >
                     <button className="btn btn-dark">
                       <CgLogOut
-                        style={{
-                          marginRight: "5px",
-                        }}
+                        id="logout"
                       />
                       Logout
                     </button>

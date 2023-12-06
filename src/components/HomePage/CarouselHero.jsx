@@ -57,17 +57,6 @@ function CarouselHero() {
                   className="d-block w-100 rounded-4 "
                   alt="..."
                 />
-                <div className="carousel-description position-absolute top-50 text-center d-block d-lg-none">
-                  <div className="container my-5 py-2">
-                    <h2 className="fw-bold text-light h5">La guerra è cambiata</h2>
-                    <span className=" text-light fw-lighter h6">
-                      Nel seguito diretto di Call Of Duty Modern Warfare II, Il
-                      capitano price e la sua squadra sono pronti alla
-                      battaglia.
-                    </span>
-                    <button className="btn btn-danger my-3" style={{borderRadius: '15px'}}>Acquista</button>
-                  </div>
-                </div>
               </Link>
             </div>
           </div>

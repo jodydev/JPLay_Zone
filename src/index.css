@@ -398,7 +398,7 @@
   /* cambio file immagine in vista mobile */
 
   .carousel-item:nth-child(1) img {
-    content: url(/public/assets/img/carousel/mobile/spiderman-mobile.jpeg) !important;
+    content: url(/public/assets/img/carousel/mobile/spiderman.png) !important;
   }
 
   .carousel-item:nth-child(2) img {
@@ -410,10 +410,10 @@
   }
 
   .carousel-item:nth-child(4) img {
-    content: url(/public/assets/img/carousel/mobile/naruto-mobile.jpeg) !important;
+    content: url(/public/assets/img/carousel/mobile/ufc5.png) !important;
   }
   .carousel-item:nth-child(5) img {
-    content: url(/public/assets/img/carousel/mobile/cod-mobile.jpeg) !important;
+    content: url(/public/assets/img/carousel/mobile/cod-3.png) !important;
   }
 
   .navbar-toggler {
@@ -515,7 +515,22 @@
   .form-container .form-submit-btn {
     width: 100% !important;
   }
+
+  .col-black{
+    border-radius: 15px 15px 0px 0px !important;
+  }
+
+  #logout{
+      margin-right: 0px !important;
+  }
+
 }
+
+#logout{
+  margin-right: 5px;
+
+}
+
 
 * {
   font-family: "Poppins", sans-serif;

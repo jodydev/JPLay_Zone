@@ -5,7 +5,6 @@ import AppContext from "../contexts/AppContext";
 import Avatar from "../components/Avatar";
 
 export default function Settings() {
-
   const navigate = useNavigate();
   const { session } = useContext(AppContext);
   const [loading, setLoading] = useState(true);
@@ -135,8 +134,6 @@ export default function Settings() {
     }
   }
 
-
-
   return (
     <div className="container-fluid p-0 p-lg-3">
       <div className="row">
@@ -153,11 +150,12 @@ export default function Settings() {
                   </div>
                 </div>
 
-                <div className="col-5 col-lg-3  flex-column">
+                <div className="col-4 col-lg-2  flex-column">
                   <p className="text-dark fw-bold h5">
-                    Aggiungi il tuo <br /> avatar
+                    Aggiungi il tuo avatar
                   </p>
                   <input
+                 
                     type="file"
                     id="single"
                     accept="image/*"
@@ -167,15 +165,17 @@ export default function Settings() {
                   />
                 </div>
 
-                <div className="col-12 col-lg-2">
+                <div className="col-8 col-lg-3">
                   {avatar_url ? (
-                    <Avatar
-                      url={avatar_url}
-                      size={100}
-                      onUpload={(event, url) => {
-                        updateProfile(event, url);
-                      }}
-                    />
+                    <div className="circle d-flex justify-content-center align-items-center">
+                      <Avatar
+                        url={avatar_url}
+                        size={150}
+                        onUpload={(event, url) => {
+                          updateProfile(event, url);
+                        }}
+                      />
+                    </div>
                   ) : (
                     <div className="add-photo circle"></div>
                   )}
@@ -194,8 +194,8 @@ export default function Settings() {
 
               <div className="container px-3">
                 <div className="row">
-                  <div className="col-6">
-                    <div className="form-group my-2">
+                  <div className="col-12 col-lg-6">
+                    <div className="form-group my-1 my-lg-2">
                       <label htmlFor="first_name">
                         <i class="fa-solid fa-circle-user"></i> Nome
                         <input
@@ -205,6 +205,7 @@ export default function Settings() {
                           placeholder="Jody"
                           value={first_name || ""}
                           onChange={(e) => setfirstName(e.target.value)}
+                          required
                         />
                       </label>
                     </div>
@@ -219,11 +220,12 @@ export default function Settings() {
                           placeholder="Username"
                           value={username || ""}
                           onChange={(e) => setUsername(e.target.value)}
+                          
                         />
                       </label>
                     </div>
 
-                    <div className="form-group my-3">
+                    <div className="form-group my-1">
                       <label htmlFor="city">
                         <i class="fa-solid fa-house"></i> Città
                         <input
@@ -232,12 +234,13 @@ export default function Settings() {
                           value={city || ""}
                           onChange={(e) => setCity(e.target.value)}
                           placeholder="Bologna"
+                          required
                         />
                       </label>
                     </div>
                   </div>
-                  <div className="col-6">
-                    <div className="form-group my-2">
+                  <div className="col-12 col-lg-6">
+                    <div className="form-group my-3 my-lg-2">
                       <label htmlFor="last_name">
                         <i class="fa-regular fa-circle-user"></i> Cognome
                         <input
@@ -247,6 +250,7 @@ export default function Settings() {
                           placeholder="Ossino"
                           value={last_name || ""}
                           onChange={(e) => setLastName(e.target.value)}
+                          required
                         />
                       </label>
                     </div>
@@ -260,6 +264,7 @@ export default function Settings() {
                           value={telephone || ""}
                           onChange={(e) => setTelephone(e.target.value)}
                           placeholder="333617.."
+                          required
                         />
                       </label>
                     </div>
@@ -273,6 +278,7 @@ export default function Settings() {
                           value={address || ""}
                           onChange={(e) => setAddress(e.target.value)}
                           placeholder="Via del Successo"
+                          required
                         />
                       </label>
                     </div>
