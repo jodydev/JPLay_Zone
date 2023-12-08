@@ -6,16 +6,17 @@ import XboxProducts from "../components/Product/XboxProducts";
 import SponsorBannerPayPal from "../components/Sponsor/SponsorBannerPayPal";
 import NintendoProducts from "../components/Product/NintendoProducts";
 
-function HomePage({ gamePs5, gameXbox, gameNintendo }) {
+function HomePage() {
+
   return (
     <>
       <CarouselHero />
       <LogoShowCase />
-      <Ps5Products gamePs5={gamePs5} />
+      <Ps5Products/>
       <SponsorBannerKlarna />
-      <XboxProducts gameXbox={gameXbox} />
+      <XboxProducts />
       <SponsorBannerPayPal />
-      <NintendoProducts gameNintendo={gameNintendo} />
+      <NintendoProducts/>
     </>
   );
 }

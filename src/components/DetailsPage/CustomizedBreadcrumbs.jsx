@@ -15,7 +15,7 @@ export default function CustomizedBreadcrumbs() {
   const { id } = useParams(); // Estraiamo l'id dal parametro dell'URL
 
   const selectedGame = gameData.find((game) => game.id == id);
-  console.log("Gioco selezionato:", selectedGame);
+
 
   return (
     <div className="container slide-in-blurred-left">

@@ -3,6 +3,7 @@ import { createContext, useState, useContext, useEffect } from "react";
 const GameContext = createContext();
 
 export const GameProvider = ({ children }) => {
+  
   const [gameData, setGameData] = useState([]);
 
   const [gamePs5, setGamePs5] = useState([]);
@@ -30,17 +31,20 @@ export const GameProvider = ({ children }) => {
     if (Array.isArray(gameData)) {
       const ps5Games = gameData.filter((game) => game.platform === "PS5");
       const xboxGames = gameData.filter((game) => game.platform === "Xbox One");
-      const nintendoGames = gameData.filter((game) => game.platform === "Nintendo Switch");
+      const nintendoGames = gameData.filter(
+        (game) => game.platform === "Nintendo Switch"
+      );
 
       setGamePs5(ps5Games);
       setGameXbox(xboxGames);
       setGameNintendo(nintendoGames);
-
     }
   }, [gameData]);
 
   return (
-    <GameContext.Provider value={{ gameData, setGameData, gamePs5, gameXbox, gameNintendo }}>
+    <GameContext.Provider
+      value={{ gameData, setGameData, gamePs5, gameXbox, gameNintendo }}
+    >
       {children}
     </GameContext.Provider>
   );

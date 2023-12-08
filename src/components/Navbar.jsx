@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-// import { useState } from "react";
 import { useContext } from "react";
 import { FiSearch } from "react-icons/fi";
 import { PiUserPlusBold } from "react-icons/pi";
@@ -21,8 +20,7 @@ function Navbar() {
     <header>
       <nav
         className={
-          "navbar navbar-expand-lg navbar-dark bg-nav p-0 my-3 position-relative slide-in-blurred-top navbar-clicked"
-        }
+          "navbar navbar-expand-lg navbar-dark bg-nav p-0 my-3 position-relative slide-in-blurred-top navbar-clicked" }
         id="headerNav"
       >
         <div className="container-fluid px-lg-0 py-3 py-lg-0 mb-4 nav-container">
@@ -94,7 +92,7 @@ function Navbar() {
             </div>
 
             <div className="col-4">
-              <ul className="navbar-nav  d-flex justify-content-center my-2 ">
+              <ul className="navbar-nav d-flex justify-content-center my-2 ">
                 <li className="nav-item">
                   <Link
                     to="/"

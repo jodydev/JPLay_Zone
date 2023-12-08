@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Footer() {
   return (
     <footer id="footer" className="text-center text-lg-start mt-5">
@@ -71,9 +73,10 @@ function Footer() {
                 Link Utili
               </h5>
               <p>
-                <a href="#!" className="text-dark">
-                  Profilo
-                </a>
+                <Link to="/account" className="text-dark"> Profilo</Link>
+            
+                 
+           
               </p>
               <p>
                 <a href="#!" className="text-dark">

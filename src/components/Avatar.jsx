@@ -1,6 +1,5 @@
 function Avatar({ url, size, avatar_url }) {
-  console.log(url);
-  console.log(avatar_url);
+
 
   return (
     <>

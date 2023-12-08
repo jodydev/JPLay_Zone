@@ -3,6 +3,7 @@ import DetailsLayout from "../components/DetailsLayout";
 
 function DetailsPage() {
 
+
   return (
     <DetailsLayout >
       <PaymentForm />
