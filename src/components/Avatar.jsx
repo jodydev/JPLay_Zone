@@ -4,7 +4,7 @@ function Avatar({ url, size, avatar_url }) {
   return (
     <>
       <img
-        src={url}
+        src={url || avatar_url}
         alt="Avatar"
         className="avatar"
         style={{

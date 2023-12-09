@@ -3,7 +3,6 @@ import { createContext, useState, useContext, useEffect } from "react";
 const GameContext = createContext();
 
 export const GameProvider = ({ children }) => {
-  
   const [gameData, setGameData] = useState([]);
 
   const [gamePs5, setGamePs5] = useState([]);
@@ -13,12 +12,14 @@ export const GameProvider = ({ children }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/games");
+        const response = await fetch(
+          "https://data-omega-five.vercel.app/data.json"
+        );
         if (!response.ok) {
           throw new Error("Network response was not ok.");
         }
         const data = await response.json();
-        setGameData(data);
+        setGameData(data.games);
       } catch (error) {
         console.error("Error fetching data:", error);
       }

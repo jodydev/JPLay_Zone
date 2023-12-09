@@ -1,13 +1,17 @@
-import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import { PiUserPlusBold } from "react-icons/pi";
 import { PiUserDuotone } from "react-icons/pi";
 import { CgLogOut } from "react-icons/cg";
 import AppContext from "../contexts/AppContext";
 import useAuth from "../hooks/useAuth";
+import Avatar from "./Avatar";
+import supabase from "../supabase/client";
 
 function Navbar() {
+  const [profile, setProfile] = useState(null);
+
   const { session } = useContext(AppContext);
 
   const { signOut } = useAuth();
@@ -16,11 +20,44 @@ function Navbar() {
     signOut();
   };
 
+  const location = useLocation();
+  const updateUser = location.state?.updatedProfile || {};
+
+  useEffect(() => {
+    let ignore = false;
+    async function getProfile() {
+      const { user } = session;
+
+      const { data, error } = await supabase
+        .from("profiles")
+        .select(`*`)
+        .eq("id", user.id)
+        .single();
+
+      if (!ignore) {
+        if (error) {
+          console.warn(error);
+        } else if (data) {
+          setProfile(data);
+        }
+      }
+    }
+
+    getProfile();
+
+    return () => {
+      ignore = true;
+    };
+  }, [session]);
+
+  console.log(updateUser.avatar_url);
+
   return (
     <header>
       <nav
         className={
-          "navbar navbar-expand-lg navbar-dark bg-nav p-0 my-3 position-relative slide-in-blurred-top navbar-clicked" }
+          "navbar navbar-expand-lg navbar-dark bg-nav p-0 my-3 position-relative slide-in-blurred-top navbar-clicked"
+        }
         id="headerNav"
       >
         <div className="container-fluid px-lg-0 py-3 py-lg-0 mb-4 nav-container">
@@ -191,12 +228,27 @@ function Navbar() {
                 ) : (
                   <div
                     onClick={handleLogout}
-                    className="col-1 col-lg-6 d-flex justify-content-end align-items-center px-0 px-lg-3 py-0 py-lg-2"
+                    className="col-12 col-lg-6 d-flex justify-content-end align-items-center px-0 px-lg-3 py-0 py-lg-2"
                   >
-                    <button className="btn btn-dark">
-                      <CgLogOut
-                        id="logout"
-                      />
+                    {profile &&
+                    profile.avatar_url &&
+                    profile.avatar_url.length === 0 ? (
+                      <p></p>
+                    ) : (
+                      <Link to="/account">
+                        <Avatar
+                          url={
+                            updateUser.avatar_url ||
+                            (profile && profile.avatar_url)
+                          }
+                          size="60px"
+                          className="ms-5"
+                        />
+                      </Link>
+                    )}
+
+                    <button className="btn btn-dark ms-3">
+                      <CgLogOut id="logout" />
                       Logout
                     </button>
                   </div>
