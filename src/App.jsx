@@ -14,11 +14,13 @@ import LoggedUserRoutes from "./auth/LoggedUserRoutes";
 import supabase from "./supabase/client";
 import Account from "./auth/Account";
 import AccountSetting from "./auth/AccountSetting";
+import AllGames from "./pages/AllGames";
 
 import "./assets/css/AppNavbar.css";
 import "./assets/css/AppCarouselHero.css";
 import "./assets/css/AppProducts.css";
 import "./assets/css/AppCardGame.css";
+
 
 export function App() {
   return (
@@ -27,6 +29,7 @@ export function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/details/:id" element={<DetailsPage />} />
         <Route path="/searchGame" element={<GameSearch />} />
+        <Route path="/allGames" element={<AllGames />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="*" element={<RouteNotFound />} />

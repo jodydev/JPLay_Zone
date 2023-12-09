@@ -1209,3 +1209,12 @@ margin-bottom: 15px !important;
 
 
 
+.user-avatar{
+  width: 150px;
+  border-radius: 50%;
+}
+
+.user-avatar-navbar{
+  width: 60px;
+  border-radius: 50%;
+}

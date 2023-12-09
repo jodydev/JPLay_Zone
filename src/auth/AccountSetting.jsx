@@ -75,6 +75,7 @@ export default function Settings() {
       updates.avatar_url = avatarUrl; // Aggiorna l'avatar_url solo se è stato fornito un nuovo URL
     }
 
+
     const { error } = await supabase.from("profiles").upsert(updates);
 
     if (error) {
@@ -151,11 +152,8 @@ export default function Settings() {
                 </div>
 
                 <div className="col-4 col-lg-2  flex-column">
-                  <p className="text-dark fw-bold h5">
-                    Aggiungi il tuo avatar
-                  </p>
+                  <p className="text-dark fw-bold h5">Aggiungi il tuo avatar</p>
                   <input
-                 
                     type="file"
                     id="single"
                     accept="image/*"
@@ -184,7 +182,7 @@ export default function Settings() {
 
               {error && (
                 <div
-                  class="alert alert-danger d-flex align-items-center"
+                  className="alert alert-danger d-flex align-items-center"
                   role="alert"
                 >
                   <i className="fa-solid fa-lg fa-triangle-exclamation mx-2"></i>
@@ -197,7 +195,7 @@ export default function Settings() {
                   <div className="col-12 col-lg-6">
                     <div className="form-group my-1 my-lg-2">
                       <label htmlFor="first_name">
-                        <i class="fa-solid fa-circle-user"></i> Nome
+                        <i className="fa-solid fa-circle-user"></i> Nome
                         <input
                           type="text"
                           id="first_name"
@@ -212,7 +210,7 @@ export default function Settings() {
 
                     <div className="form-group my-3">
                       <label htmlFor="username">
-                        <i class="fa-solid fa-signature"></i> Username
+                        <i className="fa-solid fa-signature"></i> Username
                         <input
                           type="text"
                           id="username"
@@ -220,14 +218,13 @@ export default function Settings() {
                           placeholder="Username"
                           value={username || ""}
                           onChange={(e) => setUsername(e.target.value)}
-                          
                         />
                       </label>
                     </div>
 
                     <div className="form-group my-1">
                       <label htmlFor="city">
-                        <i class="fa-solid fa-house"></i> Città
+                        <i className="fa-solid fa-house"></i> Città
                         <input
                           id="city"
                           type="text"
@@ -242,7 +239,7 @@ export default function Settings() {
                   <div className="col-12 col-lg-6">
                     <div className="form-group my-3 my-lg-2">
                       <label htmlFor="last_name">
-                        <i class="fa-regular fa-circle-user"></i> Cognome
+                        <i className="fa-regular fa-circle-user"></i> Cognome
                         <input
                           type="text"
                           id="last_name"
@@ -257,7 +254,7 @@ export default function Settings() {
 
                     <div className="form-group my-3">
                       <label htmlFor="telephone">
-                        <i class="fa-solid fa-phone"></i> Telefono
+                        <i className="fa-solid fa-phone"></i> Telefono
                         <input
                           id="telephone"
                           type="text"
@@ -271,7 +268,7 @@ export default function Settings() {
 
                     <div className="form-group my-3">
                       <label htmlFor="address">
-                        <i class="fa-solid fa-location-dot"></i> Indirizzo
+                        <i className="fa-solid fa-location-dot"></i> Indirizzo
                         <input
                           id="address"
                           type="text"

@@ -1,6 +1,5 @@
 import { useState, useEffect, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
-import Avatar from "../components/Avatar";
 import getProfileImg from "../utils/getProfileImg";
 import AppContext from "../contexts/AppContext";
 import supabase from "../supabase/client";
@@ -9,7 +8,7 @@ function Account() {
   const location = useLocation();
   const updateUser = location.state?.updatedProfile || {};
   const { session } = useContext(AppContext);
-  const [profile, setProfile] = useState(null);
+  const [profile, setProfile] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -53,17 +52,16 @@ function Account() {
                   <div className="row g-0">
                     <div className="col-md-4 text-center text-white col-black">
                       <div className="circle d-flex justify-content-center align-items-center">
-                        <Avatar
-                          url={profile.avatar_url || getProfileImg.avatar_url}
-                          size='150px'
-                          className='d-flex justify-content-center align-items-center'
+                        <img
+                        
+                          src={profile && profile.avatar_url}                      
+                          className="d-flex justify-content-center align-items-center user-avatar"
                         />
                       </div>
-                     
 
                       <div className="text-description my-2">
-                        <h2 class="fs-1 fw-bold">Bentornato,</h2>
-                        <h3 class="fs-3 fw-bold text-danger">
+                        <h2 className="fs-1 fw-bold">Bentornato,</h2>
+                        <h3 className="fs-3 fw-bold text-danger">
                           {profile.username || updateUser.username}
                         </h3>
                       </div>

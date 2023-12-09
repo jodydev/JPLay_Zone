@@ -57,14 +57,14 @@ function CardGame({ gamePs5, gameXbox, gameNintendo }) {
                   {game.disponibility ? (
                     <span>
                       <i
-                        class="fa-solid fa-circle-check"
+                        className="fa-solid fa-circle-check"
                         style={{ color: "green" }}
                       ></i>
                     </span>
                   ) : (
                     <span>
                       <i
-                        class="fa-solid fa-circle-xmark"
+                        className="fa-solid fa-circle-xmark"
                         style={{ color: "red" }}
                       ></i>
                     </span>

@@ -6,7 +6,6 @@ import { PiUserDuotone } from "react-icons/pi";
 import { CgLogOut } from "react-icons/cg";
 import AppContext from "../contexts/AppContext";
 import useAuth from "../hooks/useAuth";
-import Avatar from "./Avatar";
 import supabase from "../supabase/client";
 
 function Navbar() {
@@ -49,8 +48,6 @@ function Navbar() {
       ignore = true;
     };
   }, [session]);
-
-  console.log(updateUser.avatar_url);
 
   return (
     <header>
@@ -140,12 +137,12 @@ function Navbar() {
                 </li>
 
                 <li className="nav-item">
-                  <a
-                    className="nav-link me-5 active effect-underline "
-                    href="#products"
+                  <Link
+                    to="/allGames"
+                    className="nav-link me-5 active effect-underline"
                   >
                     Giochi
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item d-none d-lg-block">
                   <Link to="/" className="nav-link p-0 logo">
@@ -230,22 +227,12 @@ function Navbar() {
                     onClick={handleLogout}
                     className="col-12 col-lg-6 d-flex justify-content-end align-items-center px-0 px-lg-3 py-0 py-lg-2"
                   >
-                    {profile &&
-                    profile.avatar_url &&
-                    profile.avatar_url.length === 0 ? (
-                      <p></p>
-                    ) : (
-                      <Link to="/account">
-                        <Avatar
-                          url={
-                            updateUser.avatar_url ||
-                            (profile && profile.avatar_url)
-                          }
-                          size="60px"
-                          className="ms-5"
-                        />
-                      </Link>
-                    )}
+                    <Link to="/account">
+                      <img
+                        src={profile && profile.avatar_url}
+                        className="d-flex justify-content-center align-items-center user-avatar-navbar"
+                      />
+                    </Link>
 
                     <button className="btn btn-dark ms-3">
                       <CgLogOut id="logout" />

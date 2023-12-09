@@ -1,10 +1,9 @@
-function Avatar({ url, size, avatar_url }) {
-
+function Avatar({ url, size}) {
 
   return (
     <>
       <img
-        src={url || avatar_url}
+        src={url}
         alt="Avatar"
         className="avatar"
         style={{

@@ -5,19 +5,19 @@ import { useParams } from "react-router-dom";
 import { useGameContext } from "../contexts/GameContext";
 import useProfile from "../hooks/useProfile";
 import AppContext from "../contexts/AppContext";
+import getProfileImg from "../utils/getProfileImg";
 
 function Messages() {
   const [chat, setChat] = useState([]);
+  const [avatars, setAvatars] = useState([]);
   const chatRef = useRef(null);
 
   const { profile } = useProfile();
   const { session } = useContext(AppContext);
 
-  console.log(profile);
-
   const { gameData } = useGameContext();
 
-  const { id } = useParams(); // Estraiamo l'id dal parametro dell'URL
+  const { id } = useParams();
 
   const selectedGame = gameData.find((game) => game.id == id);
 
@@ -27,7 +27,6 @@ function Messages() {
       .select("*, profile: profiles(*)")
       .eq("game_id", selectedGame.id);
     if (error) {
-      // eslint-disable-next-line no-alert
       alert(error.message);
     } else {
       setChat(data);
@@ -49,6 +48,8 @@ function Messages() {
           },
         ])
         .select();
+
+      console.log(data);
       if (error) {
         alert(error.message);
       } else {
@@ -114,13 +115,13 @@ function Messages() {
                     <div
                       key={index}
                       className={`row my-3 ${
-                        session.user.id == message.profile_id
+                        profile.id == message.profile_id
                           ? "d-flex justify-content-end"
                           : ""
                       }`}
                     >
                       <div className="col-8">
-                        {session.user.id === message.profile_id ? (
+                        {profile.id === message.profile_id ? (
                           <div className="row">
                             <div className="col-9 d-flex justify-content-end">
                               <div className="msg_container">
@@ -133,7 +134,7 @@ function Messages() {
                             <div className="col-2 p-0">
                               <div className="img_cont_msg">
                                 <img
-                                  src={profile.avatar_url}
+                                  src={profile && message.profile.avatar_url}
                                   className="rounded-circle user_img_msg"
                                 />
                               </div>
@@ -144,7 +145,7 @@ function Messages() {
                             <div className="col-2">
                               <div className="img_cont_msg">
                                 <img
-                                  src=""
+                                  src={message.profile.avatar_url}
                                   className="rounded-circle user_img_msg ms-2"
                                 />
                               </div>

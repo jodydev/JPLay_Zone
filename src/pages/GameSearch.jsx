@@ -1,15 +1,17 @@
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
+import { useGameContext } from "../contexts/GameContext";
+import { useState } from "react";
 
-const GameSearch = ({ games }) => {
+function GameSearch () {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredGames, setFilteredGames] = useState([]);
+  const { gameData } = useGameContext();
 
   const handleSearch = (e) => {
     const term = e.target.value.trim().toLowerCase();
     setSearchTerm(term);
 
-    const filtered = games.filter((game) => {
+    const filtered = gameData.filter((game) => {
       const gameTitle = game.title.trim().toLowerCase();
       return gameTitle.includes(term);
     });
@@ -45,7 +47,10 @@ const GameSearch = ({ games }) => {
             {searchTerm && filteredGames.length > 0 && (
               <div className="d-flex flex-nowrap flex-lg-wrap my-overflow-x-scroll">
                 {filteredGames.map((game) => (
-                  <div key={game.id} className="col-12 col-lg-3 flip-card my-5 mx-3 mx-lg-3 flip-in-hor-bottom">
+                  <div
+                    key={game.id}
+                    className="col-12 col-lg-3 flip-card my-5 mx-3 mx-lg-3 flip-in-hor-bottom"
+                  >
                     <div
                       className="col-5 flip-card mx-5 mx-lg-0 my-3 my-lg-0 flip-in-hor-bottom"
                       key={game.id}
