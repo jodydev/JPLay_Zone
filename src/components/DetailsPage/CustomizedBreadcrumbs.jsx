@@ -19,7 +19,7 @@ export default function CustomizedBreadcrumbs() {
 
   return (
     <div className="container slide-in-blurred-left">
-      <div className="my-3" role="presentation" onClick={handleClick}>
+      <div className="my-0 my-lg-3 " role="presentation" onClick={handleClick}>
         <Breadcrumbs aria-label="breadcrumb">
           <Link
             underline="hover"

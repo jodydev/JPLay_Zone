@@ -1,16 +1,75 @@
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useGameContext } from "../../contexts/GameContext";
-import Rating from "@mui/material/Rating";
+import { useState, useEffect } from "react";
+import useProfile from "../../hooks/useProfile";
+import supabase from "../../supabase/client";
+import { GrFavorite } from "react-icons/gr";
 
 function PaymentForm() {
-  
   const { gameData } = useGameContext();
+
+  const { profile } = useProfile();
 
   const { id } = useParams(); // Estraiamo l'id dal parametro dell'URL
 
   const selectedGame = gameData.find((game) => game.id == id);
 
+  const [fav, setFav] = useState([]);
+
+  const getFavGame = async () => {
+    const { data, error } = await supabase
+      .from("favorites")
+      .select("*")
+      .eq("game_id", selectedGame.id)
+      .eq("profile_id", profile.id);
+    if (error) {
+      // eslint-disable-next-line no-alert
+      alert(error.message);
+    } else {
+      setFav(() => [...data]);
+    }
+  };
+
+  const addToFavorites = async () => {
+    const { error } = await supabase
+      .from("favorites")
+      .insert([
+        {
+          game_id: selectedGame.id,
+          game_name: selectedGame.title,
+          game_category: selectedGame.category,
+          game_platform: selectedGame.platform,
+        },
+      ])
+      .select();
+    if (error) {
+      // eslint-disable-next-line no-alert
+      alert(error.message);
+    } else {
+      getFavGame();
+    }
+  };
+
+  const removeFromFavorites = async () => {
+    const { error } = await supabase
+      .from("favorites")
+      .delete()
+      .eq("game_id", selectedGame.id)
+      .eq("profile_id", profile.id);
+    if (error) {
+      // eslint-disable-next-line no-alert
+      alert(error.message);
+    } else {
+      getFavGame();
+    }
+  };
+
+  useEffect(() => {
+    if (profile) {
+      getFavGame();
+    }
+  }, []);
 
   return (
     <div className="container-fluid">
@@ -21,8 +80,40 @@ function PaymentForm() {
               <div className="col-12 d-flex justify-content-center">
                 <img
                   src={selectedGame.img}
-                  className="w-75 my-5 p-0 p-lg-5 details-img slide-in-blurred-left"
+                  className="w-75 my-5 p-2 p-lg-5 details-img slide-in-blurred-left position-relative"
                 />
+
+                {profile && (
+                  <div>
+                    {fav.length !== 0 ? (
+                      <button
+                        className="button-favorites"
+                        type="button"
+                        onClick={removeFromFavorites}
+                      >
+                        <span
+                          class="d-flex justify-content-center align-items-center fs-2"
+                          aria-label="Rimuovi dai preferiti!"
+                        >
+                          <i class="fa-solid fa-heart-circle-check love"></i>
+                        </span>
+                      </button>
+                    ) : (
+                      <button
+                        className="button-favorites"
+                        type="button"
+                        onClick={addToFavorites}
+                      >
+                        <span
+                          class="d-flex justify-content-center align-items-center fs-2"
+                          aria-label="Aggiungi ai preferiti!"
+                        >
+                          <i className="fa-regular fa-heart love fs-2"></i>
+                        </span>
+                      </button>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -32,7 +123,6 @@ function PaymentForm() {
           <div className="container slide-in-blurred-right shadow-lg rounded-4 my-5 p-5">
             <h1 className="my-3 fw-normal fs-3">{selectedGame.title}</h1>
             <h2 className="my-3 fw-bold fs-1">{selectedGame.price}€</h2>
-            <Rating name="size-large" defaultValue={5} size="large" />
 
             <div className="container my-3">
               <div className="row">
@@ -69,18 +159,22 @@ function PaymentForm() {
             <div className="container my-3">
               <div className="row">
                 <div className="col-lg-4 col-6 px-2">
-                  <img
-                    src="/assets/img/sponsor/klarna.avif"
-                    className="rounded-4 w-100 shadow-lg"
-                    alt="Klarna"
-                  />
+                  <Link to="https://www.klarna.com/it/paga-in-3-rate/">
+                    <img
+                      src="/assets/img/sponsor/klarna.avif"
+                      className="rounded-4 w-100 shadow-lg"
+                      alt="Klarna"
+                    />
+                  </Link>
                 </div>
                 <div className="col-lg-4 col-6 px-2">
-                  <img
-                    src="/assets/img/sponsor/paypall.png"
-                    className="rounded-4 w-100 shadow-lg"
-                    alt="PayPal"
-                  />
+                  <Link to="https://www.paypal.com/it/webapps/mpp/paga-in-3-rate">
+                    <img
+                      src="/assets/img/sponsor/paypall.png"
+                      className="rounded-4 w-100 shadow-lg"
+                      alt="PayPal"
+                    />
+                  </Link>
                 </div>
               </div>
             </div>

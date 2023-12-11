@@ -223,10 +223,7 @@ function Navbar() {
                     </div>
                   </div>
                 ) : (
-                  <div
-                    onClick={handleLogout}
-                    className="col-12 col-lg-6 d-flex justify-content-end align-items-center px-0 px-lg-3 py-0 py-lg-2"
-                  >
+                  <div className="col-12 col-lg-6 d-flex justify-content-end align-items-center px-0 px-lg-3 py-0 py-lg-2">
                     <Link to="/account">
                       <img
                         src={profile && profile.avatar_url}
@@ -234,7 +231,10 @@ function Navbar() {
                       />
                     </Link>
 
-                    <button className="btn btn-dark ms-3">
+                    <button
+                      onClick={handleLogout}
+                      className="btn btn-dark ms-3"
+                    >
                       <CgLogOut id="logout" />
                       Logout
                     </button>

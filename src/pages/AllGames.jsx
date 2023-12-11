@@ -1,19 +1,17 @@
 import { useGameContext } from "../contexts/GameContext";
+import AllCardGame from "../components/Product/AllCardGame";
 
 function AllGames() {
   const { gameData } = useGameContext();
 
-  console.log(gameData);
-
-  <div className="container">
-    <h1>Tutti i giochi</h1>
-    {gameData.map((game) => (
-      <div key={game.id}>
-        <h2>{game.title}</h2>
-        <img src={game.img}/>
+  return (
+    <div className="container py-5 ">
+      <h1 className="fw-bold">Tutti i giochi</h1>
+      <div className="container">
+        <AllCardGame />
       </div>
-    ))}
-  </div>;
+    </div>
+  );
 }
 
 export default AllGames;

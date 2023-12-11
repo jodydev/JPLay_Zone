@@ -5,12 +5,12 @@ import { useParams } from "react-router-dom";
 import { useGameContext } from "../contexts/GameContext";
 import useProfile from "../hooks/useProfile";
 import AppContext from "../contexts/AppContext";
-import getProfileImg from "../utils/getProfileImg";
+
 
 function Messages() {
   const [chat, setChat] = useState([]);
-  const [avatars, setAvatars] = useState([]);
   const chatRef = useRef(null);
+
 
   const { profile } = useProfile();
   const { session } = useContext(AppContext);
@@ -32,6 +32,7 @@ function Messages() {
       setChat(data);
     }
   };
+
 
   const handleMessageSubmit = async (event) => {
     event.preventDefault();
@@ -81,26 +82,39 @@ function Messages() {
     if (chatRef.current) {
       chatRef.current.scrollTop = chatRef.current.scrollHeight;
     }
+  
   }, [chat]);
 
   return (
     <>
       {profile && (
-        <div className="container d-flex justify-content-center">
-          <div className="card-chat">
+        <div className="d-flex justify-content-center col-12 slide-in-blurred-right">
+          <div className="card-chat shadow-lg">
             <div className="card-header msg_head">
               <div className="container mb-3">
                 <div className="row">
-                  <div className="col-2">
-                    <img src={selectedGame.img} className="user_img" />
+                  <div className="col-3">
+                    <img src={selectedGame.img} className="user_img ms-3" />
                   </div>
-                  <div className="col-9 px-5">
-                    <h2 className="text-success fw-bold">
-                      Live Chat{" "}
-                      <span className="text-light text-nowrap ">
-                        {selectedGame.title}{" "}
+                  <div className="col-9">
+                    <div className="row">
+                      <h2 className="text-success fw-bold position-relative fs-1">
+                        Live Chat{" "}
+                       
+                      </h2>
+                      <span className="text-light text-nowrap fs-3 fw-bold">
+                          {selectedGame.title}{" "}
+                        </span>
+                      <span className="d-none d-lg-block">
+                        <iframe
+                          src="https://giphy.com/embed/DzEb7JBoJYuIRJBL3c"
+                          width="100%"
+                          height="100%"
+                          className="giphy-embed position-absolute "
+                          allowFullScreen
+                        ></iframe>
                       </span>
-                    </h2>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -108,7 +122,7 @@ function Messages() {
             <div className="msg_card_body">
               <div
                 classNameName="d-flex justify-content-start mb-4"
-                ref={chatRef}
+                
               >
                 {chat &&
                   chat.map((message, index) => (
@@ -122,16 +136,16 @@ function Messages() {
                     >
                       <div className="col-8">
                         {profile.id === message.profile_id ? (
-                          <div className="row">
-                            <div className="col-9 d-flex justify-content-end">
-                              <div className="msg_container">
-                                <p className="my-msg">{message.content}</p>
-                                <span className="msg_time">
+                          <div ref={chatRef}  className="row">
+                            <div className="col-10 d-flex justify-content-end">
+                              <div className="my_msg_container">
+                                <p  className="my-msg">{message.content}</p>
+                                <span className="msg_time d-flex justify-content-end">
                                   {formatMessageDate(message.created_at)}
                                 </span>
                               </div>
                             </div>
-                            <div className="col-2 p-0">
+                            <div className="col-2 p-0 d-flex align-items-end">
                               <div className="img_cont_msg">
                                 <img
                                   src={profile && message.profile.avatar_url}
@@ -150,7 +164,7 @@ function Messages() {
                                 />
                               </div>
                             </div>
-                            <div className="col-9 d-flex justify-content-start px-4">
+                            <div className="col-10 d-flex justify-content-start">
                               <div className="msg_container">
                                 <p className="msg">{message.content}</p>
                                 <span className="msg_time">

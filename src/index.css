@@ -532,6 +532,55 @@
     background-color: rgb(56, 56, 56) !important;
     padding-top: 20px;
   }
+
+  .button-favorites{
+    background-color: red;
+    position: absolute;
+    top: 220px !important;
+    left: 320px !important;
+    right: 0px;
+    border-radius: 50%;
+    width: 60px !important;
+    height: 60px !important;
+    border: 3px solid white;
+  }
+  
+  .love{
+    color: white !important;
+  }
+  
+  span[aria-label]::before {
+    content: attr(aria-label);
+    display: none;
+    position: absolute;
+    background: #fff; /* Sfondo del testo */
+    padding: 7px !important; /* Spaziatura dal testo */
+    border: 2px solid red; /* Bordo intorno al testo */
+    border-radius: 5px; /* Bordi arrotondati */
+    margin-top: -95px !important; /* Posizionamento sopra l'elemento */
+    margin-left: -110px !important;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out; /* Transizione per rendere visibile il testo */
+    color: #ff0000;
+    font-size: 12px !important;
+    text-wrap: nowrap;
+    font-weight: bold;
+  }
+
+  .type_msg {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    border: 0 !important;
+    color: white !important;
+    height: 60px !important;
+    overflow-y: auto;
+    width: 260px !important;
+    border-radius: 13px 0px 0px 13px !important;
+    padding-left: 5%;
+  }
+  .type_msg:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+  }
 }
 
 #logout {
@@ -937,8 +986,8 @@ label {
   margin-bottom: auto;
 }
 .card-chat {
-  height: 500px;
-  max-height: 500px;
+  height: 700px;
+  max-height: 700px;
   width: 75%;
   border-radius: 15px !important;
   background-color: rgb(56, 56, 56) !important;
@@ -972,7 +1021,7 @@ label {
   color: white !important;
   height: 60px !important;
   overflow-y: auto;
-  width: 380px;
+  width: 490px;
   border-radius: 13px 0px 0px 13px !important;
   padding-left: 5%;
 }
@@ -1066,15 +1115,12 @@ label {
   cursor: pointer;
   margin-right: 20px;
 }
-.msg_cotainer {
+.msg_container {
   margin-top: auto;
-  margin-bottom: auto;
+  margin-bottom: 20px;
   margin-left: 10px;
-  border-radius: 25px;
-  background-color: #82ccdd;
-  padding: 10px;
-  position: relative;
 }
+
 .msg_cotainer_send {
   margin-top: auto;
   margin-bottom: auto;
@@ -1085,11 +1131,9 @@ label {
   position: relative;
 }
 .msg_time {
-  position: absolute;
-  left: 0;
-  bottom: -15px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgb(255, 255, 255);
   font-size: 10px;
+
 }
 .msg_time_send {
   position: absolute;
@@ -1150,14 +1194,14 @@ label {
 .msg {
   background-color: rgb(72, 72, 72);
   padding: 10px !important;
-  border-radius: 15px !important;
+  border-radius: 0px 15px 15px 15px !important;
   font-size: 14px;
   color: white;
 }
 
 .my-msg {
   padding: 10px !important;
-  border-radius: 15px !important;
+  border-radius: 15px 15px 0px 15px !important;
   background-color: red !important;
   color: white;
   font-size: 14px;
@@ -1166,7 +1210,7 @@ label {
 .msg_card_body {
   border-radius: 0px !important;
   background-color: rgb(37, 37, 37);
-  height: 300px;
+  height: 490px;
   overflow-x: hidden;
   overflow-y: scroll;
 }
@@ -1190,4 +1234,47 @@ label {
 .user-avatar-navbar {
   width: 60px;
   border-radius: 50%;
+}
+
+.button-favorites {
+  background-color: red;
+  position: absolute;
+  top: 310px;
+  left: 750px;
+  right: 0px;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  border: 3px solid white;
+}
+
+.love {
+  color: white !important;
+}
+
+span[aria-label]::before {
+  content: attr(aria-label);
+  display: none;
+  position: absolute;
+  background: #fff; /* Sfondo del testo */
+  padding: 10px; /* Spaziatura dal testo */
+  border: 2px solid red; /* Bordo intorno al testo */
+  border-radius: 5px; /* Bordi arrotondati */
+  margin-top: -120px; /* Posizionamento sopra l'elemento */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out; /* Transizione per rendere visibile il testo */
+  color: #ff0000;
+  font-size: 15px;
+  text-wrap: nowrap;
+  font-weight: bold;
+}
+
+span:hover::before {
+  display: block;
+  opacity: 1;
+}
+
+.giphy-embed{
+  top: -40px;
+  left: 230px;
 }

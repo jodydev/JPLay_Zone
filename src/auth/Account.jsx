@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
-import getProfileImg from "../utils/getProfileImg";
+// import getProfileImg from "../utils/getProfileImg";
 import AppContext from "../contexts/AppContext";
 import supabase from "../supabase/client";
 
@@ -10,6 +10,7 @@ function Account() {
   const { session } = useContext(AppContext);
   const [profile, setProfile] = useState();
   const [loading, setLoading] = useState(true);
+  const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
     let ignore = false;
@@ -40,6 +41,22 @@ function Account() {
       ignore = true;
     };
   }, [session]);
+
+  useEffect(() => {
+    const getFav = async () => {
+      const { data, error } = await supabase
+        .from("favorites")
+        .select("*")
+        .eq("profile_id", session.user.id);
+      if (error) {
+        // eslint-disable-next-line no-alert
+        alert(error.message);
+      } else {
+        setFavorites(data);
+      }
+    };
+    getFav();
+  }, []);
 
   return (
     <>
@@ -140,6 +157,66 @@ function Account() {
             </div>
           </div>
         )}
+      </section>
+
+      <section id="user" className="vh-200">
+        <div className="container h-100 w-100 p-3 p-lg-5 mt-3 mt-lg-5">
+          <div className="row d-flex justify-content-center align-items-center h-100">
+            <div className="col col-lg-12 mb-lg-0">
+              <div className="card mb- w-100 rounded-4 shadow-lg">
+                <div className="row g-0">
+                  <div className="col-md-12">
+                    <div className="p-4">
+                      <h6 className="fs-1 fw-bold">
+                        I tuoi giochi preferiti<span>.</span>
+                      </h6>
+                      <hr className="mt-0 mb-2 mt-3" />
+                      <div className="row pt-1">
+                        <div className="col-12 col-lg-4 mb-3">
+                          <label className="fs-5">Nome del gioco</label>
+                        </div>
+                        <div className="col-12 col-lg-4 mb-3">
+                          <label className="fs-5 ">Categoria del gioco</label>
+                        </div>
+                        <div className="col-12 col-lg-4 mb-3">
+                          <label className="fs-5">Piattaforma del gioco</label>
+                          
+                        </div>
+                      </div>
+                      {favorites &&
+                        favorites.map((favGame) => (
+                          <div key={favGame.id} className="row pt-1">
+                            
+                            <div className="col-12 col-lg-4">
+                              <p className="text-muted fw-bold">
+                                {favGame.game_name}{" "}
+                              </p>
+                              <hr className="mt-0 mb-4 mt-3" />
+                            </div>
+                            
+
+                            <div className="col-12 col-lg-4">
+                              <p className="text-muted fw-bold">
+                                {favGame.game_category}{" "}
+                              </p>
+                              <hr className="mt-0 mb-4 mt-3" />
+                            </div>
+
+                            <div className="col-12 col-lg-4">
+                              <p className="text-muted fw-bold">
+                                {favGame.game_platform}{" "}
+                              </p>
+                              <hr className="mt-0 mb-4 mt-3" />
+                            </div>
+                          </div>
+                        ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </>
   );
