@@ -53,8 +53,7 @@ function Account() {
                     <div className="col-md-4 text-center text-white col-black">
                       <div className="circle d-flex justify-content-center align-items-center">
                         <img
-                        
-                          src={profile && profile.avatar_url}                      
+                          src={profile && profile.avatar_url}
                           className="d-flex justify-content-center align-items-center user-avatar"
                         />
                       </div>

@@ -114,6 +114,8 @@ function RegisterPage() {
                 />
               </div>
 
+
+
               <button type="submit" className="form-submit-btn">
                 Registrati
               </button>
