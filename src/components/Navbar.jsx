@@ -235,8 +235,10 @@ function Navbar() {
                       onClick={handleLogout}
                       className="btn btn-dark ms-3"
                     >
-                      <CgLogOut id="logout" />
-                      Logout
+                      <Link to="/">
+                        <CgLogOut id="logout" />
+                        Logout
+                      </Link>
                     </button>
                   </div>
                 )}

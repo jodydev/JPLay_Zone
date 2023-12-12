@@ -4,7 +4,6 @@ import { useGameContext } from "../../contexts/GameContext";
 import { useState, useEffect } from "react";
 import useProfile from "../../hooks/useProfile";
 import supabase from "../../supabase/client";
-import { GrFavorite } from "react-icons/gr";
 
 function PaymentForm() {
   const { gameData } = useGameContext();

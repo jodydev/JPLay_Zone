@@ -179,10 +179,10 @@ function Messages() {
                   ))}
               </div>
             </div>
-            <div className="card-footer">
+            <div className="card-footer p-3">
               <div className="input-group">
                 <form
-                  className="d-flex px-3 py-2"
+                  className="d-flex py-2"
                   onSubmit={handleMessageSubmit}
                 >
                   <input

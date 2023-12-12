@@ -1,6 +1,5 @@
 import { useState, useEffect, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
-// import getProfileImg from "../utils/getProfileImg";
 import AppContext from "../contexts/AppContext";
 import supabase from "../supabase/client";
 
