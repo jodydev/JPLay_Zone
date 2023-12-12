@@ -1,26 +1,16 @@
-import supabase from "../supabase/client";
-import formatMessageDate from "../utils/formatMessageDate";
-
 import { useParams } from "react-router-dom";
 import { useGameContext } from "../contexts/GameContext";
 import { useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCards } from "swiper/modules";
+import SwiperCore from "swiper/core";
 import useProfile from "../hooks/useProfile";
-
-
-// Import Swiper styles
-import 'swiper/css';
-
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-import SwiperCore from 'swiper/core';
-
-import { EffectCards } from 'swiper/modules';
-
- SwiperCore.use([EffectCards]);
-
+import supabase from "../supabase/client";
+import formatMessageDate from "../utils/formatMessageDate";
 
 function Comments() {
+  SwiperCore.use([EffectCards]);
+
   const [comments, setComments] = useState([]);
 
   const { gameData } = useGameContext();
@@ -41,48 +31,45 @@ function Comments() {
         alert(error.message);
       } else {
         setComments(data);
-        console.log(data);
       }
     };
     getComments();
   }, []);
 
   return (
-    <div className="container">
-      <Swiper
-         effect={'cards'}
-         grabCursor={true}
-         modules={[EffectCards]}
-         className="mySwiper "
-         
-      >
-        {comments &&
-          comments.map((comment) => (
-            <SwiperSlide className="swiper" key={comment.id}>
-              <div className="row p-3 d-flex justify-content-center align-items-center">
-                <div className="col-3 ">
-                  <img
-                    src={comment.profile.avatar_url}
-                    className="rounded-circle user_img_recenzioni ms-2"
-                  />
-                </div>
-                <div className="col-9">
-                  <p className="text-muted h5">
-                    Publicato da
-                    <span className="h5 fw-bold ">
-                      {" "}
-                      {comment.profile.username}
-                    </span>
-                  </p>
-                  <p className="text-dark h6">
-                    il {formatMessageDate(comment.created_at)}
-                  </p>
-                </div>
-
+    <Swiper
+      effect={"cards"}
+      grabCursor={true}
+      modules={[EffectCards]}
+      className="mySwiper"
+    >
+      {comments &&
+        comments.map((comment) => (
+          <SwiperSlide className="swiper" key={comment.id}>
+            <div className="row p-3 d-flex justify-content-center align-items-center">
+              <div className="col-4 col-lg-2 ">
+                <img
+                  src={comment.profile.avatar_url}
+                  className="rounded-circle user_img_recenzioni ms-2"
+                />
+              </div>
+              <div className="col-8 col-lg-10">
+                <p className="text-muted h6">
+                  Publicato da
+                  <span className="h6 fw-bold ">
+                    {" "}
+                    {comment.profile.username}
+                  </span>
+                </p>
+                <p className="text-dark h6">
+                  il {formatMessageDate(comment.created_at)}
+                </p>
+              </div>
+              <div className="container">
                 <p className="text-muted fw-bold h4 mt-4">
                   {comment.comment_title}
                 </p>
-                <p className="text-dark fw-bold h5">
+                <p className="text-dark fw-bold h5 my-3">
                   {comment.comment_content}
                 </p>
 
@@ -90,10 +77,10 @@ function Comments() {
                   {formatMessageDate(comment.created_at)}
                 </p>
               </div>
-            </SwiperSlide>
-          ))}
-      </Swiper>
-    </div>
+            </div>
+          </SwiperSlide>
+        ))}
+    </Swiper>
   );
 }
 

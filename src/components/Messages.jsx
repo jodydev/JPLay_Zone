@@ -49,8 +49,6 @@ function Messages() {
           },
         ])
         .select();
-
-      console.log(data);
       if (error) {
         alert(error.message);
       } else {
@@ -88,23 +86,23 @@ function Messages() {
   return (
     <>
       {profile && (
-        <div className="d-flex justify-content-center col-12 slide-in-blurred-right">
+        <div className="d-flex justify-content-center col-12 slide-in-blurred-right my-5 py-5">
           <div className="card-chat shadow-lg">
             <div className="card-header msg_head">
-              <div className="container mb-3">
+              <div className="container my-3 mb-3">
                 <div className="row">
-                  <div className="col-3">
-                    <img src={selectedGame.img} className="user_img ms-3" />
+                  <div className="col-4 col-lg-3">
+                    <img src={selectedGame.img} className="user_img_game ms-0 ms-lg-3" />
                   </div>
-                  <div className="col-9">
+                  <div className="col-6 col-lg-9">
                     <div className="row">
-                      <h2 className="text-success fw-bold position-relative fs-1">
-                        Live Chat{" "}
-                       
-                      </h2>
-                      <span className="text-light text-nowrap fs-3 fw-bold">
-                          {selectedGame.title}{" "}
+                      <h2 className="text-danger fw-bold position-relative fs-1 text-nowrap">
+                        Live Chat{" "} <br />
+                        <span className="text-light  text-nowrap fs-3 fw-bold">
+                         per {selectedGame.title}{" "}
                         </span>
+                      </h2>
+                     
                       <span className="d-none d-lg-block">
                         <iframe
                           src="https://giphy.com/embed/DzEb7JBoJYuIRJBL3c"
@@ -134,10 +132,10 @@ function Messages() {
                           : ""
                       }`}
                     >
-                      <div className="col-8">
+                      <div className="col-10 col-lg-8">
                         {profile.id === message.profile_id ? (
                           <div ref={chatRef}  className="row">
-                            <div className="col-10 d-flex justify-content-end">
+                            <div className="col-9 col-lg-10 d-flex justify-content-end">
                               <div className="my_msg_container">
                                 <p  className="my-msg">{message.content}</p>
                                 <span className="msg_time d-flex justify-content-end">
@@ -149,22 +147,22 @@ function Messages() {
                               <div className="img_cont_msg">
                                 <img
                                   src={profile && message.profile.avatar_url}
-                                  className="rounded-circle user_img_msg"
+                                  className="rounded-circle user_img_msg "
                                 />
                               </div>
                             </div>
                           </div>
                         ) : (
                           <div className="row">
-                            <div className="col-2">
+                            <div className="col-2 col-lg-2">
                               <div className="img_cont_msg">
                                 <img
                                   src={message.profile.avatar_url}
-                                  className="rounded-circle user_img_msg ms-2"
+                                  className="rounded-circle user_img_msg ms-1"
                                 />
                               </div>
                             </div>
-                            <div className="col-10 d-flex justify-content-start">
+                            <div className="col-10 col-lg-10 d-flex justify-content-start">
                               <div className="msg_container">
                                 <p className="msg">{message.content}</p>
                                 <span className="msg_time">

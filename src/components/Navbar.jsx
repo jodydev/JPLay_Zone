@@ -72,43 +72,97 @@ function Navbar() {
             </div>
 
             <div className="col-6 d-flex justify-content-end align-items-center d-block d-lg-none">
-              <Link to="/searchGame" className="fs-5 text-dark">
-                <FiSearch
-                  style={{
-                    marginRight: "8px",
-                    marginBottom: "3px",
-                  }}
-                />
-              </Link>
+              
 
-              <Link to="/login" className="fs-5 text-dark">
-                <PiUserDuotone
-                  style={{
-                    marginRight: "8px",
-                    marginBottom: "3px",
-                  }}
-                />
-              </Link>
+              {!session ? (
+                <>
+                <Link to="/searchGame" className="fs-5 text-dark">
+                      <FiSearch
+                        style={{
+                          marginRight: "8px",
+                          marginBottom: "3px",
+                        }}
+                      />
+                    </Link>
+                  <Link to="/login" className="fs-5 text-dark">
+                    <PiUserDuotone
+                      style={{
+                        marginRight: "8px",
+                        marginBottom: "3px",
+                      }}
+                    />
+                  </Link>
 
-              <Link to="/register" className="fs-5 text-dark">
-                <PiUserPlusBold
-                  style={{
-                    marginRight: "8px",
-                    marginBottom: "3px",
-                  }}
-                />
-              </Link>
-              <button
-                className="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <i className="fa-solid fa-bars"></i>
-              </button>
+                  <Link to="/register" className="fs-5 text-dark">
+                    <PiUserPlusBold
+                      style={{
+                        marginRight: "8px",
+                        marginBottom: "3px",
+                      }}
+                    />
+                  </Link>
+
+                  <button
+                  className="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <i className="fa-solid fa-bars"></i>
+                </button>
+                </>
+              ) : (
+                <div className="container ms-3">
+                <div className="row">
+                  <div className="col-3">
+                    <Link to="/account">
+                      <img
+                        src={profile && profile.avatar_url}
+                        className="user-avatar-navbar"
+                      />
+                    </Link>
+                  </div>
+
+                  <div className="col-3">
+                  <button
+                      onClick={handleLogout}
+                      className="btn-logout-sm"
+                    >
+                
+                      <CgLogOut className="logout-btn" id="logout" />
+                
+                    </button>
+                  </div>
+
+                  <div className="col-3">
+                    <Link to="/searchGame" className="fs-5 text-dark">
+                      <FiSearch
+                        style={{
+                          marginRight: "8px",
+                          marginBottom: "3px",
+                        }}
+                      />
+                    </Link>
+                  </div>
+                  <div className="col-3">
+                  <button
+                  className="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <i className="fa-solid fa-bars"></i>
+                </button>
+                </div>
+                </div>
+              </div>
+              )}
             </div>
           </div>
 
@@ -224,7 +278,7 @@ function Navbar() {
                   </div>
                 ) : (
                   <div className="col-12 col-lg-6 d-flex justify-content-end align-items-center px-0 px-lg-3 py-0 py-lg-2">
-                    <Link to="/account">
+                    <Link to="/account" className="d-none d-lg-block">
                       <img
                         src={profile && profile.avatar_url}
                         className="d-flex justify-content-center align-items-center user-avatar-navbar"
@@ -233,9 +287,9 @@ function Navbar() {
 
                     <button
                       onClick={handleLogout}
-                      className="btn btn-dark ms-3"
+                      className="btn btn-dark ms-3 d-none d-lg-block"
                     >
-                      <Link to="/">
+                      <Link to="/" className="text-light fs-6 fw-normal ">
                         <CgLogOut id="logout" />
                         Logout
                       </Link>

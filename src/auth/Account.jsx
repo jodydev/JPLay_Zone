@@ -10,7 +10,7 @@ function Account() {
   const [profile, setProfile] = useState();
   const [loading, setLoading] = useState(true);
   const [favorites, setFavorites] = useState([]);
-
+  const [comments, setComments] = useState([]);
   useEffect(() => {
     let ignore = false;
     async function getProfile() {
@@ -52,9 +52,27 @@ function Account() {
         alert(error.message);
       } else {
         setFavorites(data);
+
+        console.log(data);
       }
     };
     getFav();
+  }, []);
+
+  useEffect(() => {
+    const getComments = async () => {
+      const { data, error } = await supabase
+        .from("comments")
+        .select("*")
+        .eq("profile_id", session.user.id);
+      if (error) {
+        alert(error.message);
+      } else {
+        setComments(data);
+        console.log(data);
+      }
+    };
+    getComments();
   }, []);
 
   return (
@@ -171,14 +189,14 @@ function Account() {
                       </h6>
                       <hr className="mt-0 mb-2 mt-3" />
                       <div className="row pt-1">
-                        <div className="col-12 col-lg-4 mb-3">
-                          <label className="fs-5">Nome del gioco</label>
+                        <div className="col-4 col-lg-4 mb-3">
+                          <label className="fs-5 account-font">Nome del gioco</label>
                         </div>
-                        <div className="col-12 col-lg-4 mb-3">
-                          <label className="fs-5 ">Categoria del gioco</label>
+                        <div className="col-4 col-lg-4 mb-3">
+                          <label className="fs-5 account-font">Categoria del gioco</label>
                         </div>
-                        <div className="col-12 col-lg-4 mb-3">
-                          <label className="fs-5">Piattaforma del gioco</label>
+                        <div className="col-4 col-lg-4 mb-3">
+                          <label className="fs-5 account-font">Piattaforma del gioco</label>
                           
                         </div>
                       </div>
@@ -186,27 +204,101 @@ function Account() {
                         favorites.map((favGame) => (
                           <div key={favGame.id} className="row pt-1">
                             
-                            <div className="col-12 col-lg-4">
+                            <div className="col-4 col-lg-4">
                               <p className="text-muted fw-bold">
                                 {favGame.game_name}{" "}
                               </p>
-                              <hr className="mt-0 mb-4 mt-3" />
+                              
                             </div>
                             
 
-                            <div className="col-12 col-lg-4">
+                            <div className="col-4 col-lg-4">
                               <p className="text-muted fw-bold">
                                 {favGame.game_category}{" "}
                               </p>
-                              <hr className="mt-0 mb-4 mt-3" />
+                              
                             </div>
 
-                            <div className="col-12 col-lg-4">
+                            <div className="col-4 col-lg-4">
                               <p className="text-muted fw-bold">
                                 {favGame.game_platform}{" "}
                               </p>
-                              <hr className="mt-0 mb-4 mt-3" />
+                              
                             </div>
+                            <hr className="mt-0 mb-4" />
+                          </div>
+                        ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="user" className="vh-200">
+        <div className="container h-100 w-100 p-3 p-lg-5 mt-3 mt-lg-5">
+          <div className="row d-flex justify-content-center align-items-center h-100">
+            <div className="col col-lg-12 mb-lg-0">
+              <div className="card mb- w-100 rounded-4 shadow-lg">
+                <div className="row g-0">
+                  <div className="col-md-12">
+                    <div className="p-4">
+                      <h6 className="fs-1 fw-bold">
+                        Le tue recenzioni<span>.</span>
+                      </h6>
+                      <hr className="mt-0 mb-2 mt-3" />
+                      <div className="row pt-1">
+                        <div className="col-12 col-lg-3 mb-3 d-none d-lg-block">
+                          <label className="fs-5 ">Nome del gioco</label>
+                        </div>
+                        <div className="col-12 col-lg-3 mb-3 d-none d-lg-block">
+                          <label className="fs-5 ">Categoria del gioco</label>
+                        </div>
+                        <div className="col-6 col-lg-3 mb-3">
+                          <label className="fs-5 account-font te">Titolo recenzione</label>
+                          
+                        </div>
+                        <div className="col-6 col-lg-3 mb-3">
+                          <label className="fs-5 account-font text-nowrap">Contenuto recenzione</label>
+                          
+                        </div>
+                      </div>
+                      
+                      {comments &&
+                        comments.map((comment) => (
+                          <div key={comment.id} className="row pt-1">
+                            
+                            <div className="col-12 col-lg-3 d-none d-lg-block">
+                              <p className="text-muted fw-bold">
+                                {comment.game_name}{" "}
+                              </p>
+                        
+                            </div>
+                            
+
+                            <div className="col-12 col-lg-3 d-none d-lg-block">
+                              <p className="text-muted fw-bold">
+                                {comment.game_category}{" "}
+                              </p>
+                      
+                            </div>
+
+                            <div className="col-6 col-lg-3">
+                              <p className="text-muted fw-bold">
+                                {comment.comment_title}{" "}
+                              </p>
+                             
+                            </div>
+
+                            <div className="col-6 col-lg-3">
+                              <p className="text-muted fw-bold">
+                                {comment.comment_content}{" "}
+                              </p>
+                              
+                            </div>
+                            <hr className="mt-0 mb-4" />
                           </div>
                         ))}
                     </div>

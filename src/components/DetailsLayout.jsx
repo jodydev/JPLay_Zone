@@ -28,7 +28,7 @@ function DetailsLayout({ children }) {
         </Container>
       </div>
 
-      <div className="container-fluid">
+      <div className="container-fluid vh-200">
         <div className="row">
           <div className="col-12 col-lg-6">
             {profile ? <ReviewForm /> : <Comment />}

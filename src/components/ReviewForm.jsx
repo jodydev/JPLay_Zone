@@ -1,8 +1,7 @@
-import supabase from "../supabase/client";
-
 import { useParams } from "react-router-dom";
 import { useGameContext } from "../contexts/GameContext";
 import { useState, useEffect, useContext } from "react";
+import supabase from "../supabase/client";
 import AppContext from "../contexts/AppContext";
 import useProfile from "../hooks/useProfile";
 import Comment from "./Comment";
@@ -13,8 +12,6 @@ function ReviewForm() {
   const { profile } = useProfile();
 
   const { session } = useContext(AppContext);
-
-  console.log(session);
 
   const { id } = useParams();
 
@@ -40,6 +37,8 @@ function ReviewForm() {
             game_name: selectedGame.title,
             comment_title: title,
             comment_content: content,
+            game_category: selectedGame.category,
+            game_platform: selectedGame.platform,
           },
         ])
         .select();
@@ -47,7 +46,7 @@ function ReviewForm() {
         alert(error.message);
       } else {
         commentForm.reset();
-        setComments([...comments, ...data]); // Aggiungi i nuovi commenti ai commenti esistenti
+        setComments([...comments, ...data]);
       }
     }
   };
@@ -79,11 +78,33 @@ function ReviewForm() {
   }, [selectedGame.id, session.user.id]);
 
   return (
-    <div className="container px-5 ms-5">
-      {comments.length > 0 && <Comment />}
+    <div className="container  px-0 px-lg-0 ms-0 py-0 py-lg-5 my-0 my-lg-5 ">
+      <div className="row">
+        {comments.length === 0 ? (
+          <div className=" my-5 px-5">
+            <h2 className="fs-1 fw-bold">Ancora nessuna recensione</h2>
+            <p className="fs-5 text-muted">
+              Pubblica per primo una recenzione su questo gioco!
+            </p>
+          </div>
+        ) : (
+          <>
+            <h2 className="fs-1 fw-bold my-5 px-5">
+              Le recensioni dei nostri clienti!{" "}
+              <span className="pt-3">
+                <i class="fa-solid fa-comments"></i>
+              </span>
+            </h2>
+            <div className="container p-5">
+              {comments.length > 0 && <Comment />}
+            </div>
+          </>
+        )}
+      </div>
+
       <div className="d-flex justify-content-center align-items-center">
-        <div className="form-container-recenzioni">
-          {!userHasCommented && (
+        {!userHasCommented && (
+          <div className="form-container-recenzioni my-5 py-5 shadow-lg">
             <form className="form" onSubmit={handleCommentSubmit}>
               <div>
                 <h1 className="text-dark fw-bold">Inserisci una recenzione </h1>
@@ -92,11 +113,11 @@ function ReviewForm() {
                 </h5>
               </div>
 
-              <div className="form-group my-3">
+              <div className="form-group my-0 my-lg-3 ">
                 <label htmlFor="email">Inserisci un titolo</label>
                 <input type="text" id="title" name="title" />
               </div>
-              <div className="form-group my-3">
+              <div className="form-group my-0 my-lg-3">
                 <label htmlFor="password">Inserisci un commento</label>
                 <textarea
                   type="text"
@@ -109,8 +130,8 @@ function ReviewForm() {
                 Pubblica
               </button>
             </form>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -524,13 +524,9 @@
     margin-right: 0px !important;
   }
 
-  .card-chat {
-    height: 500px;
-    max-height: 500px;
-    width: 100% !important;
-    border-radius: 15px !important;
-    background-color: rgb(56, 56, 56) !important;
-    padding-top: 20px;
+  .user-avatar-navbar {
+    width: 35px !important;
+    border-radius: 50%;
   }
 
   .button-favorites {
@@ -573,13 +569,57 @@
     color: white !important;
     height: 60px !important;
     overflow-y: auto;
-    width: 260px !important;
+    width: 210px !important;
     border-radius: 13px 0px 0px 13px !important;
     padding-left: 5%;
   }
   .type_msg:focus {
     box-shadow: none !important;
     outline: 0px !important;
+  }
+
+  .form-container-recenzioni {
+    width: 100% !important;
+    border: none;
+    padding: 0px !important;
+    font-size: 14px;
+    font-family: inherit;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px !important;
+    box-sizing: border-box;
+    border-radius: 16px;
+    background-size: 200% 100%;
+    animation: gradient 5s ease infinite;
+    /* filter: drop-shadow(0 0 0.5rem rgb(197, 197, 197)); */
+  }
+
+  .card-chat {
+    height: 700px !important;
+    max-height: 700px !important;
+    width: 80% !important;
+    border-radius: 15px !important;
+    background-color: rgb(56, 56, 56) !important;
+    padding-top: 0px !important;
+  }
+
+  .msg_card_body {
+    border-radius: 0px !important;
+    background-color: rgb(37, 37, 37);
+    height: 480px !important;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  .user_img_game {
+    height: 70px !important;
+    width: 70px !important;
+    border: 1.5px solid #f5f6fa;
+    margin-left: 10% !important;
+  }
+
+  .account-font {
+    font-size: 14px !important;
   }
 }
 
@@ -921,7 +961,6 @@ label {
   border-radius: 16px;
   background-size: 200% 100%;
   animation: gradient 5s ease infinite;
-  /* filter: drop-shadow(0 0 0.5rem rgb(197, 197, 197)); */
 }
 
 .text-area {
@@ -1159,6 +1198,11 @@ label {
   width: 90px;
   border: 1.5px solid #f5f6fa;
 }
+.user_img_game {
+  height: 90px;
+  width: 90px;
+  border: 1.5px solid #f5f6fa;
+}
 .user_img_msg {
   height: 45px;
   width: 45px;
@@ -1167,7 +1211,7 @@ label {
 .user_img_recenzioni {
   height: 80px;
   width: 80px;
-  border: 2px solid #ff0000;
+  border: 3px solid #ff0000;
 }
 .img_cont {
   position: relative;
@@ -1374,55 +1418,21 @@ span:hover::before {
 
 .giphy-embed {
   top: -40px;
-  left: 230px;
-}
-
-swiper-container {
-  width: 450px;
-  height: 250px;
+  left: 200px;
 }
 
 .swiper {
   box-shadow: #565656 5px 5px 10px;
   border-radius: 15px;
+  background-color: white;
 }
 
-/* swiper-slide:nth-child(1n) {
-  background-color: rgb(206, 17, 17);
+.btn-logout-sm {
+  border: none !important;
+  background-color: transparent !important;
 }
 
-swiper-slide:nth-child(2n) {
-  background-color: rgb(0, 140, 255);
+.logout-btn {
+  font-size: 30px !important;
+  color: rgba(17, 17, 17, 0.709) !important;
 }
-
-swiper-slide:nth-child(3n) {
-  background-color: rgb(10, 184, 111);
-}
-
-swiper-slide:nth-child(4n) {
-  background-color: rgb(211, 122, 7);
-}
-
-swiper-slide:nth-child(5n) {
-  background-color: rgb(118, 163, 12);
-}
-
-swiper-slide:nth-child(6n) {
-  background-color: rgb(180, 10, 47);
-}
-
-swiper-slide:nth-child(7n) {
-  background-color: rgb(35, 99, 19);
-}
-
-swiper-slide:nth-child(8n) {
-  background-color: rgb(0, 68, 255);
-}
-
-swiper-slide:nth-child(9n) {
-  background-color: rgb(218, 12, 218);
-}
-
-swiper-slide:nth-child(10n) {
-  background-color: rgb(54, 94, 77);
-} */
