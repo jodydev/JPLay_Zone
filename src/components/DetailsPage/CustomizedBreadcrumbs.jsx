@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useGameContext } from '../../contexts/GameContext';
+import { useGameContext } from "../../contexts/GameContext";
 import Typography from "@mui/material/Typography";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
@@ -9,13 +9,11 @@ function handleClick(event) {
 }
 
 export default function CustomizedBreadcrumbs() {
+  const { gameData } = useGameContext();
 
-  const { gameData  } = useGameContext();
-
-  const { id } = useParams(); // Estraiamo l'id dal parametro dell'URL
+  const { id } = useParams();
 
   const selectedGame = gameData.find((game) => game.id == id);
-
 
   return (
     <div className="container slide-in-blurred-left">

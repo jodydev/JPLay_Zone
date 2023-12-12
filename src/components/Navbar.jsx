@@ -10,18 +10,19 @@ import supabase from "../supabase/client";
 
 function Navbar() {
   const [profile, setProfile] = useState(null);
+  const location = useLocation();
+  const updateUser = location.state?.updatedProfile || {};
 
   const { session } = useContext(AppContext);
 
   const { signOut } = useAuth();
 
+  // Funzione per eseguire il logout
   const handleLogout = () => {
     signOut();
   };
 
-  const location = useLocation();
-  const updateUser = location.state?.updatedProfile || {};
-
+  // Effetto per ottenere il profilo dell'utente attualmente autenticato
   useEffect(() => {
     let ignore = false;
     async function getProfile() {
@@ -35,16 +36,20 @@ function Navbar() {
 
       if (!ignore) {
         if (error) {
+          // Log degli errori nel recupero del profilo
           console.warn(error);
         } else if (data) {
+          // Imposta il profilo recuperato nello stato
           setProfile(data);
         }
       }
     }
 
+    // Chiama la funzione per recuperare il profilo
     getProfile();
 
     return () => {
+      // Imposta ignore a true per evitare di aggiornare lo stato dopo la disattivazione dell'effetto
       ignore = true;
     };
   }, [session]);
@@ -72,18 +77,16 @@ function Navbar() {
             </div>
 
             <div className="col-6 d-flex justify-content-end align-items-center d-block d-lg-none">
-              
-
               {!session ? (
                 <>
-                <Link to="/searchGame" className="fs-5 text-dark">
-                      <FiSearch
-                        style={{
-                          marginRight: "8px",
-                          marginBottom: "3px",
-                        }}
-                      />
-                    </Link>
+                  <Link to="/searchGame" className="fs-5 text-dark">
+                    <FiSearch
+                      style={{
+                        marginRight: "8px",
+                        marginBottom: "3px",
+                      }}
+                    />
+                  </Link>
                   <Link to="/login" className="fs-5 text-dark">
                     <PiUserDuotone
                       style={{
@@ -103,65 +106,60 @@ function Navbar() {
                   </Link>
 
                   <button
-                  className="navbar-toggler"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navbarSupportedContent"
-                  aria-controls="navbarSupportedContent"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation"
-                >
-                  <i className="fa-solid fa-bars"></i>
-                </button>
+                    className="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
+                    <i className="fa-solid fa-bars"></i>
+                  </button>
                 </>
               ) : (
                 <div className="container ms-3">
-                <div className="row">
-                  <div className="col-3">
-                    <Link to="/account">
-                      <img
-                        src={profile && profile.avatar_url}
-                        className="user-avatar-navbar"
-                      />
-                    </Link>
-                  </div>
+                  <div className="row">
+                    <div className="col-3">
+                      <Link to="/account">
+                        <img
+                          src={profile && profile.avatar_url}
+                          className="user-avatar-navbar"
+                        />
+                      </Link>
+                    </div>
 
-                  <div className="col-3">
-                  <button
-                      onClick={handleLogout}
-                      className="btn-logout-sm"
-                    >
-                
-                      <CgLogOut className="logout-btn" id="logout" />
-                
-                    </button>
-                  </div>
+                    <div className="col-3">
+                      <button onClick={handleLogout} className="btn-logout-sm">
+                        <CgLogOut className="logout-btn" id="logout" />
+                      </button>
+                    </div>
 
-                  <div className="col-3">
-                    <Link to="/searchGame" className="fs-5 text-dark">
-                      <FiSearch
-                        style={{
-                          marginRight: "8px",
-                          marginBottom: "3px",
-                        }}
-                      />
-                    </Link>
+                    <div className="col-3">
+                      <Link to="/searchGame" className="fs-5 text-dark">
+                        <FiSearch
+                          style={{
+                            marginRight: "8px",
+                            marginBottom: "3px",
+                          }}
+                        />
+                      </Link>
+                    </div>
+                    <div className="col-3">
+                      <button
+                        className="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                      >
+                        <i className="fa-solid fa-bars"></i>
+                      </button>
+                    </div>
                   </div>
-                  <div className="col-3">
-                  <button
-                  className="navbar-toggler"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navbarSupportedContent"
-                  aria-controls="navbarSupportedContent"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation"
-                >
-                  <i className="fa-solid fa-bars"></i>
-                </button>
                 </div>
-                </div>
-              </div>
               )}
             </div>
           </div>
@@ -203,6 +201,7 @@ function Navbar() {
                     <img src="/assets/img/logo/logo1.png" width="70" />
                   </Link>
                 </li>
+
                 <li className="nav-item dropdown">
                   <a
                     className="nav-link dropdown-toggle ms-5 active "
@@ -235,6 +234,7 @@ function Navbar() {
                     </li>
                   </ul>
                 </li>
+
                 <li className="nav-item ">
                   <a
                     className="nav-link  mx-5 active effect-underline "

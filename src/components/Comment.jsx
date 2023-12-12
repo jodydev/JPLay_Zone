@@ -19,8 +19,10 @@ function Comments() {
 
   const { id } = useParams();
 
+  // Trova il gioco selezionato utilizzando l'ID dall'elenco di dati dei giochi
   const selectedGame = gameData.find((game) => game.id == id);
 
+  // Effettua il recupero dei commenti associati al gioco selezionato
   useEffect(() => {
     const getComments = async () => {
       const { data, error } = await supabase
@@ -28,11 +30,13 @@ function Comments() {
         .select("*, profile: profiles(*)")
         .eq("game_id", selectedGame.id);
       if (error) {
+        // Gestisce gli errori durante il recupero dei commenti del gioco
         alert(error.message);
       } else {
         setComments(data);
       }
     };
+    // Esegue il recupero dei commenti al caricamento della pagina, senza dipendenze
     getComments();
   }, []);
 

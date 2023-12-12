@@ -1,8 +1,7 @@
 import CardGame from "./CardGame";
-import { useGameContext } from '../../contexts/GameContext';
+import { useGameContext } from "../../contexts/GameContext";
 
 function NintendoSwitch() {
-
   const { gameNintendo } = useGameContext();
 
   return (
@@ -19,6 +18,7 @@ function NintendoSwitch() {
         </div>
 
         <div className="col-12 col-lg-8">
+          
           <CardGame gameNintendo={gameNintendo} />
 
           <div className="row d-none d-lg-block">

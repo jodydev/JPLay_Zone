@@ -4,7 +4,7 @@ import AppContext from "../contexts/AppContext";
 
 function ProtectedRoute() {
   const { session } = useContext(AppContext);
-  
+
   if (!session) {
     return <Navigate to="/login" />;
   }

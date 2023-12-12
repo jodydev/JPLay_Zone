@@ -18,12 +18,16 @@ export default function Settings() {
   const [address, setAddress] = useState(null);
   const [error, setError] = useState(null);
 
+  // Esegui l'effetto al cambio di sessione, ottenendo e aggiornando i dati del profilo
   useEffect(() => {
     let ignore = false;
+
+    // Funzione per ottenere il profilo dell'utente attuale
     async function getProfile() {
       setLoading(true);
       const { user } = session;
 
+      // Ottieni i dati del profilo dall'API di Supabase
       const { data, error } = await supabase
         .from("profiles")
         .select(`*`)
@@ -34,6 +38,7 @@ export default function Settings() {
         if (error) {
           console.warn(error);
         } else if (data) {
+          // Aggiorna lo stato con i dati del profilo ottenuti
           setUsername(data.username);
           setfirstName(data.first_name);
           setLastName(data.last_name);
@@ -48,17 +53,20 @@ export default function Settings() {
 
     getProfile();
 
+    // Ritorna una funzione per indicare l'ignorare il set di stato dopo la disconnessione dell'effetto
     return () => {
       ignore = true;
     };
   }, [session]);
 
+  // Funzione per aggiornare il profilo dell'utente
   async function updateProfile(event, avatarUrl) {
     event.preventDefault();
 
     setLoading(true);
     const { user } = session;
 
+    // Creazione dell'oggetto di aggiornamento con i dati del profilo
     const updates = {
       id: user.id,
       username,
@@ -75,7 +83,7 @@ export default function Settings() {
       updates.avatar_url = avatarUrl; // Aggiorna l'avatar_url solo se è stato fornito un nuovo URL
     }
 
-
+    // Aggiornamento del profilo nell'API di Supabase
     const { error } = await supabase.from("profiles").upsert(updates);
 
     if (error) {
@@ -89,7 +97,7 @@ export default function Settings() {
     }
   }
 
-  // funzione che carica l'immagine nello storage...
+  // Funzione per scaricare un'immagine dallo storage
   async function downloadImage(path) {
     try {
       const { data, error } = await supabase.storage
@@ -105,6 +113,7 @@ export default function Settings() {
     }
   }
 
+  // Funzione per caricare un'immagine nello storage
   async function uploadAvatar(event) {
     try {
       setUploading(true);

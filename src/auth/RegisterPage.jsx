@@ -1,20 +1,21 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import useAuth from "../hooks/useAuth";
-// import { Formik, Form, Field } from 'formik';
-// import * as Yup from 'yup';
 
 function RegisterPage() {
   const { signUp } = useAuth();
   const navigate = useNavigate();
   const [error, setError] = useState(null);
 
+  // Gestisce la registrazione di un nuovo utente
   const handleRegister = async (event) => {
     event.preventDefault();
-    const { username, email, password} =
-      Object.fromEntries(new FormData(event.currentTarget));
+    const { username, email, password } = Object.fromEntries(
+      new FormData(event.currentTarget)
+    );
 
     try {
+      // Effettua la registrazione attraverso la funzione signUp fornita da useAuth()
       const { error } = await signUp({
         email,
         password,
@@ -25,12 +26,13 @@ function RegisterPage() {
         },
       });
 
+      // Possibili messaggi di errore restituiti dalla registrazione
       const errorEmail = "Unable to validate email address: invalid format";
       const errorPassword = "Signup requires a valid password";
-
       const errorMessageMail = "Email errata, riprova";
       const errorMessagePassword = "Dati incompleti o errati, riprova";
 
+      // Gestisce i diversi tipi di errori restituiti durante la registrazione
       if (error?.message === errorEmail) {
         setError(errorMessageMail);
       } else if (error?.message === errorPassword) {
@@ -39,12 +41,14 @@ function RegisterPage() {
         setError("Errore durante la registrazione, riprova");
       }
 
+      // Se il codice di errore è 422, reindirizza alla pagina di registrazione, altrimenti vai alla pagina delle impostazioni
       if (error?.status === 422) {
         navigate("/register");
       } else {
         navigate("/setting");
       }
     } catch (error) {
+      // Gestisce eventuali errori durante la registrazione
       setError("Errore durante la registrazione, riprova");
     }
 
@@ -113,8 +117,6 @@ function RegisterPage() {
                   required
                 />
               </div>
-
-
 
               <button type="submit" className="form-submit-btn">
                 Registrati

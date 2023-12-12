@@ -1,8 +1,7 @@
+import { useGameContext } from "../../contexts/GameContext";
 import CardGame from "./CardGame";
-import { useGameContext } from '../../contexts/GameContext';
 
 function XboxProducts() {
-
   const { gameXbox } = useGameContext();
 
   return (

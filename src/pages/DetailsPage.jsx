@@ -2,10 +2,8 @@ import PaymentForm from "../components/DetailsPage/PaymentForm";
 import DetailsLayout from "../components/DetailsLayout";
 
 function DetailsPage() {
-
-
   return (
-    <DetailsLayout >
+    <DetailsLayout>
       <PaymentForm />
     </DetailsLayout>
   );

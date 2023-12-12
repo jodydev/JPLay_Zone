@@ -12,12 +12,16 @@ function Account() {
   const [favorites, setFavorites] = useState([]);
   const [comments, setComments] = useState([]);
   
+  // Esegui l'effetto al cambio di sessione, ottenendo e impostando il profilo dell'utente
   useEffect(() => {
     let ignore = false;
+
+    // Funzione per ottenere il profilo dell'utente attuale
     async function getProfile() {
       setLoading(true);
       const { user } = session;
 
+      // Ottieni i dati del profilo dall'API di Supabase
       const { data, error } = await supabase
         .from("profiles")
         .select(`*`)
@@ -28,6 +32,7 @@ function Account() {
         if (error) {
           console.warn(error);
         } else if (data) {
+          // Imposta lo stato del profilo con i dati ottenuti
           setProfile(data);
         }
       }
@@ -37,11 +42,13 @@ function Account() {
 
     getProfile();
 
+    // Ritorna una funzione per indicare l'ignorare il set di stato dopo la disconnessione dell'effetto
     return () => {
       ignore = true;
     };
   }, [session]);
 
+  // Esegui l'effetto per ottenere i preferiti dell'utente
   useEffect(() => {
     const getFav = async () => {
       const { data, error } = await supabase
@@ -49,18 +56,18 @@ function Account() {
         .select("*")
         .eq("profile_id", session.user.id);
       if (error) {
-        // eslint-disable-next-line no-alert
+        // Gestisci l'errore in caso di fallimento della richiesta
         alert(error.message);
       } else {
+        // Imposta lo stato dei preferiti con i dati ottenuti
         setFavorites(data);
-
         console.log(data);
-
       }
     };
     getFav();
   }, []);
 
+  // Esegui l'effetto per ottenere i commenti dell'utente
   useEffect(() => {
     const getComments = async () => {
       const { data, error } = await supabase
@@ -68,8 +75,10 @@ function Account() {
         .select("*")
         .eq("profile_id", session.user.id);
       if (error) {
+        // Gestisci l'errore in caso di fallimento della richiesta
         alert(error.message);
       } else {
+        // Imposta lo stato dei commenti con i dati ottenuti
         setComments(data);
         console.log(data);
       }
@@ -192,40 +201,40 @@ function Account() {
                       <hr className="mt-0 mb-2 mt-3" />
                       <div className="row pt-1">
                         <div className="col-4 col-lg-4 mb-3">
-                          <label className="fs-5 account-font">Nome del gioco</label>
+                          <label className="fs-5 account-font">
+                            Nome del gioco
+                          </label>
                         </div>
                         <div className="col-4 col-lg-4 mb-3">
-                          <label className="fs-5 account-font">Categoria del gioco</label>
+                          <label className="fs-5 account-font">
+                            Categoria del gioco
+                          </label>
                         </div>
                         <div className="col-4 col-lg-4 mb-3">
-                          <label className="fs-5 account-font">Piattaforma del gioco</label>
-                          
+                          <label className="fs-5 account-font">
+                            Piattaforma del gioco
+                          </label>
                         </div>
                       </div>
                       {favorites &&
                         favorites.map((favGame) => (
                           <div key={favGame.id} className="row pt-1">
-                            
                             <div className="col-4 col-lg-4">
                               <p className="text-muted fw-bold">
                                 {favGame.game_name}{" "}
                               </p>
-                              
                             </div>
-                            
 
                             <div className="col-4 col-lg-4">
                               <p className="text-muted fw-bold">
                                 {favGame.game_category}{" "}
                               </p>
-                              
                             </div>
 
                             <div className="col-4 col-lg-4">
                               <p className="text-muted fw-bold">
                                 {favGame.game_platform}{" "}
                               </p>
-                              
                             </div>
                             <hr className="mt-0 mb-4" />
                           </div>
@@ -259,46 +268,42 @@ function Account() {
                           <label className="fs-5 ">Categoria del gioco</label>
                         </div>
                         <div className="col-6 col-lg-3 mb-3">
-                          <label className="fs-5 account-font te">Titolo recenzione</label>
-                          
+                          <label className="fs-5 account-font te">
+                            Titolo recenzione
+                          </label>
                         </div>
                         <div className="col-6 col-lg-3 mb-3">
-                          <label className="fs-5 account-font text-nowrap">Contenuto recenzione</label>
-                          
+                          <label className="fs-5 account-font text-nowrap">
+                            Contenuto recenzione
+                          </label>
                         </div>
                       </div>
-                      
+
                       {comments &&
                         comments.map((comment) => (
                           <div key={comment.id} className="row pt-1">
-                            
                             <div className="col-12 col-lg-3 d-none d-lg-block">
                               <p className="text-muted fw-bold">
                                 {comment.game_name}{" "}
                               </p>
-                        
                             </div>
-                            
 
                             <div className="col-12 col-lg-3 d-none d-lg-block">
                               <p className="text-muted fw-bold">
                                 {comment.game_category}{" "}
                               </p>
-                      
                             </div>
 
                             <div className="col-6 col-lg-3">
                               <p className="text-muted fw-bold">
                                 {comment.comment_title}{" "}
                               </p>
-                             
                             </div>
 
                             <div className="col-6 col-lg-3">
                               <p className="text-muted fw-bold">
                                 {comment.comment_content}{" "}
                               </p>
-                              
                             </div>
                             <hr className="mt-0 mb-4" />
                           </div>

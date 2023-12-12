@@ -2,10 +2,9 @@ import { Link } from "react-router-dom";
 import { useGameContext } from "../../contexts/GameContext";
 
 function AllCardGame() {
-  const { gameData } = useGameContext()
+  const { gameData } = useGameContext();
 
   const games = gameData;
-
 
   const getCardClass = (platform) => {
     if (platform === "PS5") {

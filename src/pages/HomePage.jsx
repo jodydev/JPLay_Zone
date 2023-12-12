@@ -7,16 +7,15 @@ import SponsorBannerPayPal from "../components/Sponsor/SponsorBannerPayPal";
 import NintendoProducts from "../components/Product/NintendoProducts";
 
 function HomePage() {
-
   return (
     <>
       <CarouselHero />
       <LogoShowCase />
-      <Ps5Products/>
+      <Ps5Products />
       <SponsorBannerKlarna />
       <XboxProducts />
       <SponsorBannerPayPal />
-      <NintendoProducts/>
+      <NintendoProducts />
     </>
   );
 }

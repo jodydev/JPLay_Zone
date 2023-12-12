@@ -9,26 +9,31 @@ function LoginPage() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(null); // Stato per memorizzare l'errore di accesso
+  const [error, setError] = useState(null);
 
+  // Gestisce l'evento di login, autenticando l'utente con Supabase
   const handleLogin = async (event) => {
     event.preventDefault();
 
+    // Effettua il login utilizzando le credenziali fornite
     const signInResult = await signIn(email, password);
 
     if (signInResult.error) {
+      // Se si verifica un errore durante il login, imposta un messaggio di errore
       const errorMessage = "I dati inseriti non sono corretti, riprova.";
       setError(signInResult.error.error_description || errorMessage);
     } else {
-      // setError(null);
+      // Se il login ha successo, reindirizza l'utente alla pagina dell'account
       navigate("/account");
     }
   };
 
+  // Gestisce il cambio dell'email nell'input del form di login
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
 
+  // Gestisce il cambio della password nell'input del form di login
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };

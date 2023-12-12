@@ -16,6 +16,7 @@ function PaymentForm() {
 
   const [fav, setFav] = useState([]);
 
+  // Ottiene i giochi preferiti per un profilo specifico
   const getFavGame = async () => {
     const { data, error } = await supabase
       .from("favorites")
@@ -23,6 +24,7 @@ function PaymentForm() {
       .eq("game_id", selectedGame.id)
       .eq("profile_id", profile.id);
     if (error) {
+      // Gestisce gli errori durante il recupero dei giochi preferiti
       // eslint-disable-next-line no-alert
       alert(error.message);
     } else {
@@ -30,6 +32,7 @@ function PaymentForm() {
     }
   };
 
+  // Aggiunge un gioco ai preferiti
   const addToFavorites = async () => {
     const { error } = await supabase
       .from("favorites")
@@ -43,6 +46,7 @@ function PaymentForm() {
       ])
       .select();
     if (error) {
+      // Gestisce gli errori durante l'aggiunta del gioco ai preferiti
       // eslint-disable-next-line no-alert
       alert(error.message);
     } else {
@@ -50,6 +54,7 @@ function PaymentForm() {
     }
   };
 
+  // Rimuove un gioco dai preferiti
   const removeFromFavorites = async () => {
     const { error } = await supabase
       .from("favorites")
@@ -57,6 +62,7 @@ function PaymentForm() {
       .eq("game_id", selectedGame.id)
       .eq("profile_id", profile.id);
     if (error) {
+      // Gestisce gli errori durante la rimozione del gioco dai preferiti
       // eslint-disable-next-line no-alert
       alert(error.message);
     } else {
@@ -64,6 +70,7 @@ function PaymentForm() {
     }
   };
 
+  // Effettua il recupero dei giochi preferiti al caricamento della pagina, se è presente un profilo
   useEffect(() => {
     if (profile) {
       getFavGame();

@@ -2,20 +2,27 @@ import { Link } from "react-router-dom";
 import { useGameContext } from "../contexts/GameContext";
 import { useState } from "react";
 
-function GameSearch () {
+function GameSearch() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredGames, setFilteredGames] = useState([]);
   const { gameData } = useGameContext();
 
+  // Funzione per gestire la ricerca dei giochi
   const handleSearch = (e) => {
+    // Ottiene il termine di ricerca e lo normalizza
     const term = e.target.value.trim().toLowerCase();
+
+    // Imposta il termine di ricerca nello stato
     setSearchTerm(term);
 
+    // Filtra i giochi in base al termine di ricerca
     const filtered = gameData.filter((game) => {
+      // Normalizza il titolo del gioco e confronta con il termine di ricerca
       const gameTitle = game.title.trim().toLowerCase();
       return gameTitle.includes(term);
     });
 
+    // Imposta i giochi filtrati nello stato
     setFilteredGames(filtered);
   };
 
@@ -123,6 +130,6 @@ function GameSearch () {
       </div>
     </div>
   );
-};
+}
 
 export default GameSearch;

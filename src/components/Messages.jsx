@@ -19,14 +19,17 @@ function Messages() {
 
   const selectedGame = gameData.find((game) => game.id == id);
 
+  // Funzione per recuperare i messaggi associati al gioco selezionato
   const getMessages = async () => {
     const { data, error } = await supabase
       .from("messages")
       .select("*, profile: profiles(*)")
       .eq("game_id", selectedGame.id);
     if (error) {
+      // Gestisce gli errori durante il recupero dei messaggi
       alert(error.message);
     } else {
+      // Imposta i messaggi recuperati nello stato e scrolla alla fine della chat se è disponibile un riferimento all'elemento
       setChat(data);
       if (chatRef.current) {
         chatRef.current.scrollTop = chatRef.current.scrollHeight;
@@ -34,6 +37,7 @@ function Messages() {
     }
   };
 
+  // Gestisce l'invio di un nuovo messaggio
   const handleMessageSubmit = async (event) => {
     event.preventDefault();
     const inputForm = event.currentTarget;
@@ -50,6 +54,7 @@ function Messages() {
         ])
         .select();
       if (error) {
+        // Gestisce gli errori durante l'inserimento del messaggio
         alert(error.message);
       } else {
         inputForm.reset();
@@ -57,6 +62,7 @@ function Messages() {
     }
   };
 
+  // Effetto per recuperare i messaggi all'avvio e sottoscriversi ai cambiamenti nella tabella dei messaggi
   useEffect(() => {
     getMessages();
     const subscription = supabase
@@ -70,12 +76,13 @@ function Messages() {
         () => getMessages()
       )
       .subscribe();
-  
+
     return () => {
       subscription.unsubscribe();
     };
   }, []);
 
+  // Effetto per scrollare alla fine della chat quando i messaggi vengono aggiornati
   useEffect(() => {
     if (chatRef.current) {
       chatRef.current.scrollTop = chatRef.current.scrollHeight;

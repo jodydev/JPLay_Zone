@@ -15,20 +15,24 @@ function ReviewForm() {
 
   const { id } = useParams();
 
-  const selectedGame = gameData.find((game) => game.id == id);
   const [comments, setComments] = useState([]);
   const [userHasCommented, setUserHasCommented] = useState(false);
+  const selectedGame = gameData.find((game) => game.id == id);
 
+  // Funzione per inviare un commento
   const handleCommentSubmit = async (event) => {
     event.preventDefault();
     const commentForm = event.currentTarget;
     const { title, content } = Object.fromEntries(new FormData(commentForm));
+
+    // Verifica se il titolo e il contenuto sono stringhe non vuote
     if (
       typeof title === "string" &&
       typeof content === "string" &&
       title.trim().length !== 0 &&
       content.trim().length !== 0
     ) {
+      // Inserisce il commento nel database
       const { data, error } = await supabase
         .from("comments")
         .insert([
@@ -42,15 +46,19 @@ function ReviewForm() {
           },
         ])
         .select();
+
       if (error) {
+        // Mostra un messaggio di errore in caso di errore nell'inserimento del commento
         alert(error.message);
       } else {
+        // Resettare il form e aggiornare lo stato dei commenti
         commentForm.reset();
         setComments([...comments, ...data]);
       }
     }
   };
 
+  // Effetto per recuperare i commenti relativi al gioco selezionato
   useEffect(() => {
     async function fetchComments() {
       const { data, error } = await supabase
@@ -59,10 +67,12 @@ function ReviewForm() {
         .eq("game_id", selectedGame.id);
 
       if (error) {
+        // Log dell'errore nel recupero dei commenti
         console.error(error);
         return;
       }
 
+      // Imposta lo stato dei commenti con i dati ottenuti
       setComments(data || []);
 
       // Controlla se l'utente corrente ha già commentato il gioco
@@ -74,6 +84,7 @@ function ReviewForm() {
       }
     }
 
+    // Richiama la funzione per recuperare i commenti quando cambia il gioco selezionato o l'utente
     fetchComments();
   }, [selectedGame.id, session.user.id]);
 
@@ -102,9 +113,9 @@ function ReviewForm() {
         )}
       </div>
 
-     <div className="container p-5">
+      <div className="container p-5">
         {!userHasCommented && (
-          <div className="form-container-recenzioni my-5 py-5 my-shadow w-100" >
+          <div className="form-container-recenzioni my-5 py-5 my-shadow w-100">
             <form className="form" onSubmit={handleCommentSubmit}>
               <div>
                 <h1 className="text-dark fw-bold">Inserisci una recenzione </h1>
@@ -132,7 +143,7 @@ function ReviewForm() {
             </form>
           </div>
         )}
-    </div>
+      </div>
     </div>
   );
 }

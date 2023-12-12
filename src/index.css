@@ -497,6 +497,8 @@
     width: 250px !important;
     margin-left: 10px !important;
     border: 2px solid red !important;
+    z-index: 1000 !important;
+    position: absolute !important; 
   }
 
   .dropdown-item:hover {
@@ -940,6 +942,7 @@ label {
   cursor: pointer;
   border-radius: 6px;
 }
+
 
 .form-container .form-submit-btn:hover {
   background-color: #ffffff;
@@ -1467,4 +1470,13 @@ span:hover::before {
 
 .my-shadow{
   box-shadow: #565656 5px 5px 10px;
+}
+
+
+.dropdown-menu {
+  width: 250px !important;
+  margin-left: 10px !important;
+  border: 2px solid red !important;
+  z-index: 1000 !important;
+  position: absolute !important;
 }
