@@ -46,7 +46,7 @@ function Comments() {
       {comments &&
         comments.map((comment) => (
           <SwiperSlide className="swiper" key={comment.id}>
-            <div className="row p-3 d-flex justify-content-center align-items-center">
+            <div className="row p-3 d-flex justify-content-center align-items-center my-padding">
               <div className="col-4 col-lg-2 ">
                 <img
                   src={comment.profile.avatar_url}

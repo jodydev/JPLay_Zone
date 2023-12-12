@@ -11,6 +11,7 @@ function Account() {
   const [loading, setLoading] = useState(true);
   const [favorites, setFavorites] = useState([]);
   const [comments, setComments] = useState([]);
+  
   useEffect(() => {
     let ignore = false;
     async function getProfile() {
@@ -54,6 +55,7 @@ function Account() {
         setFavorites(data);
 
         console.log(data);
+
       }
     };
     getFav();

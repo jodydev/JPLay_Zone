@@ -78,7 +78,7 @@ function ReviewForm() {
   }, [selectedGame.id, session.user.id]);
 
   return (
-    <div className="container  px-0 px-lg-0 ms-0 py-0 py-lg-5 my-0 my-lg-5 ">
+    <div className="container">
       <div className="row">
         {comments.length === 0 ? (
           <div className=" my-5 px-5">
@@ -102,9 +102,9 @@ function ReviewForm() {
         )}
       </div>
 
-      <div className="d-flex justify-content-center align-items-center">
+     <div className="container p-5">
         {!userHasCommented && (
-          <div className="form-container-recenzioni my-5 py-5 shadow-lg">
+          <div className="form-container-recenzioni my-5 py-5 my-shadow w-100" >
             <form className="form" onSubmit={handleCommentSubmit}>
               <div>
                 <h1 className="text-dark fw-bold">Inserisci una recenzione </h1>
@@ -132,7 +132,7 @@ function ReviewForm() {
             </form>
           </div>
         )}
-      </div>
+    </div>
     </div>
   );
 }

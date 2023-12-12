@@ -948,9 +948,9 @@ label {
 }
 
 .form-container-recenzioni {
-  width: 80%;
+  width: 100% !important;
   border: none;
-  padding: 25px;
+  padding: 25;
   font-size: 14px;
   font-family: inherit;
   color: white;
@@ -1038,7 +1038,7 @@ label {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 10px 60px;
+  padding: 10px 30px;
 }
 
 .circle {
@@ -1354,7 +1354,10 @@ label {
   background-color: rgb(37, 37, 37);
   height: 600px;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
+  width: 100%;
+  scroll-behavior: smooth !important;
+
 }
 
 /* Cambia il colore dello sfondo della barra di scorrimento */
@@ -1425,6 +1428,11 @@ span:hover::before {
   box-shadow: #565656 5px 5px 10px;
   border-radius: 15px;
   background-color: white;
+  
+}
+
+.my-padding{
+  padding: 30px 50px !important;
 }
 
 .btn-logout-sm {
@@ -1435,4 +1443,28 @@ span:hover::before {
 .logout-btn {
   font-size: 30px !important;
   color: rgba(17, 17, 17, 0.709) !important;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  position: absolute;
+  right: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  border: solid 4px red;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Stile dell'asse dello scroll */
+::-webkit-scrollbar-track {
+  background-color: #383838 !important; /* Colore di sfondo verde */
+}
+
+.my-shadow{
+  box-shadow: #565656 5px 5px 10px;
 }
