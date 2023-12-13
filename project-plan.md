@@ -1,4 +1,4 @@
-#JPlay
+#JPlayZone
 
 - [Descrizione](#descrizione)
 - [API](#api)
@@ -10,7 +10,7 @@
 
 ## Descrizione
 
-Benvenuto in JPlay, l'ecommerce dedicato agli amanti dei videogiochi dove l'esperienza diventa interattiva. Esplora la nostra vasta libreria di giochi, avrai il potere di cercare, filtrare e aggiungere i tuoi preferiti con facilità. Ma non finisce qui: la nostra piattaforma ti offre l'opportunità di lasciare recensioni dettagliate, condividere le tue opinioni e chiedere consigli utilizzando la nostra live chat interattiva. Con JPlay, l'interazione con la community e la ricerca del tuo prossimo gioco preferito diventano un'esperienza coinvolgente e personalizzata.
+Benvenuto in JPlayZone, l'ecommerce dedicato agli amanti dei videogiochi dove l'esperienza diventa interattiva. Esplora la nostra vasta libreria di giochi, avrai il potere di cercare, filtrare e aggiungere i tuoi preferiti con facilità. Ma non finisce qui: la nostra piattaforma ti offre l'opportunità di lasciare recensioni dettagliate, condividere le tue opinioni e chiedere consigli utilizzando la nostra live chat interattiva. Con JPlay, l'interazione con la community e la ricerca del tuo prossimo gioco preferito diventano un'esperienza coinvolgente e personalizzata.
 
 ## API
 
